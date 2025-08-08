@@ -1,0 +1,1233 @@
+This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+</file_summary>
+
+<directory_structure>
+src/
+  lib/
+    assets/
+      favicon.svg
+    components/
+      Contact.svelte
+      Faq.svelte
+      Modal.svelte
+      Services.svelte
+      Solutions.svelte
+    index.js
+  routes/
+    success/
+      +page.svelte
+    +layout.svelte
+    +page.svelte
+  app.css
+  app.html
+static/
+  lightbulb.svg
+  robots.txt
+.gitignore
+.npmrc
+.prettierignore
+.prettierrc
+eslint.config.js
+jsconfig.json
+netlify.toml
+package.json
+README.md
+svelte.config.js
+vite.config.js
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path="src/lib/assets/favicon.svg">
+<svg xmlns="http://www.w3.org/2000/svg" width="107" height="128" viewBox="0 0 107 128"><title>svelte-logo</title><path d="M94.157 22.819c-10.4-14.885-30.94-19.297-45.792-9.835L22.282 29.608A29.92 29.92 0 0 0 8.764 49.65a31.5 31.5 0 0 0 3.108 20.231 30 30 0 0 0-4.477 11.183 31.9 31.9 0 0 0 5.448 24.116c10.402 14.887 30.942 19.297 45.791 9.835l26.083-16.624A29.92 29.92 0 0 0 98.235 78.35a31.53 31.53 0 0 0-3.105-20.232 30 30 0 0 0 4.474-11.182 31.88 31.88 0 0 0-5.447-24.116" style="fill:#ff3e00"/><path d="M45.817 106.582a20.72 20.72 0 0 1-22.237-8.243 19.17 19.17 0 0 1-3.277-14.503 18 18 0 0 1 .624-2.435l.49-1.498 1.337.981a33.6 33.6 0 0 0 10.203 5.098l.97.294-.09.968a5.85 5.85 0 0 0 1.052 3.878 6.24 6.24 0 0 0 6.695 2.485 5.8 5.8 0 0 0 1.603-.704L69.27 76.28a5.43 5.43 0 0 0 2.45-3.631 5.8 5.8 0 0 0-.987-4.371 6.24 6.24 0 0 0-6.698-2.487 5.7 5.7 0 0 0-1.6.704l-9.953 6.345a19 19 0 0 1-5.296 2.326 20.72 20.72 0 0 1-22.237-8.243 19.17 19.17 0 0 1-3.277-14.502 17.99 17.99 0 0 1 8.13-12.052l26.081-16.623a19 19 0 0 1 5.3-2.329 20.72 20.72 0 0 1 22.237 8.243 19.17 19.17 0 0 1 3.277 14.503 18 18 0 0 1-.624 2.435l-.49 1.498-1.337-.98a33.6 33.6 0 0 0-10.203-5.1l-.97-.294.09-.968a5.86 5.86 0 0 0-1.052-3.878 6.24 6.24 0 0 0-6.696-2.485 5.8 5.8 0 0 0-1.602.704L37.73 51.72a5.42 5.42 0 0 0-2.449 3.63 5.79 5.79 0 0 0 .986 4.372 6.24 6.24 0 0 0 6.698 2.486 5.8 5.8 0 0 0 1.602-.704l9.952-6.342a19 19 0 0 1 5.295-2.328 20.72 20.72 0 0 1 22.237 8.242 19.17 19.17 0 0 1 3.277 14.503 18 18 0 0 1-8.13 12.053l-26.081 16.622a19 19 0 0 1-5.3 2.328" style="fill:#fff"/></svg>
+</file>
+
+<file path="src/lib/components/Contact.svelte">
+<!-- src/lib/components/Contact.svelte -->
+<script>
+	// THIS IS THE CRUCIAL PART FOR NETLIFY FORMS
+	// It tells SvelteKit to generate a plain HTML file for this component,
+	// which Netlify's build bots can find and process.
+	export const prerender = true;
+</script>
+
+<div class="content-wrapper">
+	<h2>CONTACT</h2>
+	<hr />
+	<p>
+		Ready to see your vision realized? Fill out the form below to tell me about your project. I'll
+		get back to you to schedule our discovery call.
+	</p>
+
+	<!--
+      - Added action="/success" to redirect to your custom success page.
+      - data-netlify="true" and the hidden input are still correctly in place.
+    -->
+	<form name="contact" method="POST" data-netlify="true" action="/success">
+		<!-- Netlify requires this hidden input to properly register the form -->
+		<input type="hidden" name="form-name" value="contact" />
+
+		<div class="form-row">
+			<input type="text" name="name" placeholder="NAME" required />
+			<input type="email" name="email" placeholder="EMAIL" required />
+		</div>
+		<textarea name="message" placeholder="MESSAGE" rows="5" required></textarea>
+
+		<div class="form-buttons">
+			<button type="submit">Send Message</button>
+			<button type="reset">Reset</button>
+		</div>
+	</form>
+
+	<p class="direct-email">Or email me directly at: zenzak@tuta.io</p>
+</div>
+
+<style>
+	/* Your styles are great, no changes needed here. */
+	.content-wrapper {
+		max-width: 600px;
+		margin: auto;
+	}
+	h2 {
+		text-align: center;
+		letter-spacing: 0.2em;
+		font-weight: 300;
+	}
+	hr {
+		border: 0;
+		border-top: 1px solid rgba(255, 255, 255, 0.2);
+		margin: 1rem 0 2rem 0;
+	}
+	p {
+		text-align: center;
+		line-height: 1.7;
+		color: #ccc;
+		margin-bottom: 2rem;
+	}
+	.direct-email {
+		margin-top: 2rem;
+		font-size: 0.9rem;
+		color: #888;
+	}
+	form {
+		margin-top: 2rem;
+	}
+	.form-row {
+		display: flex;
+		gap: 1rem;
+		margin-bottom: 1rem;
+	}
+	input,
+	textarea {
+		width: 100%;
+		background: #2a2a2a;
+		border: 1px solid #444;
+		color: white;
+		padding: 0.8rem;
+		font-family: inherit;
+		font-size: 1rem;
+	}
+	input {
+		border-radius: 30px;
+	}
+	textarea {
+		border-radius: 12px;
+	}
+	input:focus,
+	textarea:focus {
+		outline: none;
+		border-color: #888;
+	}
+
+	.form-buttons {
+		margin-top: 1rem;
+		display: flex;
+		gap: 1rem;
+	}
+	.form-buttons button {
+		border: 1px solid #666;
+		padding: 0.6rem 1.2rem;
+		border-radius: 30px;
+		transition: all 0.2s ease;
+		cursor: pointer;
+		font-weight: 500;
+	}
+
+	/* Primary button style */
+	.form-buttons button[type='submit'] {
+		background-color: #f0f0f0;
+		color: #121212;
+		border-color: #f0f0f0;
+		flex-grow: 1; /* Make it take more space */
+	}
+
+	.form-buttons button[type='submit']:hover {
+		background-color: #fff;
+		border-color: #fff;
+	}
+
+	/* Secondary (outline) button style */
+	.form-buttons button[type='reset'] {
+		background-color: transparent;
+		color: #aaa;
+	}
+
+	.form-buttons button[type='reset']:hover {
+		background-color: rgba(255, 255, 255, 0.1);
+		color: #fff;
+		border-color: #888;
+	}
+</style>
+</file>
+
+<file path="src/lib/components/Faq.svelte">
+<!-- src/lib/components/Faq.svelte -->
+<script>
+	import { createEventDispatcher } from 'svelte';
+
+	const dispatch = createEventDispatcher();
+
+	function switchToContact() {
+		// Dispatch a custom event named 'switchmodal'
+		// and pass the name of the target modal ('contact') as the data.
+		dispatch('switchmodal', 'contact');
+	}
+</script>
+
+<div class="content-wrapper">
+	<h2>FREQUENTLY ASKED QUESTIONS</h2>
+	<hr />
+
+	<h3>A straightforward process is key. Here’s what you can expect.</h3>
+
+	<!-- Question sections -->
+	<section>
+		<h4>What's the benefit of hiring an engineer to do this?</h4>
+		<p>
+			<strong>Efficiency.</strong> I understand your CAD files, schematics, and technical language
+			from the start. This eliminates misinterpretation and drastically reduces revision cycles,
+			getting you to a perfect final product faster.
+		</p>
+	</section>
+
+	<section>
+		<h4>What is your process?</h4>
+		<ol>
+			<li>
+				<strong>Discovery &amp; Strategy:</strong> A quick call to align on your commercial goals and
+				technical details.
+			</li>
+			<li>
+				<strong>Creation &amp; Review:</strong> I build the animation with key milestones for your
+				feedback and approval.
+			</li>
+			<li><strong>Delivery:</strong> You receive the final, high-impact animation, ready for deployment.</li>
+		</ol>
+	</section>
+
+	<section>
+		<h4>How much does a project cost?</h4>
+		<p>
+			Every project is custom-quoted to fit its specific goals. After our call, you'll receive a
+			detailed, transparent quote. No hidden fees, no surprises. Just exceptional results.
+		</p>
+	</section>
+
+	<section>
+		<h4>How long will it take?</h4>
+		<p>
+			Most projects are delivered in 1-3 weeks. Your quote will include a reliable timeline. If
+			you have an urgent deadline, let's discuss it.
+		</p>
+	</section>
+
+	<section class="final-question">
+		<h4>Still have a question?</h4>
+		<!-- This is now a button that triggers our Svelte function -->
+		<button on:click={switchToContact} class="button-link"> Let's talk </button>
+	</section>
+</div>
+
+<style>
+	/* Using styles similar to Services.svelte for consistency */
+	.content-wrapper {
+		max-width: 700px;
+		margin: 0 auto;
+	}
+	h2 {
+		text-align: center;
+		letter-spacing: 0.2em;
+		margin-bottom: 1rem;
+		font-weight: 300;
+	}
+	hr {
+		border: 0;
+		border-top: 1px solid rgba(255, 255, 255, 0.2);
+		margin-bottom: 2rem;
+	}
+	h3 {
+		text-align: center;
+		margin-bottom: 3rem;
+		font-weight: 300;
+		color: #ccc;
+		letter-spacing: 0.05em;
+	}
+	h4 {
+		font-weight: 500;
+		letter-spacing: 0.1em;
+		margin-bottom: 0.5rem;
+	}
+	p,
+	li {
+		line-height: 1.7;
+		color: #ccc;
+		max-width: 65ch; /* Improves readability */
+	}
+	ol {
+		padding-left: 20px;
+	}
+	li {
+		margin-bottom: 1rem;
+	}
+	section {
+		margin-bottom: 2.5rem;
+	}
+
+	.final-question {
+		text-align: center;
+		margin-top: 3rem;
+	}
+
+	/* Style for the new button to look like a link or a button */
+	.button-link {
+		/* Reset default button styles */
+		background: none;
+		border: 1px solid rgba(255, 255, 255, 0.6);
+		font-family: inherit;
+		font-size: 1rem;
+		cursor: pointer;
+		padding: 10px 24px;
+		border-radius: 4px;
+		color: #f0f0f0;
+		transition:
+			background-color 0.2s,
+			color 0.2s;
+	}
+
+	.button-link:hover {
+		background-color: white;
+		color: black;
+	}
+</style>
+</file>
+
+<file path="src/lib/components/Modal.svelte">
+<!-- src/lib/components/Modal.svelte (Corrected) -->
+<script>
+	import { fade } from 'svelte/transition';
+
+	// MODERNIZED:
+	// - Removed `createEventDispatcher`.
+	// - We now accept `onclose` as a required callback prop using $props().
+	let { children, onclose } = $props();
+
+	function handleKeydown(event) {
+		if (event.key === 'Escape') {
+			onclose(); // Call the prop directly
+		}
+	}
+
+	let modalContentEl = $state(null);
+
+	$effect(() => {
+		if (modalContentEl) {
+			modalContentEl.focus();
+		}
+	});
+</script>
+
+<!-- MODERNIZED: Use event attributes (onkeydown) instead of directives (on:keydown) -->
+<svelte:window onkeydown={handleKeydown} />
+
+<div
+	class="overlay"
+	onmousedown={onclose}
+	role="button"
+	tabindex="-1"
+	aria-label="Close modal"
+	transition:fade={{ duration: 200 }}
+>
+	<div
+		bind:this={modalContentEl}
+		class="modal-content"
+		onmousedown={(e) => e.stopPropagation()}
+		role="dialog"
+		aria-modal="true"
+		tabindex="-1"
+		transition:fade={{ duration: 200, delay: 50 }}
+	>
+		<button class="close-button" onclick={onclose} aria-label="Close">×</button>
+		{@render children()}
+	</div>
+</div>
+
+<style>
+	/* Styles remain the same */
+	.overlay {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.8);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		z-index: 100;
+	}
+	.overlay:focus {
+		outline: none;
+	}
+	.modal-content {
+		background-color: #121212;
+		padding: 2rem 3rem;
+		border-radius: 8px;
+		max-width: 700px;
+		width: 90%;
+		position: relative;
+		max-height: 85vh;
+		overflow-y: auto;
+		border: 1px solid rgba(255, 255, 255, 0.1);
+	}
+	.modal-content:focus {
+		outline: none;
+	}
+	.close-button {
+		position: absolute;
+		top: 10px;
+		right: 15px;
+		font-size: 2rem;
+		color: #aaa;
+		width: 35px;
+		height: 35px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		line-height: 1;
+		border-radius: 50%;
+	}
+	.close-button:hover {
+		color: white;
+		background-color: rgba(255, 255, 255, 0.1);
+	}
+</style>
+</file>
+
+<file path="src/lib/components/Services.svelte">
+<div class="content-wrapper">
+	<h2>SERVICES</h2>
+	<hr />
+
+	<section>
+		<h3>A Full-Cycle Design Partner</h3>
+		<p>
+			I offer a comprehensive suite of solutions designed to solve your specific challenge. Whether
+			you have a detailed CAD model or just a concept on a whiteboard, I provide the strategic
+			tools to bring your vision to market.
+		</p>
+	</section>
+
+	<section>
+		<h4>Product Visualization & Renders</h4>
+				<p>The definitive "hero shot." We'll create stunning, photorealistic images of your product, perfect for
+					pitch decks, marketing campaigns, and e-commerce stores that demand attention and drive interest.
+				</p>
+	</section>
+
+    <section>
+		<h4>Technical & Explainer Animations</h4>
+				<p>We make the complex crystal-clear. I transform intricate mechanics, internal processes, and
+					innovative technology into easy-to-understand animations that educate your audience and prove your
+					product's superiority.</p>
+	</section>
+
+    <section>
+		<h4>UI/UX & App Demonstrations</h4>
+				<p>Showcase a flawless user experience. I create fluid animations of your software or app interface,
+					perfect for promotional videos and tutorials that demonstrate functionality and drive user adoption.
+				</p>
+	</section>
+
+</div>
+
+<style>
+	h2 {
+		text-align: center;
+		letter-spacing: 0.2em;
+		margin-bottom: 1rem;
+	}
+	hr {
+		border: 0;
+		border-top: 1px solid rgba(255, 255, 255, 0.2);
+		margin-bottom: 2rem;
+	}
+	h3 {
+		letter-spacing: 0.1em;
+	}
+	p {
+		line-height: 1.7;
+		color: #ccc;
+	}
+	section {
+		margin-bottom: 2rem;
+	}
+</style>
+</file>
+
+<file path="src/lib/components/Solutions.svelte">
+<div class="content-wrapper">
+	<h2>3D SOLUTIONS</h2>
+	<hr />
+
+	<h3>WHERE I CREATE VALUE:</h3>
+
+	<ul>
+		<li>
+			<strong>For Startups: Secure Funding.</strong> Turn your pitch deck into an undeniable demonstration
+			of value with a product animation that proves your concept is brilliant and ready.
+		</li>
+		<li>
+			<strong>For Engineering Firms: Win Bids.</strong> Eliminate ambiguity and showcase the superiority
+			of your mechanisms with technically-perfect animations that leave no room for doubt.
+		</li>
+		<li>
+			<strong>For Marketing Teams: Drive Sales.</strong> I create scroll-stopping content that turns
+			dense features into must-have benefits, captivating your audience and boosting conversion.
+		</li>
+		<li>
+			<strong>For Product Designers: Impress Clients.</strong> Move beyond static blueprints. Present
+			your work with photorealistic renders that showcase every detail and win immediate client approval.
+		</li>
+	</ul>
+
+	<div class="video-container">
+		<iframe
+			src="https://player.vimeo.com/video/1099649861?h=00ba6dd0ad&dnt=1"
+			width="100%"
+			height="360"
+			frameborder="0"
+			allow="autoplay; fullscreen; picture-in-picture"
+			allowfullscreen
+			title="Vimeo Video"
+		></iframe>
+	</div>
+	<h3>Engineering-Grade 3D Animation</h3>
+	<p>
+		Your vision is technically brilliant. But can your investors, clients, and customers truly see
+		it?<br />
+		I bridge the gap. As a mechanical engineer, I speak your language. As a 3D animator, I translate
+		it for the world.
+	</p>
+</div>
+
+<style>
+	/* ... add styles similar to Services.svelte ... */
+	.video-container {
+		margin-top: 2rem;
+		aspect-ratio: 16 / 9;
+	}
+	iframe {
+		width: 100%;
+		height: 100%;
+	}
+</style>
+</file>
+
+<file path="src/lib/index.js">
+// place files you want to import through the `$lib` alias in this folder.
+</file>
+
+<file path="src/routes/success/+page.svelte">
+<div class="success-message">
+	<h1>Thank You!</h1>
+	<p>Your message has been sent. I'll get back to you shortly.</p>
+	<a href="/">Return to Home</a>
+</div>
+
+<style>
+	.success-message {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		min-height: 80vh;
+	}
+	h1 {
+		font-size: 3rem;
+		margin-bottom: 1rem;
+	}
+	p {
+		font-size: 1.2rem;
+		color: #ccc;
+		margin-bottom: 2rem;
+	}
+	a {
+		border: 1px solid rgba(255, 255, 255, 0.6);
+		padding: 10px 24px;
+		border-radius: 4px;
+		text-decoration: none;
+		transition: all 0.2s;
+	}
+	a:hover {
+		background-color: white;
+		color: black;
+	}
+</style>
+</file>
+
+<file path="src/routes/+layout.svelte">
+<!-- src/routes/+layout.svelte -->
+<script>
+	import '../app.css';
+	// 1. Get the `children` prop, which is the new way to access default slot content.
+	let { children } = $props();
+</script>
+
+<div class="app-container">
+	<div class="background-video-container">
+		<video autoplay muted loop playsinline>
+			<!-- Make sure you have this video file in your /static folder -->
+			<source src="videos/bg.mp4" type="video/mp4" />
+			Your browser does not support the video tag.
+		</video>
+		<div class="video-overlay"></div>
+	</div>
+
+	<div class="content-container">
+		<!-- 2. Use the {@render} tag to display the page content -->
+		{@render children()}
+	</div>
+</div>
+
+<style>
+	.app-container {
+		position: relative;
+		min-height: 100vh;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		overflow: hidden;
+	}
+
+	.background-video-container {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+	}
+
+	video {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.video-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.8) 70%);
+	}
+
+	.content-container {
+		position: relative;
+		z-index: 1;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		flex-grow: 1;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		video {
+			display: none;
+		}
+		.background-video-container {
+			background: url('videos/poster.jpg');
+		}
+	}
+</style>
+</file>
+
+<file path="src/routes/+page.svelte">
+<script>
+	import { onMount } from 'svelte';
+	import Modal from '$lib/components/Modal.svelte';
+	import Services from '$lib/components/Services.svelte';
+	import Solutions from '$lib/components/Solutions.svelte';
+	import Faq from '$lib/components/Faq.svelte';
+	import Contact from '$lib/components/Contact.svelte';
+
+	let activeModal = $state(null);
+	let contentVisible = $state(false);
+
+	const modalComponentMap = {
+		services: Services,
+		solutions: Solutions,
+		faq: Faq,
+		contact: Contact
+	};
+
+	const ActiveComponent = $derived(activeModal ? modalComponentMap[activeModal] : null);
+
+	onMount(() => {
+		// Trigger fade-in animation
+		const timer = setTimeout(() => {
+			contentVisible = true;
+		}, 100);
+		return () => clearTimeout(timer);
+	});
+</script>
+
+<!-- A new wrapper for robust centering and layout -->
+<div class="page-container">
+	<main class="home-content" class:visible={contentVisible}>
+		<div class="logo-icon-container hero-element">
+			<div class="logo-icon-glow"></div>
+			<img src="/lightbulb.svg" alt="Idea lightbulb icon" class="logo-icon" />
+		</div>
+
+		<div class="title-container hero-element">
+			<h1 class="title">ZENZAK ANIMATION</h1>
+		</div>
+
+		<p class="subtitle hero-element">MAKING COMPLEX IDEAS CLEAR, PERSUASIVE, AND READY FOR MARKET.</p>
+
+		<button class="quote-button hero-element" onclick={() => (activeModal = 'contact')}>
+			Get a Project Quote
+		</button>
+
+		<nav class="main-nav">
+			<button onclick={() => (activeModal = 'services')}>SERVICES</button>
+			<button onclick={() => (activeModal = 'solutions')}>3D SOLUTIONS</button>
+			<button onclick={() => (activeModal = 'faq')}>FAQS</button>
+			<button onclick={() => (activeModal = 'contact')}>CONTACT</button>
+		</nav>
+	</main>
+
+	<!-- The footer is now a flex-item, centered by its parent -->
+	<footer class="footer-credit" class:visible={contentVisible}>
+		BACKGROUND ANIMATION BY ZENZAK ANIMATION.
+	</footer>
+</div>
+
+{#if ActiveComponent}
+	<Modal onclose={() => (activeModal = null)}>
+		<ActiveComponent on:switchmodal={(event) => (activeModal = event.detail)} />
+	</Modal>
+{/if}
+
+<style>
+	/* --- NEW: Page Layout Container --- */
+	.page-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center; /* This horizontally centers the main content and footer */
+		min-height: 100dvh; /* Use dynamic viewport height for best mobile support */
+		padding: 2rem;
+		box-sizing: border-box;
+	}
+
+	/* --- MODIFIED: Home Content --- */
+	.home-content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center; /* This vertically centers your hero content */
+		flex-grow: 1; /* This is key: it makes the main area expand to push the footer down */
+		text-align: center;
+		width: 100%;
+		max-width: 1200px;
+		/* margin: auto; and padding: 2rem; are no longer needed here */
+	}
+
+	/* --- ANIMATION STYLES (Footer selector corrected) --- */
+	.hero-element,
+	.main-nav,
+	.footer-credit {
+		opacity: 0;
+		transform: translateY(20px);
+		transition:
+			opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+			transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+	}
+	/* Note: No longer need to reference .home-content to style .footer-credit */
+	.home-content.visible .hero-element,
+	.home-content.visible .main-nav,
+	.footer-credit.visible { /* CORRECTED SELECTOR */
+		opacity: 1;
+		transform: translateY(0);
+	}
+	/* Stagger the animation */
+	.home-content.visible .hero-element:nth-child(1) {
+		transition-delay: 0.1s;
+	}
+	.home-content.visible .hero-element:nth-child(2) {
+		transition-delay: 0.2s;
+	}
+	.home-content.visible .hero-element:nth-child(3) {
+		transition-delay: 0.3s;
+	}
+	.home-content.visible .hero-element:nth-child(4) {
+		transition-delay: 0.4s;
+	}
+	.home-content.visible .main-nav {
+		transition-delay: 0.6s;
+	}
+	.footer-credit.visible { /* CORRECTED SELECTOR */
+		transition-delay: 0.7s;
+		opacity: 0.5;
+	}
+
+	/* --- UI STYLES (Largely unchanged) --- */
+	.logo-icon-container {
+		position: relative;
+		margin-bottom: 2rem;
+	}
+	.logo-icon {
+		width: 56px;
+		height: 56px;
+		opacity: 0.8;
+	}
+	.logo-icon-glow {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 120px;
+		height: 120px;
+		background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 50%);
+	}
+	.title-container {
+		position: relative;
+		padding: 1.5rem 0;
+		margin: 0.5rem 0;
+		width: 100%;
+		max-width: 550px;
+	}
+	.title-container::before,
+	.title-container::after {
+		content: '';
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 100%;
+		height: 1px;
+		background-color: rgba(255, 255, 255, 0.2);
+	}
+	.title-container::before {
+		top: 0;
+	}
+	.title-container::after {
+		bottom: 0;
+	}
+	.title {
+		font-size: clamp(2rem, 6vw, 3.2rem); /* Responsive font size */
+		letter-spacing: 0.4em;
+		margin: 0;
+		padding: 0 1rem;
+		font-weight: 200;
+		color: #f0f0f0;
+	}
+	.subtitle {
+		max-width: 500px;
+		line-height: 1.8;
+		margin: 2rem 0 3rem 0;
+		font-size: clamp(1rem, 2.5vw, 1.2rem); /* Responsive font size */
+		font-weight: 300;
+		color: #ccc;
+		letter-spacing: 0.05em;
+	}
+	.quote-button {
+		border: 1px solid rgba(255, 255, 255, 0.6);
+		padding: 14px 32px;
+		margin-bottom: 4rem;
+		transition: all 0.2s;
+		border-radius: 4px;
+		font-size: 1rem;
+		letter-spacing: 0.1em;
+		font-weight: 400;
+	}
+	.quote-button:hover {
+		background-color: white;
+		color: black;
+		border-color: white;
+	}
+
+	/* --- MODERN NAVIGATION STYLES (Unchanged) --- */
+	.main-nav {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		width: 100%;
+		max-width: 700px;
+	}
+	.main-nav button {
+		flex-grow: 1;
+		flex-basis: 160px;
+		border: 1px solid rgba(255, 255, 255, 0.2);
+		border-radius: 4px;
+		padding: 0.8rem 1.6rem;
+		transition: all 0.2s;
+		font-size: 0.9rem;
+		letter-spacing: 0.15em;
+		color: #ccc;
+	}
+	.main-nav button:not(:last-child)::after {
+		display: none;
+	}
+	.main-nav button:hover {
+		color: black;
+		background-color: white;
+		border-color: white;
+	}
+
+	/* --- MODIFIED: Footer Credit --- */
+	.footer-credit {
+		/* position: fixed and bottom are no longer needed */
+		font-size: 0.8rem;
+		letter-spacing: 0.1em;
+		flex-shrink: 0; /* Prevents the footer from shrinking */
+	}
+</style>
+</file>
+
+<file path="src/app.css">
+/* src/app.css */
+body {
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+		'Open Sans', 'Helvetica Neue', sans-serif;
+	background-color: #000;
+	color: #e0e0e0;
+}
+
+/* Basic reset for buttons to match your site's aesthetic */
+button {
+	cursor: pointer;
+	font-family: inherit;
+	color: inherit;
+	background: none;
+	border: none;
+	padding: 0;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+}
+
+button:focus-visible {
+	outline: 2px solid white;
+	outline-offset: 2px;
+}
+
+h1, h2, h3 {
+    font-weight: 300;
+}
+</file>
+
+<file path="src/app.html">
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		%sveltekit.head%
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">%sveltekit.body%</div>
+	</body>
+</html>
+</file>
+
+<file path="static/lightbulb.svg">
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools -->
+<svg fill="#ffffff" width="256px" height="256px" viewBox="-4 0 19 19" xmlns="http://www.w3.org/2000/svg" class="cf-icon-svg" stroke="#ffffff" stroke-width="0.00019">
+<g id="SVGRepo_bgCarrier" stroke-width="0"/>
+<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+<g id="SVGRepo_iconCarrier">
+<path d="M10.328 6.83a5.903 5.903 0 0 1-1.439 3.64 2.874 2.874 0 0 0-.584 1v1.037a.95.95 0 0 1-.95.95h-3.71a.95.95 0 0 1-.95-.95V11.47a2.876 2.876 0 0 0-.584-1A5.903 5.903 0 0 1 .67 6.83a4.83 4.83 0 0 1 9.28-1.878 4.796 4.796 0 0 1 .38 1.88zm-.95 0a3.878 3.878 0 0 0-7.756 0c0 2.363 2.023 3.409 2.023 4.64v1.037h3.71V11.47c0-1.231 2.023-2.277 2.023-4.64zM7.83 14.572a.475.475 0 0 1-.475.476h-3.71a.475.475 0 0 1 0-.95h3.71a.475.475 0 0 1 .475.474zm-.64 1.262a.238.238 0 0 1-.078.265 2.669 2.669 0 0 1-3.274 0 .237.237 0 0 1 .145-.425h2.983a.238.238 0 0 1 .225.16z"/>
+</g>
+</svg>
+</file>
+
+<file path="static/robots.txt">
+# allow crawling everything by default
+User-agent: *
+Disallow:
+</file>
+
+<file path=".gitignore">
+node_modules
+
+# Output
+.output
+.vercel
+.netlify
+.wrangler
+/.svelte-kit
+/build
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+.env.*
+!.env.example
+!.env.test
+
+# Vite
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+</file>
+
+<file path=".npmrc">
+engine-strict=true
+</file>
+
+<file path=".prettierignore">
+# Package Managers
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+bun.lock
+bun.lockb
+
+# Miscellaneous
+/static/
+</file>
+
+<file path=".prettierrc">
+{
+	"useTabs": true,
+	"singleQuote": true,
+	"trailingComma": "none",
+	"printWidth": 100,
+	"plugins": ["prettier-plugin-svelte"],
+	"overrides": [
+		{
+			"files": "*.svelte",
+			"options": {
+				"parser": "svelte"
+			}
+		}
+	]
+}
+</file>
+
+<file path="eslint.config.js">
+import prettier from 'eslint-config-prettier';
+import { includeIgnoreFile } from '@eslint/compat';
+import js from '@eslint/js';
+import svelte from 'eslint-plugin-svelte';
+import globals from 'globals';
+import { fileURLToPath } from 'node:url';
+import svelteConfig from './svelte.config.js';
+
+const gitignorePath = fileURLToPath(new URL('./.gitignore', import.meta.url));
+
+/** @type {import('eslint').Linter.Config[]} */
+export default [
+	includeIgnoreFile(gitignorePath),
+	js.configs.recommended,
+	...svelte.configs.recommended,
+	prettier,
+	...svelte.configs.prettier,
+	{
+		languageOptions: {
+			globals: { ...globals.browser, ...globals.node }
+		}
+	},
+	{
+		files: ['**/*.svelte', '**/*.svelte.js'],
+		languageOptions: { parserOptions: { svelteConfig } }
+	}
+];
+</file>
+
+<file path="jsconfig.json">
+{
+	"extends": "./.svelte-kit/tsconfig.json",
+	"compilerOptions": {
+		"allowJs": true,
+		"checkJs": false,
+		"moduleResolution": "bundler"
+	}
+	// Path aliases are handled by https://svelte.dev/docs/kit/configuration#alias
+	// except $lib which is handled by https://svelte.dev/docs/kit/configuration#files
+	//
+	// If you want to overwrite includes/excludes, make sure to copy over the relevant includes/excludes
+	// from the referenced tsconfig.json - TypeScript does not merge them in
+}
+</file>
+
+<file path="netlify.toml">
+[build]
+  command = "npm run build"
+  publish = "build"
+</file>
+
+<file path="package.json">
+{
+	"name": "zenzak-animation",
+	"private": true,
+	"version": "0.0.1",
+	"type": "module",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"prepare": "svelte-kit sync || echo ''",
+		"format": "prettier --write .",
+		"lint": "prettier --check . && eslint ."
+	},
+	"devDependencies": {
+		"@eslint/compat": "^1.2.5",
+		"@eslint/js": "^9.18.0",
+		"@sveltejs/adapter-auto": "^6.0.0",
+		"@sveltejs/adapter-netlify": "^5.1.0",
+		"@sveltejs/kit": "^2.22.0",
+		"@sveltejs/vite-plugin-svelte": "^6.0.0",
+		"eslint": "^9.18.0",
+		"eslint-config-prettier": "^10.0.1",
+		"eslint-plugin-svelte": "^3.0.0",
+		"globals": "^16.0.0",
+		"prettier": "^3.4.2",
+		"prettier-plugin-svelte": "^3.3.3",
+		"svelte": "^5.0.0",
+		"vite": "^7.0.4"
+	}
+}
+</file>
+
+<file path="README.md">
+# sv
+
+Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+
+## Creating a project
+
+If you're seeing this, you've probably already done this step. Congrats!
+
+```sh
+# create a new project in the current directory
+npx sv create
+
+# create a new project in my-app
+npx sv create my-app
+```
+
+## Developing
+
+Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+
+```sh
+npm run dev
+
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
+```
+
+## Building
+
+To create a production version of your app:
+
+```sh
+npm run build
+```
+
+You can preview the production build with `npm run preview`.
+
+> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+</file>
+
+<file path="svelte.config.js">
+import adapter from '@sveltejs/adapter-netlify';
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
+
+/** @type {import('@sveltejs/kit').Config} */
+const config = {
+	preprocess: vitePreprocess(),
+	kit: {
+		// Use the Netlify adapter
+		adapter: adapter({
+			// We'll use standard Netlify Functions.
+			// This is the most common and robust choice.
+			edge: false,
+			split: false
+		})
+	}
+};
+
+export default config;
+</file>
+
+<file path="vite.config.js">
+import { sveltekit } from '@sveltejs/kit/vite';
+import { defineConfig } from 'vite';
+
+export default defineConfig({
+	plugins: [sveltekit()]
+});
+</file>
+
+</files>
