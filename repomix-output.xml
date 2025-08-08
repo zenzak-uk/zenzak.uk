@@ -45,13 +45,21 @@ src/
     assets/
       favicon.svg
     components/
+      Button.svelte
       Contact.svelte
       Faq.svelte
       Modal.svelte
       Services.svelte
       Solutions.svelte
+    posts/
+      welcome.md
     index.js
   routes/
+    blog/
+      [slug]/
+        +page.js
+        +page.svelte
+      +page.svelte
     success/
       +page.svelte
     +layout.js
@@ -79,6 +87,57 @@ This section contains the contents of the repository's files.
 
 <file path="src/lib/assets/favicon.svg">
 <svg xmlns="http://www.w3.org/2000/svg" width="107" height="128" viewBox="0 0 107 128"><title>svelte-logo</title><path d="M94.157 22.819c-10.4-14.885-30.94-19.297-45.792-9.835L22.282 29.608A29.92 29.92 0 0 0 8.764 49.65a31.5 31.5 0 0 0 3.108 20.231 30 30 0 0 0-4.477 11.183 31.9 31.9 0 0 0 5.448 24.116c10.402 14.887 30.942 19.297 45.791 9.835l26.083-16.624A29.92 29.92 0 0 0 98.235 78.35a31.53 31.53 0 0 0-3.105-20.232 30 30 0 0 0 4.474-11.182 31.88 31.88 0 0 0-5.447-24.116" style="fill:#ff3e00"/><path d="M45.817 106.582a20.72 20.72 0 0 1-22.237-8.243 19.17 19.17 0 0 1-3.277-14.503 18 18 0 0 1 .624-2.435l.49-1.498 1.337.981a33.6 33.6 0 0 0 10.203 5.098l.97.294-.09.968a5.85 5.85 0 0 0 1.052 3.878 6.24 6.24 0 0 0 6.695 2.485 5.8 5.8 0 0 0 1.603-.704L69.27 76.28a5.43 5.43 0 0 0 2.45-3.631 5.8 5.8 0 0 0-.987-4.371 6.24 6.24 0 0 0-6.698-2.487 5.7 5.7 0 0 0-1.6.704l-9.953 6.345a19 19 0 0 1-5.296 2.326 20.72 20.72 0 0 1-22.237-8.243 19.17 19.17 0 0 1-3.277-14.502 17.99 17.99 0 0 1 8.13-12.052l26.081-16.623a19 19 0 0 1 5.3-2.329 20.72 20.72 0 0 1 22.237 8.243 19.17 19.17 0 0 1 3.277 14.503 18 18 0 0 1-.624 2.435l-.49 1.498-1.337-.98a33.6 33.6 0 0 0-10.203-5.1l-.97-.294.09-.968a5.86 5.86 0 0 0-1.052-3.878 6.24 6.24 0 0 0-6.696-2.485 5.8 5.8 0 0 0-1.602.704L37.73 51.72a5.42 5.42 0 0 0-2.449 3.63 5.79 5.79 0 0 0 .986 4.372 6.24 6.24 0 0 0 6.698 2.486 5.8 5.8 0 0 0 1.602-.704l9.952-6.342a19 19 0 0 1 5.295-2.328 20.72 20.72 0 0 1 22.237 8.242 19.17 19.17 0 0 1 3.277 14.503 18 18 0 0 1-8.13 12.053l-26.081 16.622a19 19 0 0 1-5.3 2.328" style="fill:#fff"/></svg>
+</file>
+
+<file path="src/lib/components/Button.svelte">
+<script>
+	// Use let for props in Svelte 5.
+	// `href` is optional, defaulting to null.
+	// `...rest` captures any other attributes like `onclick`.
+	let { href = null, children, ...rest } = $props();
+</script>
+
+{#if href}
+	<!-- If an href is passed, render an anchor tag -->
+	<a {href} {...rest} class="btn">
+		{@render children()}
+	</a>
+{:else}
+	<!-- Otherwise, render a button -->
+	<button {...rest} class="btn">
+		{@render children()}
+	</button>
+{/if}
+
+<style>
+	.btn {
+		/* All your shared styles go here, in one place! */
+		flex-grow: 1;
+		flex-basis: 160px;
+		border: 1px solid rgba(255, 255, 255, 0.2);
+		border-radius: 4px;
+		padding: 0.8rem 1.6rem;
+		transition: all 0.2s;
+		font-size: 0.9rem;
+		letter-spacing: 0.15em;
+		color: #ccc;
+		background: none;
+		cursor: pointer;
+		font-family: inherit;
+		text-transform: uppercase;
+		text-decoration: none;
+		text-align: center;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.btn:hover {
+		color: black;
+		background-color: white;
+		border-color: white;
+	}
+</style>
 </file>
 
 <file path="src/lib/components/Contact.svelte">
@@ -582,8 +641,243 @@ This section contains the contents of the repository's files.
 </style>
 </file>
 
+<file path="src/lib/posts/welcome.md">
+---
+title: "Welcome to the Zenzak Animation Blog"
+date: "2025-08-08"
+description: "An introduction to our new blog, where we'll share insights on 3D animation, engineering, and bringing technical ideas to market."
+---
+
+## Hello, World! And Welcome.
+
+If you're here, you understand that a brilliant idea is only the beginning. The real challenge is making that brilliance clear to investors, clients, and customers. That's the gap we bridge at Zenzak, and this blog is a new space for us to explore that intersection between technical innovation and persuasive communication.
+
+This isn't just another company blog. It's an extension of our core mission: **to make complex ideas clear, persuasive, and ready for market.**
+
+### What to Expect
+
+Here, we'll be sharing insights, tutorials, and deep dives on the topics we're passionate about. You can look forward to posts covering:
+
+*   **Technical Deep Dives:** How we transform complex CAD files into clear, compelling animations.
+*   **Case Studies:** A behind-the-scenes look at how our work has helped startups secure funding and engineering firms win bids.
+*   **Industry Insights:** Trends in 3D visualization, product marketing, and the tools we use to stay at the cutting edge.
+*   **Tips & Tricks:** Actionable advice for product designers and marketing teams on how to best prepare for a visualization project.
+
+Our goal is to demystify the process and demonstrate the immense value that engineering-grade 3D animation can bring to your project.
+
+We're excited to start this journey and share what we've learned. Stay tuned for our first behind-the-scenes post, coming soon.
+
+Thanks for reading.
+</file>
+
 <file path="src/lib/index.js">
 // place files you want to import through the `$lib` alias in this folder.
+</file>
+
+<file path="src/routes/blog/[slug]/+page.js">
+import { error } from '@sveltejs/kit';
+
+export async function load({ params }) {
+	try {
+        // Dynamically import the post using the slug from the URL
+		const post = await import(`../../../lib/posts/${params.slug}.md`);
+		
+		return {
+			content: post.default, // The Svelte component rendered from Markdown
+			meta: post.metadata    // The frontmatter
+		};
+	} catch (e) {
+		// If the post doesn't exist, throw a 404 error
+		error(404, `Could not find ${params.slug}`);
+	}
+}
+</file>
+
+<file path="src/routes/blog/[slug]/+page.svelte">
+<script>
+	let { data } = $props();
+    // In Svelte 5, we assign the component to a capitalized variable.
+	const PostContent = data.content;
+</script>
+
+<article class="post-content">
+	<h1>{data.meta.title}</h1>
+	<p class="post-meta">
+		Published on {new Date(data.meta.date).toLocaleDateString('en-US', {
+			year: 'numeric',
+			month: 'long',
+			day: 'numeric'
+		})}
+	</p>
+
+	<div class="content-body">
+		<!-- OLD WAY: <svelte:component this={data.content} /> -->
+		
+        <!-- NEW SVELTE 5 WAY: -->
+		<PostContent />
+	</div>
+
+	<a href="/blog" class="back-link">&larr; Back to all posts</a>
+</article>
+
+<style>
+	.post-content {
+		max-width: 700px;
+		margin: 4rem auto;
+		padding: 2rem;
+		width: 90%;
+	}
+	h1 {
+		font-size: 2.5rem;
+		line-height: 1.2;
+		margin-bottom: 1rem;
+		color: #f0f0f0;
+		font-weight: 400;
+	}
+	.post-meta {
+		color: #aaa;
+		margin-bottom: 3rem;
+	}
+	.content-body {
+		line-height: 1.8;
+		font-size: 1.1rem;
+		color: #ccc;
+	}
+	/* Style markdown elements */
+	.content-body :global(h2) {
+		font-weight: 500;
+		letter-spacing: 0.05em;
+		margin-top: 3rem;
+		margin-bottom: 1rem;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+		padding-bottom: 0.5rem;
+	}
+	.content-body :global(strong) {
+		color: #fff;
+	}
+	.back-link {
+		display: inline-block;
+		margin-top: 4rem;
+		color: #ccc;
+		text-decoration: none;
+		border: 1px solid rgba(255, 255, 255, 0.3);
+		padding: 0.5rem 1rem;
+		border-radius: 4px;
+		transition: all 0.2s;
+	}
+	.back-link:hover {
+		background-color: #fff;
+		color: #000;
+		border-color: #fff;
+	}
+</style>
+</file>
+
+<file path="src/routes/blog/+page.svelte">
+<script>
+	// This helper function will process the raw data from our Markdown files
+	async function getPosts() {
+		const paths = import.meta.glob('/src/lib/posts/*.md', { eager: true });
+
+		const posts = Object.entries(paths).map(([path, file]) => {
+			const slug = path.split('/').pop()?.split('.').shift();
+			const metadata = file.metadata;
+			return { ...metadata, slug };
+		});
+
+        // Sort posts by date, newest first
+		return posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+	}
+
+    // Use a promise to load the posts
+    const postsPromise = getPosts();
+</script>
+
+<div class="blog-container">
+	<h1>THE BLOG</h1>
+	<p class="subtitle">Insights on technical animation, design, and market strategy.</p>
+	<hr />
+
+	{#await postsPromise}
+		<p>Loading posts...</p>
+	{:then posts}
+		<div class="posts-list">
+			{#each posts as post}
+				<a href={`/blog/${post.slug}`} class="post-card">
+					<h2>{post.title}</h2>
+					<p class="post-date">{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+					<p class="post-description">{post.description}</p>
+					<span class="read-more">Read More &rarr;</span>
+				</a>
+			{/each}
+		</div>
+	{/await}
+</div>
+
+<style>
+	.blog-container {
+		max-width: 800px;
+		margin: 4rem auto;
+		padding: 2rem;
+		width: 90%;
+	}
+	h1 {
+		text-align: center;
+		letter-spacing: 0.2em;
+		font-weight: 300;
+	}
+	.subtitle {
+		text-align: center;
+		color: #ccc;
+		margin-top: -0.5rem;
+		margin-bottom: 2rem;
+	}
+	hr {
+		border: 0;
+		border-top: 1px solid rgba(255, 255, 255, 0.2);
+		margin-bottom: 3rem;
+	}
+	.posts-list {
+		display: grid;
+		gap: 2rem;
+	}
+	.post-card {
+		display: block;
+		padding: 1.5rem;
+		border: 1px solid rgba(255, 255, 255, 0.15);
+		border-radius: 8px;
+		text-decoration: none;
+		color: inherit;
+		transition:
+			background-color 0.2s,
+			border-color 0.2s;
+	}
+	.post-card:hover {
+		background-color: rgba(255, 255, 255, 0.05);
+		border-color: rgba(255, 255, 255, 0.4);
+	}
+	.post-card h2 {
+		margin: 0 0 0.5rem 0;
+		font-weight: 500;
+		letter-spacing: 0.05em;
+		color: #f0f0f0;
+	}
+	.post-date {
+		font-size: 0.9rem;
+		color: #888;
+		margin-bottom: 1rem;
+	}
+    .post-description {
+        color: #ccc;
+        line-height: 1.6;
+    }
+	.read-more {
+		display: inline-block;
+		margin-top: 1rem;
+		font-weight: 500;
+		color: #fff;
+	}
+</style>
 </file>
 
 <file path="src/routes/success/+page.svelte">
@@ -705,250 +999,6 @@ export const prerender = true;
 		.background-video-container {
 			background: url('videos/poster.jpg');
 		}
-	}
-</style>
-</file>
-
-<file path="src/routes/+page.svelte">
-<script>
-	import { onMount } from 'svelte';
-	import Modal from '$lib/components/Modal.svelte';
-	import Services from '$lib/components/Services.svelte';
-	import Solutions from '$lib/components/Solutions.svelte';
-	import Faq from '$lib/components/Faq.svelte';
-	import Contact from '$lib/components/Contact.svelte';
-
-	let activeModal = $state(null);
-	let contentVisible = $state(false);
-
-	const modalComponentMap = {
-		services: Services,
-		solutions: Solutions,
-		faq: Faq,
-		contact: Contact
-	};
-
-	const ActiveComponent = $derived(activeModal ? modalComponentMap[activeModal] : null);
-
-	onMount(() => {
-		// Trigger fade-in animation
-		const timer = setTimeout(() => {
-			contentVisible = true;
-		}, 100);
-		return () => clearTimeout(timer);
-	});
-</script>
-
-<!-- A new wrapper for robust centering and layout -->
-<div class="page-container">
-	<main class="home-content" class:visible={contentVisible}>
-		<div class="logo-icon-container hero-element">
-			<div class="logo-icon-glow"></div>
-			<img src="/lightbulb.svg" alt="Idea lightbulb icon" class="logo-icon" />
-		</div>
-
-		<div class="title-container hero-element">
-			<h1 class="title">ZENZAK ANIMATION</h1>
-		</div>
-
-		<p class="subtitle hero-element">MAKING COMPLEX IDEAS CLEAR, PERSUASIVE, AND READY FOR MARKET.</p>
-
-		<button class="quote-button hero-element" onclick={() => (activeModal = 'contact')}>
-			Get a Project Quote
-		</button>
-
-		<nav class="main-nav">
-			<button onclick={() => (activeModal = 'services')}>SERVICES</button>
-			<button onclick={() => (activeModal = 'solutions')}>3D SOLUTIONS</button>
-			<button onclick={() => (activeModal = 'faq')}>FAQS</button>
-			<button onclick={() => (activeModal = 'contact')}>CONTACT</button>
-		</nav>
-	</main>
-
-	<!-- The footer is now a flex-item, centered by its parent -->
-	<footer class="footer-credit" class:visible={contentVisible}>
-		BACKGROUND ANIMATION BY ZENZAK ANIMATION.
-	</footer>
-</div>
-
-{#if ActiveComponent}
-	<Modal onclose={() => (activeModal = null)}>
-		<ActiveComponent on:switchmodal={(event) => (activeModal = event.detail)} />
-	</Modal>
-{/if}
-
-<style>
-	/* --- NEW: Page Layout Container --- */
-	.page-container {
-		display: flex;
-		flex-direction: column;
-		align-items: center; /* This horizontally centers the main content and footer */
-		min-height: 100dvh; /* Use dynamic viewport height for best mobile support */
-		padding: 2rem;
-		box-sizing: border-box;
-	}
-
-	/* --- MODIFIED: Home Content --- */
-	.home-content {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center; /* This vertically centers your hero content */
-		flex-grow: 1; /* This is key: it makes the main area expand to push the footer down */
-		text-align: center;
-		width: 100%;
-		max-width: 1200px;
-		/* margin: auto; and padding: 2rem; are no longer needed here */
-	}
-
-	/* --- ANIMATION STYLES (Footer selector corrected) --- */
-	.hero-element,
-	.main-nav,
-	.footer-credit {
-		opacity: 0;
-		transform: translateY(20px);
-		transition:
-			opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1),
-			transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-	}
-	/* Note: No longer need to reference .home-content to style .footer-credit */
-	.home-content.visible .hero-element,
-	.home-content.visible .main-nav,
-	.footer-credit.visible { /* CORRECTED SELECTOR */
-		opacity: 1;
-		transform: translateY(0);
-	}
-	/* Stagger the animation */
-	.home-content.visible .hero-element:nth-child(1) {
-		transition-delay: 0.1s;
-	}
-	.home-content.visible .hero-element:nth-child(2) {
-		transition-delay: 0.2s;
-	}
-	.home-content.visible .hero-element:nth-child(3) {
-		transition-delay: 0.3s;
-	}
-	.home-content.visible .hero-element:nth-child(4) {
-		transition-delay: 0.4s;
-	}
-	.home-content.visible .main-nav {
-		transition-delay: 0.6s;
-	}
-	.footer-credit.visible { /* CORRECTED SELECTOR */
-		transition-delay: 0.7s;
-		opacity: 0.5;
-	}
-
-	/* --- UI STYLES (Largely unchanged) --- */
-	.logo-icon-container {
-		position: relative;
-		margin-bottom: 2rem;
-	}
-	.logo-icon {
-		width: 56px;
-		height: 56px;
-		opacity: 0.8;
-	}
-	.logo-icon-glow {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		width: 120px;
-		height: 120px;
-		background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 50%);
-	}
-	.title-container {
-		position: relative;
-		padding: 1.5rem 0;
-		margin: 0.5rem 0;
-		width: 100%;
-		max-width: 550px;
-	}
-	.title-container::before,
-	.title-container::after {
-		content: '';
-		position: absolute;
-		left: 50%;
-		transform: translateX(-50%);
-		width: 100%;
-		height: 1px;
-		background-color: rgba(255, 255, 255, 0.2);
-	}
-	.title-container::before {
-		top: 0;
-	}
-	.title-container::after {
-		bottom: 0;
-	}
-	.title {
-		font-size: clamp(2rem, 6vw, 3.2rem); /* Responsive font size */
-		letter-spacing: 0.4em;
-		margin: 0;
-		padding: 0 1rem;
-		font-weight: 200;
-		color: #f0f0f0;
-	}
-	.subtitle {
-		max-width: 500px;
-		line-height: 1.8;
-		margin: 2rem 0 3rem 0;
-		font-size: clamp(1rem, 2.5vw, 1.2rem); /* Responsive font size */
-		font-weight: 300;
-		color: #ccc;
-		letter-spacing: 0.05em;
-	}
-	.quote-button {
-		border: 1px solid rgba(255, 255, 255, 0.6);
-		padding: 14px 32px;
-		margin-bottom: 4rem;
-		transition: all 0.2s;
-		border-radius: 4px;
-		font-size: 1rem;
-		letter-spacing: 0.1em;
-		font-weight: 400;
-	}
-	.quote-button:hover {
-		background-color: white;
-		color: black;
-		border-color: white;
-	}
-
-	/* --- MODERN NAVIGATION STYLES (Unchanged) --- */
-	.main-nav {
-		display: flex;
-		justify-content: center;
-		flex-wrap: wrap;
-		gap: 0.5rem;
-		width: 100%;
-		max-width: 700px;
-	}
-	.main-nav button {
-		flex-grow: 1;
-		flex-basis: 160px;
-		border: 1px solid rgba(255, 255, 255, 0.2);
-		border-radius: 4px;
-		padding: 0.8rem 1.6rem;
-		transition: all 0.2s;
-		font-size: 0.9rem;
-		letter-spacing: 0.15em;
-		color: #ccc;
-	}
-	.main-nav button:not(:last-child)::after {
-		display: none;
-	}
-	.main-nav button:hover {
-		color: black;
-		background-color: white;
-		border-color: white;
-	}
-
-	/* --- MODIFIED: Footer Credit --- */
-	.footer-credit {
-		/* position: fixed and bottom are no longer needed */
-		font-size: 0.8rem;
-		letter-spacing: 0.1em;
-		flex-shrink: 0; /* Prevents the footer from shrinking */
 	}
 </style>
 </file>
@@ -1123,40 +1173,6 @@ export default [
 }
 </file>
 
-<file path="package.json">
-{
-	"name": "zenzak-animation",
-	"private": true,
-	"version": "0.0.1",
-	"type": "module",
-	"scripts": {
-		"dev": "vite dev",
-		"build": "vite build",
-		"preview": "vite preview",
-		"prepare": "svelte-kit sync || echo ''",
-		"format": "prettier --write .",
-		"lint": "prettier --check . && eslint ."
-	},
-	"devDependencies": {
-		"@eslint/compat": "^1.2.5",
-		"@eslint/js": "^9.18.0",
-		"@sveltejs/adapter-auto": "^6.0.0",
-		"@sveltejs/adapter-netlify": "^5.1.0",
-		"@sveltejs/adapter-static": "^3.0.8",
-		"@sveltejs/kit": "^2.22.0",
-		"@sveltejs/vite-plugin-svelte": "^6.0.0",
-		"eslint": "^9.18.0",
-		"eslint-config-prettier": "^10.0.1",
-		"eslint-plugin-svelte": "^3.0.0",
-		"globals": "^16.0.0",
-		"prettier": "^3.4.2",
-		"prettier-plugin-svelte": "^3.3.3",
-		"svelte": "^5.0.0",
-		"vite": "^7.0.4"
-	}
-}
-</file>
-
 <file path="README.md">
 # sv
 
@@ -1198,26 +1214,6 @@ You can preview the production build with `npm run preview`.
 > To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
 </file>
 
-<file path="svelte.config.js">
-import adapter from '@sveltejs/adapter-static';
-import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
-
-/** @type {import('@sveltejs/kit').Config} */
-const config = {
-	preprocess: vitePreprocess(),
-	kit: {
-		// Use the static adapter to build a static site
-		adapter: adapter({
-			// default options are fine. `pages` and `assets` default to 'build'.
-			// this will output a static site that can be deployed anywhere.
-			fallback: null
-		})
-	}
-};
-
-export default config;
-</file>
-
 <file path="vite.config.js">
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
@@ -1225,6 +1221,298 @@ import { defineConfig } from 'vite';
 export default defineConfig({
 	plugins: [sveltekit()]
 });
+</file>
+
+<file path="src/routes/+page.svelte">
+<script>
+	import { onMount } from 'svelte';
+	import Modal from '$lib/components/Modal.svelte';
+	import Services from '$lib/components/Services.svelte';
+	import Solutions from '$lib/components/Solutions.svelte';
+	import Faq from '$lib/components/Faq.svelte';
+	import Contact from '$lib/components/Contact.svelte';
+	import Button from '$lib/components/Button.svelte';
+
+	let activeModal = $state(null);
+	let contentVisible = $state(false);
+
+	const modalComponentMap = {
+		services: Services,
+		solutions: Solutions,
+		faq: Faq,
+		contact: Contact
+	};
+
+	const ActiveComponent = $derived(activeModal ? modalComponentMap[activeModal] : null);
+
+	onMount(() => {
+		// Trigger fade-in animation
+		const timer = setTimeout(() => {
+			contentVisible = true;
+		}, 100);
+		return () => clearTimeout(timer);
+	});
+</script>
+
+<!-- A new wrapper for robust centering and layout -->
+<div class="page-container">
+	<main class="home-content" class:visible={contentVisible}>
+		<div class="logo-icon-container hero-element">
+			<div class="logo-icon-glow"></div>
+			<img src="/lightbulb.svg" alt="Idea lightbulb icon" class="logo-icon" />
+		</div>
+
+		<div class="title-container hero-element">
+			<h1 class="title">ZENZAK ANIMATION</h1>
+		</div>
+
+		<p class="subtitle hero-element">
+			MAKING COMPLEX IDEAS CLEAR, PERSUASIVE, AND READY FOR MARKET.
+		</p>
+
+		<button class="quote-button hero-element" onclick={() => (activeModal = 'contact')}>
+			Get a Project Quote
+		</button>
+
+		<nav class="main-nav">
+			<Button onclick={() => (activeModal = 'services')}>SERVICES</Button>
+			<Button onclick={() => (activeModal = 'solutions')}>3D SOLUTIONS</Button>
+			<Button onclick={() => (activeModal = 'faq')}>FAQS</Button>
+			<Button href="/blog">BLOG</Button>
+			<Button onclick={() => (activeModal = 'contact')}>CONTACT</Button>
+		</nav>
+	</main>
+
+	<!-- The footer is now a flex-item, centered by its parent -->
+	<footer class="footer-credit" class:visible={contentVisible}>
+		BACKGROUND ANIMATION BY ZENZAK ANIMATION.
+	</footer>
+</div>
+
+{#if ActiveComponent}
+	<Modal onclose={() => (activeModal = null)}>
+		<ActiveComponent on:switchmodal={(event) => (activeModal = event.detail)} />
+	</Modal>
+{/if}
+
+<style>
+	/* --- NEW: Page Layout Container --- */
+	.page-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center; /* This horizontally centers the main content and footer */
+		min-height: 100dvh; /* Use dynamic viewport height for best mobile support */
+		padding: 2rem;
+		box-sizing: border-box;
+	}
+
+	/* --- MODIFIED: Home Content --- */
+	.home-content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center; /* This vertically centers your hero content */
+		flex-grow: 1; /* This is key: it makes the main area expand to push the footer down */
+		text-align: center;
+		width: 100%;
+		max-width: 1200px;
+		/* margin: auto; and padding: 2rem; are no longer needed here */
+	}
+
+	/* --- ANIMATION STYLES (Footer selector corrected) --- */
+	.hero-element,
+	.main-nav,
+	.footer-credit {
+		opacity: 0;
+		transform: translateY(20px);
+		transition:
+			opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+			transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+	}
+	/* Note: No longer need to reference .home-content to style .footer-credit */
+	.home-content.visible .hero-element,
+	.home-content.visible .main-nav,
+	.footer-credit.visible {
+		/* CORRECTED SELECTOR */
+		opacity: 1;
+		transform: translateY(0);
+	}
+	/* Stagger the animation */
+	.home-content.visible .hero-element:nth-child(1) {
+		transition-delay: 0.1s;
+	}
+	.home-content.visible .hero-element:nth-child(2) {
+		transition-delay: 0.2s;
+	}
+	.home-content.visible .hero-element:nth-child(3) {
+		transition-delay: 0.3s;
+	}
+	.home-content.visible .hero-element:nth-child(4) {
+		transition-delay: 0.4s;
+	}
+	.home-content.visible .main-nav {
+		transition-delay: 0.6s;
+	}
+	.footer-credit.visible {
+		/* CORRECTED SELECTOR */
+		transition-delay: 0.7s;
+		opacity: 0.5;
+	}
+
+	/* --- UI STYLES (Largely unchanged) --- */
+	.logo-icon-container {
+		position: relative;
+		margin-bottom: 2rem;
+	}
+	.logo-icon {
+		width: 56px;
+		height: 56px;
+		opacity: 0.8;
+	}
+	.logo-icon-glow {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 120px;
+		height: 120px;
+		background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 50%);
+	}
+	.title-container {
+		position: relative;
+		padding: 1.5rem 0;
+		margin: 0.5rem 0;
+		width: 100%;
+		max-width: 550px;
+	}
+	.title-container::before,
+	.title-container::after {
+		content: '';
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 100%;
+		height: 1px;
+		background-color: rgba(255, 255, 255, 0.2);
+	}
+	.title-container::before {
+		top: 0;
+	}
+	.title-container::after {
+		bottom: 0;
+	}
+	.title {
+		font-size: clamp(2rem, 6vw, 3.2rem); /* Responsive font size */
+		letter-spacing: 0.4em;
+		margin: 0;
+		padding: 0 1rem;
+		font-weight: 200;
+		color: #f0f0f0;
+	}
+	.subtitle {
+		max-width: 500px;
+		line-height: 1.8;
+		margin: 2rem 0 3rem 0;
+		font-size: clamp(1rem, 2.5vw, 1.2rem); /* Responsive font size */
+		font-weight: 300;
+		color: #ccc;
+		letter-spacing: 0.05em;
+	}
+	.quote-button {
+		border: 1px solid rgba(255, 255, 255, 0.6);
+		padding: 14px 32px;
+		margin-bottom: 4rem;
+		transition: all 0.2s;
+		border-radius: 4px;
+		font-size: 1rem;
+		letter-spacing: 0.1em;
+		font-weight: 400;
+	}
+	.quote-button:hover {
+		background-color: white;
+		color: black;
+		border-color: white;
+	}
+
+	/* --- MODERN NAVIGATION STYLES (Unchanged) --- */
+	.main-nav {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		width: 100%;
+		max-width: 700px;
+	}
+
+	/* --- MODIFIED: Footer Credit --- */
+	.footer-credit {
+		/* position: fixed and bottom are no longer needed */
+		font-size: 0.8rem;
+		letter-spacing: 0.1em;
+		flex-shrink: 0; /* Prevents the footer from shrinking */
+	}
+</style>
+</file>
+
+<file path="package.json">
+{
+	"name": "zenzak-animation",
+	"private": true,
+	"version": "0.0.1",
+	"type": "module",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"prepare": "svelte-kit sync || echo ''",
+		"format": "prettier --write .",
+		"lint": "prettier --check . && eslint ."
+	},
+	"devDependencies": {
+		"@eslint/compat": "^1.2.5",
+		"@eslint/js": "^9.18.0",
+		"@sveltejs/adapter-auto": "^6.0.0",
+		"@sveltejs/adapter-netlify": "^5.1.0",
+		"@sveltejs/adapter-static": "^3.0.8",
+		"@sveltejs/kit": "^2.22.0",
+		"@sveltejs/vite-plugin-svelte": "^6.0.0",
+		"eslint": "^9.18.0",
+		"eslint-config-prettier": "^10.0.1",
+		"eslint-plugin-svelte": "^3.0.0",
+		"globals": "^16.0.0",
+		"mdsvex": "^0.12.6",
+		"prettier": "^3.4.2",
+		"prettier-plugin-svelte": "^3.3.3",
+		"svelte": "^5.0.0",
+		"vite": "^7.0.4"
+	}
+}
+</file>
+
+<file path="svelte.config.js">
+import adapter from '@sveltejs/adapter-static';
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
+import { mdsvex } from 'mdsvex';
+
+/** @type {import('@sveltejs/kit').Config} */
+const config = {
+	extensions: ['.svelte', '.md'], 
+
+	preprocess: [
+		vitePreprocess(),
+		mdsvex({
+			extensions: ['.md']
+		})
+	],
+
+	kit: {
+		adapter: adapter({
+			fallback: null
+		})
+	}
+};
+
+export default config;
 </file>
 
 </files>
