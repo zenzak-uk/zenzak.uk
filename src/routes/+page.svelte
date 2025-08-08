@@ -32,7 +32,6 @@
 <div class="page-container">
 	<main class="home-content" class:visible={contentVisible}>
 		<div class="logo-icon-container hero-element">
-			<div class="logo-icon-glow"></div>
 			<img src="/lightbulb.svg" alt="Idea lightbulb icon" class="logo-icon" />
 		</div>
 
@@ -77,7 +76,6 @@
 		align-items: center; /* This horizontally centers the main content and footer */
 		min-height: 100dvh; /* Use dynamic viewport height for best mobile support */
 		padding: 2rem;
-		box-sizing: border-box;
 	}
 
 	/* --- MODIFIED: Home Content --- */
@@ -142,15 +140,6 @@
 		width: 56px;
 		height: 56px;
 		opacity: 0.8;
-	}
-	.logo-icon-glow {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		width: 120px;
-		height: 120px;
-		background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 50%);
 	}
 	.title-container {
 		position: relative;

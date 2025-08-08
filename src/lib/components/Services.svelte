@@ -39,6 +39,7 @@
 		text-align: center;
 		letter-spacing: 0.2em;
 		margin-bottom: 1rem;
+		font-weight: 300;
 	}
 	hr {
 		border: 0;

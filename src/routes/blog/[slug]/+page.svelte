@@ -1,6 +1,6 @@
 <script>
 	let { data } = $props();
-    // In Svelte 5, we assign the component to a capitalized variable.
+	// In Svelte 5, we assign the component to a capitalized variable.
 	const PostContent = data.content;
 </script>
 
@@ -16,8 +16,8 @@
 
 	<div class="content-body">
 		<!-- OLD WAY: <svelte:component this={data.content} /> -->
-		
-        <!-- NEW SVELTE 5 WAY: -->
+
+		<!-- NEW SVELTE 5 WAY: -->
 		<PostContent />
 	</div>
 
@@ -30,6 +30,10 @@
 		margin: 4rem auto;
 		padding: 2rem;
 		width: 90%;
+		background: rgba(5, 5, 5, 0.45);
+		border-radius: 12px;
+		-webkit-backdrop-filter: blur(10px);
+		backdrop-filter: blur(10px);
 	}
 	h1 {
 		font-size: 2.5rem;

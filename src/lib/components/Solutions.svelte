@@ -1,3 +1,8 @@
+<script>
+	// We use state to track if the video should be visible.
+	let showVideo = $state(false);
+</script>
+
 <div class="content-wrapper">
 	<h2>3D SOLUTIONS</h2>
 	<hr />
@@ -24,16 +29,43 @@
 	</ul>
 
 	<div class="video-container">
-		<iframe
-			src="https://player.vimeo.com/video/1099649861?h=00ba6dd0ad&dnt=1"
-			width="100%"
-			height="360"
-			frameborder="0"
-			allow="autoplay; fullscreen; picture-in-picture"
-			allowfullscreen
-			title="Vimeo Video"
-		></iframe>
+		{#if showVideo}
+			<!-- This iframe is only rendered AFTER the click. -->
+			<!-- The `&autoplay=1` parameter makes it play immediately. -->
+			<iframe
+				src="https://player.vimeo.com/video/1099649861?h=00ba6dd0ad&dnt=1&autoplay=1"
+				width="100%"
+				height="100%"
+				frameborder="0"
+				allow="fullscreen; picture-in-picture"
+				allowfullscreen
+				title="Zenzak Portfolio Video"
+			></iframe>
+		{:else}
+			<!-- This is the clickable thumbnail that loads instantly. -->
+			<button
+				class="video-thumbnail"
+				onclick={() => (showVideo = true)}
+				aria-label="Play portfolio video"
+			>
+				<!-- Your local thumbnail image -->
+				<img
+					src="/thumb.jpg"
+					alt="Portfolio showreel thumbnail"
+					class="thumbnail-image"
+				/>
+				<!-- A simple SVG play button icon -->
+				<div class="play-button-icon">
+					<svg viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<circle cx="35" cy="35" r="35" fill="white" fill-opacity="0.2" />
+						<circle cx="35" cy="35" r="29" stroke="white" stroke-opacity="0.8" stroke-width="2" />
+						<path d="M49 35L28.75 47.1244L28.75 22.8756L49 35Z" fill="white" />
+					</svg>
+				</div>
+			</button>
+		{/if}
 	</div>
+
 	<h3>Engineering-Grade 3D Animation</h3>
 	<p>
 		Your vision is technically brilliant. But can your investors, clients, and customers truly see
@@ -44,13 +76,64 @@
 </div>
 
 <style>
-	/* ... add styles similar to Services.svelte ... */
+	/* --- Video Player Styles --- */
 	.video-container {
 		margin-top: 2rem;
 		aspect-ratio: 16 / 9;
+		width: 100%;
+		border-radius: 8px;
+		overflow: hidden;
+		background-color: #111; /* Fallback color */
 	}
+
 	iframe {
 		width: 100%;
 		height: 100%;
+		border: 0;
 	}
+
+	.video-thumbnail {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		padding: 0;
+		border: 0;
+	}
+
+	.thumbnail-image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+		transition: filter 0.3s ease;
+	}
+
+	.video-thumbnail:hover .thumbnail-image {
+		filter: brightness(0.8);
+	}
+
+	.play-button-icon {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 70px; /* Match the SVG viewBox width */
+		height: 70px;
+		pointer-events: none; /* Allows clicks to go through to the button */
+		transition: transform 0.3s ease;
+	}
+
+	.video-thumbnail:hover .play-button-icon {
+		transform: translate(-50%, -50%) scale(1.1);
+	}
+
+	/* Other component styles */
+	.content-wrapper { max-width: 700px; margin: 0 auto; }
+	h2 { text-align: center; letter-spacing: 0.2em; margin-bottom: 1rem; font-weight: 300; }
+	hr { border: 0; border-top: 1px solid rgba(255, 255, 255, 0.2); margin-bottom: 2rem; }
+	h3 { font-weight: 300; color: #ccc; letter-spacing: 0.05em; }
+	p, li { line-height: 1.7; color: #ccc; }
+	ul { padding-left: 20px; }
+	li { margin-bottom: 1rem; }
+	strong { color: white; font-weight: 500; }
 </style>

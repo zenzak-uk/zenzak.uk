@@ -59,6 +59,7 @@ src/
       [slug]/
         +page.js
         +page.svelte
+      +layout.svelte
       +page.svelte
     success/
       +page.svelte
@@ -84,6 +85,77 @@ vite.config.js
 
 <files>
 This section contains the contents of the repository's files.
+
+<file path="src/routes/blog/+layout.svelte">
+<script>
+	// Get the children prop, which is the page content being rendered.
+	let { children } = $props();
+</script>
+
+<div class="blog-wrapper">
+	<header class="blog-header">
+		<a href="/" class="home-link" aria-label="Back to Homepage">
+			<img src="/lightbulb.svg" alt="Zenzak Animation Home" class="home-icon" />
+			<span>Zenzak Animation</span>
+		</a>
+	</header>
+
+	<main>
+		<!-- This renders the content of +page.svelte -->
+		{@render children()}
+	</main>
+</div>
+
+<style>
+	.blog-wrapper {
+		width: 100%;
+		min-height: 100vh;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.blog-header {
+		padding: 2rem;
+		display: flex;
+		justify-content: center;
+		width: 100%;
+		box-sizing: border-box;
+	}
+
+	.home-link {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.75rem;
+		text-decoration: none;
+		color: #ccc;
+		transition: color 0.2s ease;
+	}
+
+	.home-link:hover {
+		color: #fff;
+	}
+
+	.home-icon {
+		width: 32px;
+		height: 32px;
+	}
+
+	.home-link span {
+		font-weight: 300;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		border-left: 1px solid rgba(255, 255, 255, 0.2);
+		padding-left: 0.75rem;
+		font-size: 0.9rem;
+	}
+
+	main {
+		flex-grow: 1;
+		display: flex;
+		flex-direction: column;
+	}
+</style>
+</file>
 
 <file path="src/lib/assets/favicon.svg">
 <svg xmlns="http://www.w3.org/2000/svg" width="107" height="128" viewBox="0 0 107 128"><title>svelte-logo</title><path d="M94.157 22.819c-10.4-14.885-30.94-19.297-45.792-9.835L22.282 29.608A29.92 29.92 0 0 0 8.764 49.65a31.5 31.5 0 0 0 3.108 20.231 30 30 0 0 0-4.477 11.183 31.9 31.9 0 0 0 5.448 24.116c10.402 14.887 30.942 19.297 45.791 9.835l26.083-16.624A29.92 29.92 0 0 0 98.235 78.35a31.53 31.53 0 0 0-3.105-20.232 30 30 0 0 0 4.474-11.182 31.88 31.88 0 0 0-5.447-24.116" style="fill:#ff3e00"/><path d="M45.817 106.582a20.72 20.72 0 0 1-22.237-8.243 19.17 19.17 0 0 1-3.277-14.503 18 18 0 0 1 .624-2.435l.49-1.498 1.337.981a33.6 33.6 0 0 0 10.203 5.098l.97.294-.09.968a5.85 5.85 0 0 0 1.052 3.878 6.24 6.24 0 0 0 6.695 2.485 5.8 5.8 0 0 0 1.603-.704L69.27 76.28a5.43 5.43 0 0 0 2.45-3.631 5.8 5.8 0 0 0-.987-4.371 6.24 6.24 0 0 0-6.698-2.487 5.7 5.7 0 0 0-1.6.704l-9.953 6.345a19 19 0 0 1-5.296 2.326 20.72 20.72 0 0 1-22.237-8.243 19.17 19.17 0 0 1-3.277-14.502 17.99 17.99 0 0 1 8.13-12.052l26.081-16.623a19 19 0 0 1 5.3-2.329 20.72 20.72 0 0 1 22.237 8.243 19.17 19.17 0 0 1 3.277 14.503 18 18 0 0 1-.624 2.435l-.49 1.498-1.337-.98a33.6 33.6 0 0 0-10.203-5.1l-.97-.294.09-.968a5.86 5.86 0 0 0-1.052-3.878 6.24 6.24 0 0 0-6.696-2.485 5.8 5.8 0 0 0-1.602.704L37.73 51.72a5.42 5.42 0 0 0-2.449 3.63 5.79 5.79 0 0 0 .986 4.372 6.24 6.24 0 0 0 6.698 2.486 5.8 5.8 0 0 0 1.602-.704l9.952-6.342a19 19 0 0 1 5.295-2.328 20.72 20.72 0 0 1 22.237 8.242 19.17 19.17 0 0 1 3.277 14.503 18 18 0 0 1-8.13 12.053l-26.081 16.622a19 19 0 0 1-5.3 2.328" style="fill:#fff"/></svg>
@@ -563,6 +635,7 @@ This section contains the contents of the repository's files.
 		text-align: center;
 		letter-spacing: 0.2em;
 		margin-bottom: 1rem;
+		font-weight: 300;
 	}
 	hr {
 		border: 0;
@@ -583,6 +656,11 @@ This section contains the contents of the repository's files.
 </file>
 
 <file path="src/lib/components/Solutions.svelte">
+<script>
+	// We use state to track if the video should be visible.
+	let showVideo = $state(false);
+</script>
+
 <div class="content-wrapper">
 	<h2>3D SOLUTIONS</h2>
 	<hr />
@@ -609,16 +687,43 @@ This section contains the contents of the repository's files.
 	</ul>
 
 	<div class="video-container">
-		<iframe
-			src="https://player.vimeo.com/video/1099649861?h=00ba6dd0ad&dnt=1"
-			width="100%"
-			height="360"
-			frameborder="0"
-			allow="autoplay; fullscreen; picture-in-picture"
-			allowfullscreen
-			title="Vimeo Video"
-		></iframe>
+		{#if showVideo}
+			<!-- This iframe is only rendered AFTER the click. -->
+			<!-- The `&autoplay=1` parameter makes it play immediately. -->
+			<iframe
+				src="https://player.vimeo.com/video/1099649861?h=00ba6dd0ad&dnt=1&autoplay=1"
+				width="100%"
+				height="100%"
+				frameborder="0"
+				allow="fullscreen; picture-in-picture"
+				allowfullscreen
+				title="Zenzak Portfolio Video"
+			></iframe>
+		{:else}
+			<!-- This is the clickable thumbnail that loads instantly. -->
+			<button
+				class="video-thumbnail"
+				onclick={() => (showVideo = true)}
+				aria-label="Play portfolio video"
+			>
+				<!-- Your local thumbnail image -->
+				<img
+					src="/thumb.jpg"
+					alt="Portfolio showreel thumbnail"
+					class="thumbnail-image"
+				/>
+				<!-- A simple SVG play button icon -->
+				<div class="play-button-icon">
+					<svg viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<circle cx="35" cy="35" r="35" fill="white" fill-opacity="0.2" />
+						<circle cx="35" cy="35" r="29" stroke="white" stroke-opacity="0.8" stroke-width="2" />
+						<path d="M49 35L28.75 47.1244L28.75 22.8756L49 35Z" fill="white" />
+					</svg>
+				</div>
+			</button>
+		{/if}
 	</div>
+
 	<h3>Engineering-Grade 3D Animation</h3>
 	<p>
 		Your vision is technically brilliant. But can your investors, clients, and customers truly see
@@ -629,15 +734,66 @@ This section contains the contents of the repository's files.
 </div>
 
 <style>
-	/* ... add styles similar to Services.svelte ... */
+	/* --- Video Player Styles --- */
 	.video-container {
 		margin-top: 2rem;
 		aspect-ratio: 16 / 9;
+		width: 100%;
+		border-radius: 8px;
+		overflow: hidden;
+		background-color: #111; /* Fallback color */
 	}
+
 	iframe {
 		width: 100%;
 		height: 100%;
+		border: 0;
 	}
+
+	.video-thumbnail {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		padding: 0;
+		border: 0;
+	}
+
+	.thumbnail-image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+		transition: filter 0.3s ease;
+	}
+
+	.video-thumbnail:hover .thumbnail-image {
+		filter: brightness(0.8);
+	}
+
+	.play-button-icon {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 70px; /* Match the SVG viewBox width */
+		height: 70px;
+		pointer-events: none; /* Allows clicks to go through to the button */
+		transition: transform 0.3s ease;
+	}
+
+	.video-thumbnail:hover .play-button-icon {
+		transform: translate(-50%, -50%) scale(1.1);
+	}
+
+	/* Other component styles */
+	.content-wrapper { max-width: 700px; margin: 0 auto; }
+	h2 { text-align: center; letter-spacing: 0.2em; margin-bottom: 1rem; font-weight: 300; }
+	hr { border: 0; border-top: 1px solid rgba(255, 255, 255, 0.2); margin-bottom: 2rem; }
+	h3 { font-weight: 300; color: #ccc; letter-spacing: 0.05em; }
+	p, li { line-height: 1.7; color: #ccc; }
+	ul { padding-left: 20px; }
+	li { margin-bottom: 1rem; }
+	strong { color: white; font-weight: 500; }
 </style>
 </file>
 
@@ -675,16 +831,39 @@ Thanks for reading.
 </file>
 
 <file path="src/routes/blog/[slug]/+page.js">
+// src/routes/blog/[slug]/+page.js
+
 import { error } from '@sveltejs/kit';
 
+/**
+ * This new `entries` function tells SvelteKit's static adapter
+ * which pages to generate for this dynamic route.
+ * @type {import('./$types').EntryGenerator}
+ */
+export function entries() {
+	// Get all markdown files from the posts directory.
+	const posts = import.meta.glob('/src/lib/posts/*.md', { eager: true });
+
+	// Map the file paths to an array of objects that SvelteKit understands.
+	const slugs = Object.keys(posts).map((path) => {
+		// Extract 'welcome' from '/src/lib/posts/welcome.md'
+		const slug = path.split('/').pop()?.split('.').shift();
+		return { slug }; // Return in the format: { slug: 'welcome' }
+	});
+
+	// This will return an array like: [{ slug: 'welcome' }]
+	return slugs;
+}
+
+// Your existing load function remains the same.
 export async function load({ params }) {
 	try {
-        // Dynamically import the post using the slug from the URL
+		// Dynamically import the post using the slug from the URL
 		const post = await import(`../../../lib/posts/${params.slug}.md`);
-		
+
 		return {
 			content: post.default, // The Svelte component rendered from Markdown
-			meta: post.metadata    // The frontmatter
+			meta: post.metadata // The frontmatter
 		};
 	} catch (e) {
 		// If the post doesn't exist, throw a 404 error
@@ -696,7 +875,7 @@ export async function load({ params }) {
 <file path="src/routes/blog/[slug]/+page.svelte">
 <script>
 	let { data } = $props();
-    // In Svelte 5, we assign the component to a capitalized variable.
+	// In Svelte 5, we assign the component to a capitalized variable.
 	const PostContent = data.content;
 </script>
 
@@ -712,8 +891,8 @@ export async function load({ params }) {
 
 	<div class="content-body">
 		<!-- OLD WAY: <svelte:component this={data.content} /> -->
-		
-        <!-- NEW SVELTE 5 WAY: -->
+
+		<!-- NEW SVELTE 5 WAY: -->
 		<PostContent />
 	</div>
 
@@ -726,6 +905,10 @@ export async function load({ params }) {
 		margin: 4rem auto;
 		padding: 2rem;
 		width: 90%;
+		background: rgba(5, 5, 5, 0.45);
+		border-radius: 12px;
+		-webkit-backdrop-filter: blur(10px);
+		backdrop-filter: blur(10px);
 	}
 	h1 {
 		font-size: 2.5rem;
@@ -814,12 +997,17 @@ export async function load({ params }) {
 	{/await}
 </div>
 
+
 <style>
 	.blog-container {
 		max-width: 800px;
 		margin: 4rem auto;
 		padding: 2rem;
 		width: 90%;
+		background: rgba(5, 5, 5, 0.35);
+		border-radius: 12px;
+		-webkit-backdrop-filter: blur(10px);
+		backdrop-filter: blur(10px);
 	}
 	h1 {
 		text-align: center;
@@ -923,86 +1111,6 @@ export async function load({ params }) {
 export const prerender = true;
 </file>
 
-<file path="src/routes/+layout.svelte">
-<script>
-	import '../app.css';
-	// 1. Get the `children` prop, which is the new way to access default slot content.
-	let { children } = $props();
-</script>
-
-<div class="app-container">
-	<div class="background-video-container">
-		<video autoplay muted loop playsinline>
-			<!-- Make sure you have this video file in your /static folder -->
-			<source src="videos/bg.mp4" type="video/mp4" />
-			Your browser does not support the video tag.
-		</video>
-		<div class="video-overlay"></div>
-	</div>
-
-	<div class="content-container">
-		<!-- 2. Use the {@render} tag to display the page content -->
-		{@render children()}
-	</div>
-</div>
-
-<style>
-	.app-container {
-		position: relative;
-		min-height: 100vh;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		overflow: hidden;
-	}
-
-	.background-video-container {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		z-index: -1;
-	}
-
-	video {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-	}
-
-	.video-overlay {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.8) 70%);
-	}
-
-	.content-container {
-		position: relative;
-		z-index: 1;
-		width: 100%;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		flex-grow: 1;
-	}
-
-	@media (prefers-reduced-motion: reduce) {
-		video {
-			display: none;
-		}
-		.background-video-container {
-			background: url('videos/poster.jpg');
-		}
-	}
-</style>
-</file>
-
 <file path="src/app.css">
 /* src/app.css */
 body {
@@ -1033,20 +1141,6 @@ button:focus-visible {
 h1, h2, h3 {
     font-weight: 300;
 }
-</file>
-
-<file path="src/app.html">
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		%sveltekit.head%
-	</head>
-	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents">%sveltekit.body%</div>
-	</body>
-</html>
 </file>
 
 <file path="static/lightbulb.svg">
@@ -1223,6 +1317,112 @@ export default defineConfig({
 });
 </file>
 
+<file path="src/routes/+layout.svelte">
+<script>
+	import '../app.css';
+	import { base } from '$app/paths';
+	let { children } = $props();
+</script>
+
+<svelte:head>
+	<title>Zenzak Animation | Engineering-Grade 3D Animation</title>
+	<meta
+		name="description"
+		content="We translate complex engineering ideas into clear, persuasive, and high-impact 3D animations and product visualizations that help you secure funding, win bids, and drive sales."
+	/>
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Zenzak Animation | Engineering-Grade 3D Animation" />
+	<meta
+		property="og:description"
+		content="High-impact 3D animations and product visualizations that make complex technical ideas clear and persuasive."
+	/>
+	<meta property="og:image" content="https://www.zenzak.uk/social-preview.png" />
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image" />
+	<meta property="twitter:title" content="Zenzak Animation | Engineering-Grade 3D Animation" />
+	<meta
+		property="twitter:description"
+		content="High-impact 3D animations and product visualizations that make complex technical ideas clear and persuasive."
+	/>
+	<meta property="twitter:image" content="https://www.zenzak.uk/social-preview.png" />
+</svelte:head>
+
+<div class="app-container" style="--poster-url: url({base}/videos/poster.jpg)">
+	<div class="background-video-container">
+		<video autoplay muted loop playsinline poster="{base}/videos/poster.jpg">
+			<!-- Make sure you have this video file in your /static folder -->
+			<source src="{base}/videos/bg.mp4" type="video/mp4" />
+			Your browser does not support the video tag.
+		</video>
+		<div class="video-overlay"></div>
+	</div>
+
+	<div class="content-container">
+		<!-- 2. Use the {@render} tag to display the page content -->
+		{@render children()}
+	</div>
+</div>
+
+<style>
+	.app-container {
+		position: relative;
+		min-height: 100vh;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		overflow: hidden;
+	}
+
+	.background-video-container {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+	}
+
+	video {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.video-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.8) 70%);
+	}
+
+	.content-container {
+		position: relative;
+		z-index: 1;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		flex-grow: 1;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		video {
+			display: none;
+		}
+		.background-video-container {
+			background: var(--poster-url);
+		}
+	}
+</style>
+</file>
+
 <file path="src/routes/+page.svelte">
 <script>
 	import { onMount } from 'svelte';
@@ -1258,7 +1458,6 @@ export default defineConfig({
 <div class="page-container">
 	<main class="home-content" class:visible={contentVisible}>
 		<div class="logo-icon-container hero-element">
-			<div class="logo-icon-glow"></div>
 			<img src="/lightbulb.svg" alt="Idea lightbulb icon" class="logo-icon" />
 		</div>
 
@@ -1369,15 +1568,6 @@ export default defineConfig({
 		height: 56px;
 		opacity: 0.8;
 	}
-	.logo-icon-glow {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		width: 120px;
-		height: 120px;
-		background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 50%);
-	}
 	.title-container {
 		position: relative;
 		padding: 1.5rem 0;
@@ -1452,6 +1642,21 @@ export default defineConfig({
 		flex-shrink: 0; /* Prevents the footer from shrinking */
 	}
 </style>
+</file>
+
+<file path="src/app.html">
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		%sveltekit.head%
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">%sveltekit.body%</div>
+	</body>
+</html>
 </file>
 
 <file path="package.json">

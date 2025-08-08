@@ -38,12 +38,17 @@
 	{/await}
 </div>
 
+
 <style>
 	.blog-container {
 		max-width: 800px;
 		margin: 4rem auto;
 		padding: 2rem;
 		width: 90%;
+		background: rgba(5, 5, 5, 0.35);
+		border-radius: 12px;
+		-webkit-backdrop-filter: blur(10px);
+		backdrop-filter: blur(10px);
 	}
 	h1 {
 		text-align: center;

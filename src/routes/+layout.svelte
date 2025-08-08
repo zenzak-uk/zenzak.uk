@@ -1,5 +1,6 @@
 <script>
 	import '../app.css';
+	import { base } from '$app/paths';
 	let { children } = $props();
 </script>
 
@@ -29,11 +30,11 @@
 	<meta property="twitter:image" content="https://www.zenzak.uk/social-preview.png" />
 </svelte:head>
 
-<div class="app-container">
+<div class="app-container" style="--poster-url: url({base}/videos/poster.jpg)">
 	<div class="background-video-container">
-		<video autoplay muted loop playsinline poster="videos/poster.jpg">
+		<video autoplay muted loop playsinline poster="{base}/videos/poster.jpg">
 			<!-- Make sure you have this video file in your /static folder -->
-			<source src="videos/bg.mp4" type="video/mp4" />
+			<source src="{base}/videos/bg.mp4" type="video/mp4" />
 			Your browser does not support the video tag.
 		</video>
 		<div class="video-overlay"></div>
@@ -96,7 +97,7 @@
 			display: none;
 		}
 		.background-video-container {
-			background: url('videos/poster.jpg');
+			background: var(--poster-url);
 		}
 	}
 </style>
