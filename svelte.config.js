@@ -1,14 +1,20 @@
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
+import { mdsvex } from 'mdsvex';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	preprocess: vitePreprocess(),
+	extensions: ['.svelte', '.md'], 
+
+	preprocess: [
+		vitePreprocess(),
+		mdsvex({
+			extensions: ['.md']
+		})
+	],
+
 	kit: {
-		// Use the static adapter to build a static site
 		adapter: adapter({
-			// default options are fine. `pages` and `assets` default to 'build'.
-			// this will output a static site that can be deployed anywhere.
 			fallback: null
 		})
 	}

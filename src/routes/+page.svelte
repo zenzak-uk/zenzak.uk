@@ -5,6 +5,7 @@
 	import Solutions from '$lib/components/Solutions.svelte';
 	import Faq from '$lib/components/Faq.svelte';
 	import Contact from '$lib/components/Contact.svelte';
+	import Button from '$lib/components/Button.svelte';
 
 	let activeModal = $state(null);
 	let contentVisible = $state(false);
@@ -39,17 +40,20 @@
 			<h1 class="title">ZENZAK ANIMATION</h1>
 		</div>
 
-		<p class="subtitle hero-element">MAKING COMPLEX IDEAS CLEAR, PERSUASIVE, AND READY FOR MARKET.</p>
+		<p class="subtitle hero-element">
+			MAKING COMPLEX IDEAS CLEAR, PERSUASIVE, AND READY FOR MARKET.
+		</p>
 
 		<button class="quote-button hero-element" onclick={() => (activeModal = 'contact')}>
 			Get a Project Quote
 		</button>
 
 		<nav class="main-nav">
-			<button onclick={() => (activeModal = 'services')}>SERVICES</button>
-			<button onclick={() => (activeModal = 'solutions')}>3D SOLUTIONS</button>
-			<button onclick={() => (activeModal = 'faq')}>FAQS</button>
-			<button onclick={() => (activeModal = 'contact')}>CONTACT</button>
+			<Button onclick={() => (activeModal = 'services')}>SERVICES</Button>
+			<Button onclick={() => (activeModal = 'solutions')}>3D SOLUTIONS</Button>
+			<Button onclick={() => (activeModal = 'faq')}>FAQS</Button>
+			<Button href="/blog">BLOG</Button>
+			<Button onclick={() => (activeModal = 'contact')}>CONTACT</Button>
 		</nav>
 	</main>
 
@@ -102,7 +106,8 @@
 	/* Note: No longer need to reference .home-content to style .footer-credit */
 	.home-content.visible .hero-element,
 	.home-content.visible .main-nav,
-	.footer-credit.visible { /* CORRECTED SELECTOR */
+	.footer-credit.visible {
+		/* CORRECTED SELECTOR */
 		opacity: 1;
 		transform: translateY(0);
 	}
@@ -122,7 +127,8 @@
 	.home-content.visible .main-nav {
 		transition-delay: 0.6s;
 	}
-	.footer-credit.visible { /* CORRECTED SELECTOR */
+	.footer-credit.visible {
+		/* CORRECTED SELECTOR */
 		transition-delay: 0.7s;
 		opacity: 0.5;
 	}
@@ -210,25 +216,6 @@
 		gap: 0.5rem;
 		width: 100%;
 		max-width: 700px;
-	}
-	.main-nav button {
-		flex-grow: 1;
-		flex-basis: 160px;
-		border: 1px solid rgba(255, 255, 255, 0.2);
-		border-radius: 4px;
-		padding: 0.8rem 1.6rem;
-		transition: all 0.2s;
-		font-size: 0.9rem;
-		letter-spacing: 0.15em;
-		color: #ccc;
-	}
-	.main-nav button:not(:last-child)::after {
-		display: none;
-	}
-	.main-nav button:hover {
-		color: black;
-		background-color: white;
-		border-color: white;
 	}
 
 	/* --- MODIFIED: Footer Credit --- */

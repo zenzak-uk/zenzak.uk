@@ -54,6 +54,7 @@ src/
   routes/
     success/
       +page.svelte
+    +layout.js
     +layout.svelte
     +page.svelte
   app.css
@@ -67,7 +68,6 @@ static/
 .prettierrc
 eslint.config.js
 jsconfig.json
-netlify.toml
 package.json
 README.md
 svelte.config.js
@@ -625,8 +625,11 @@ This section contains the contents of the repository's files.
 </style>
 </file>
 
+<file path="src/routes/+layout.js">
+export const prerender = true;
+</file>
+
 <file path="src/routes/+layout.svelte">
-<!-- src/routes/+layout.svelte -->
 <script>
 	import '../app.css';
 	// 1. Get the `children` prop, which is the new way to access default slot content.
@@ -1120,12 +1123,6 @@ export default [
 }
 </file>
 
-<file path="netlify.toml">
-[build]
-  command = "npm run build"
-  publish = "build"
-</file>
-
 <file path="package.json">
 {
 	"name": "zenzak-animation",
@@ -1145,6 +1142,7 @@ export default [
 		"@eslint/js": "^9.18.0",
 		"@sveltejs/adapter-auto": "^6.0.0",
 		"@sveltejs/adapter-netlify": "^5.1.0",
+		"@sveltejs/adapter-static": "^3.0.8",
 		"@sveltejs/kit": "^2.22.0",
 		"@sveltejs/vite-plugin-svelte": "^6.0.0",
 		"eslint": "^9.18.0",
@@ -1201,19 +1199,18 @@ You can preview the production build with `npm run preview`.
 </file>
 
 <file path="svelte.config.js">
-import adapter from '@sveltejs/adapter-netlify';
+import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	preprocess: vitePreprocess(),
 	kit: {
-		// Use the Netlify adapter
+		// Use the static adapter to build a static site
 		adapter: adapter({
-			// We'll use standard Netlify Functions.
-			// This is the most common and robust choice.
-			edge: false,
-			split: false
+			// default options are fine. `pages` and `assets` default to 'build'.
+			// this will output a static site that can be deployed anywhere.
+			fallback: null
 		})
 	}
 };
