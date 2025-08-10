@@ -55,7 +55,7 @@
 		left: 0;
 		width: 100%;
 		height: 100%;
-		background-color: rgba(0, 0, 0, 0.8);
+		background-color: rgba(0, 0, 0, 0.25);
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -65,16 +65,24 @@
 		outline: none;
 	}
 	.modal-content {
-		background-color: #121212;
-		padding: 2rem 3rem;
-		border-radius: 8px;
-		max-width: 700px;
-		width: 90%;
-		position: relative;
-		max-height: 85vh;
-		overflow-y: auto;
-		border: 1px solid rgba(255, 255, 255, 0.1);
-	}
+	/* Properties from .blog-container */
+	background: rgba(5, 5, 5, 0.7);
+	border-radius: 12px;
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
+	padding: 2rem; /* Symmetrical padding like the blog */
+
+	/* Retained properties for modal functionality */
+	max-width: 700px;
+	width: 90%;
+	position: relative;
+	max-height: 85vh;
+	overflow-y: auto;
+
+	/* --- FOR FIREFOX --- */
+	scrollbar-width: thin;
+	scrollbar-color: #555 transparent;
+}
 	.modal-content:focus {
 		outline: none;
 	}
