@@ -39,13 +39,17 @@
 			<h1 class="title">ZENZAK ANIMATION</h1>
 		</div>
 
-		<p class="subtitle hero-element">
-			MAKING COMPLEX IDEAS CLEAR, PERSUASIVE, AND READY FOR MARKET.
-		</p>
+		<div class="subtitle-panel-wrapper hero-element">
+	<p class="subtitle">
+		MAKING COMPLEX IDEAS CLEAR, <br>PERSUASIVE, AND READY FOR MARKET.
+	</p>
+</div>
 
-		<button class="quote-button hero-element" onclick={() => (activeModal = 'contact')}>
-			Get a Project Quote
-		</button>
+		<div class="hero-element quote-button-wrapper">
+			<Button variant="fill" size="large" onclick={() => (activeModal = 'contact')}>
+				Get a Project Quote
+			</Button>
+		</div>
 
 		<nav class="main-nav">
 			<Button onclick={() => (activeModal = 'services')}>SERVICES</Button>
@@ -173,29 +177,31 @@
 		color: #f0f0f0;
 	}
 	.subtitle {
-		max-width: 500px;
+		max-width: none;
+		margin: 0;
 		line-height: 1.8;
-		margin: 2rem 0 3rem 0;
 		font-size: clamp(1rem, 2.5vw, 1.2rem); /* Responsive font size */
-		font-weight: 300;
+		font-weight: 600;
 		color: #ccc;
 		letter-spacing: 0.05em;
 	}
-	.quote-button {
-		border: 1px solid rgba(255, 255, 255, 0.6);
-		padding: 14px 32px;
-		margin-bottom: 4rem;
-		transition: all 0.2s;
-		border-radius: 4px;
-		font-size: 1rem;
-		letter-spacing: 0.1em;
-		font-weight: 400;
-	}
-	.quote-button:hover {
-		background-color: white;
-		color: black;
-		border-color: white;
-	}
+	.subtitle-panel-wrapper {
+	/* The Glass Effect */
+	background: rgba(227, 227, 240, 0.0); /* A dark, semi-transparent background */
+	-webkit-backdrop-filter: blur(5px); /* For Safari */
+	backdrop-filter: blur(5px); /* The "frosted glass" blur effect */
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 18px; /* Rounded corners for the panel */
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* A subtle shadow adds depth */
+
+	/* Layout and Spacing */
+		padding: 0.5rem 2rem;
+	max-width: 500px; /* Give it a max width */
+	width: 100%;
+
+	/* We move the margin from the original .subtitle to this wrapper */
+	margin: 2rem 0 3rem 0;
+}
 
 	/* --- MODERN NAVIGATION STYLES (Unchanged) --- */
 	.main-nav {
@@ -205,6 +211,10 @@
 		gap: 0.5rem;
 		width: 100%;
 		max-width: 700px;
+	}
+
+	.quote-button-wrapper {
+		margin-bottom: 4rem;
 	}
 
 	/* --- MODIFIED: Footer Credit --- */

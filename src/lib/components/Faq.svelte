@@ -26,9 +26,9 @@
 	<section>
 		<h4>What's the benefit of hiring an engineer to do this?</h4>
 		<p>
-			<strong>Efficiency.</strong> I understand your CAD files, schematics, and technical language
-			from the start. This eliminates misinterpretation and drastically reduces revision cycles,
-			getting you to a perfect final product faster.
+			<strong>Efficiency.</strong> I understand your CAD files, schematics, and technical language from
+			the start. This eliminates misinterpretation and drastically reduces revision cycles, getting you
+			to a perfect final product faster.
 		</p>
 	</section>
 
@@ -40,10 +40,12 @@
 				technical details.
 			</li>
 			<li>
-				<strong>Creation &amp; Review:</strong> I build the animation with key milestones for your
-				feedback and approval.
+				<strong>Creation &amp; Review:</strong> I build the animation with key milestones for your feedback
+				and approval.
 			</li>
-			<li><strong>Delivery:</strong> You receive the final, high-impact animation, ready for deployment.</li>
+			<li>
+				<strong>Delivery:</strong> You receive the final, high-impact animation, ready for deployment.
+			</li>
 		</ol>
 	</section>
 
@@ -58,8 +60,8 @@
 	<section>
 		<h4>How long will it take?</h4>
 		<p>
-			Most projects are delivered in 1-3 weeks. Your quote will include a reliable timeline. If
-			you have an urgent deadline, let's discuss it.
+			Most projects are delivered in 1-3 weeks. Your quote will include a reliable timeline. If you
+			have an urgent deadline, let's discuss it.
 		</p>
 	</section>
 

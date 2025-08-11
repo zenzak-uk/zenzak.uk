@@ -53,11 +53,7 @@
 				aria-label="Play portfolio video"
 			>
 				<!-- Your local thumbnail image -->
-				<img
-					src="/thumb.jpg"
-					alt="Portfolio showreel thumbnail"
-					class="thumbnail-image"
-				/>
+				<img src="/thumb.jpg" alt="Portfolio showreel thumbnail" class="thumbnail-image" />
 				<!-- A simple SVG play button icon -->
 				<div class="play-button-icon">
 					<svg viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">

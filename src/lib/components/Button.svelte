@@ -1,8 +1,11 @@
 <script>
-	// Use let for props in Svelte 5.
-	// `href` is optional, defaulting to null.
-	// `...rest` captures any other attributes like `onclick`.
-	let { href = null, children, variant = 'outline', ...rest } = $props();
+	let {
+		href = null,
+		children,
+		variant = 'outline', // 'outline' | 'fill'
+		size = 'normal', // 'normal' | 'large'
+		...rest
+	} = $props();
 </script>
 
 {#if href}
@@ -23,18 +26,21 @@
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
-		padding: 0.7rem 1.5rem; /* Adjusted for consistency */
-		border-radius: 30px; /* Rounded buttons look great in forms */
+		border-radius: 30px;
 		font-family: inherit;
-		font-size: 0.9rem;
-		font-weight: 500;
 		text-transform: uppercase;
-		letter-spacing: 0.1em;
 		text-decoration: none;
 		cursor: pointer;
 		transition: all 0.2s ease;
+		font-weight: 500;
+		letter-spacing: 0.1em;
+		flex-shrink: 0; /* Prevent buttons from shrinking in flex layouts */
 
-		/* Default to outline style */
+		/* --- SIZE: Normal (default) --- */
+		padding: 0.7rem 1.5rem;
+		font-size: 0.9rem;
+
+		/* --- VARIANT: Outline (default) --- */
 		background-color: transparent;
 		color: #ccc;
 		border: 1px solid #666;
@@ -46,7 +52,7 @@
 		background-color: rgba(255, 255, 255, 0.1);
 	}
 
-	/* "Fill" variant for primary actions */
+	/* --- VARIANT: Fill --- */
 	.btn.fill {
 		background-color: #f0f0f0;
 		color: #121212;
@@ -57,5 +63,11 @@
 		background-color: #fff;
 		border-color: #fff;
 		color: #121212;
+	}
+
+	/* --- SIZE: Large --- */
+	.btn.large {
+		padding: 1rem 2rem; /* More padding */
+		font-size: 1rem; /* Larger font */
 	}
 </style>
