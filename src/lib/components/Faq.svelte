@@ -1,6 +1,7 @@
 <!-- src/lib/components/Faq.svelte -->
 <script>
 	import { createEventDispatcher } from 'svelte';
+	import Button from '$lib/components/Button.svelte';
 
 	const dispatch = createEventDispatcher();
 
@@ -11,11 +12,15 @@
 	}
 </script>
 
+<svelte:head>
+	<link rel="stylesheet" href="/src/lib/styles/content.css" />
+</svelte:head>
+
 <div class="content-wrapper">
 	<h2>FREQUENTLY ASKED QUESTIONS</h2>
 	<hr />
 
-	<h3>A straightforward process is key. Here’s what you can expect.</h3>
+	<h3 class="center-text">A straightforward process is key. Here’s what you can expect.</h3>
 
 	<!-- Question sections -->
 	<section>
@@ -58,81 +63,8 @@
 		</p>
 	</section>
 
-	<section class="final-question">
+	<section class="center-text">
 		<h4>Still have a question?</h4>
-		<!-- This is now a button that triggers our Svelte function -->
-		<button on:click={switchToContact} class="button-link"> Let's talk </button>
+		<Button onclick={switchToContact}>Let's talk</Button>
 	</section>
 </div>
-
-<style>
-	/* Using styles similar to Services.svelte for consistency */
-	.content-wrapper {
-		max-width: 700px;
-		margin: 0 auto;
-	}
-	h2 {
-		text-align: center;
-		letter-spacing: 0.2em;
-		margin-bottom: 1rem;
-		font-weight: 300;
-	}
-	hr {
-		border: 0;
-		border-top: 1px solid rgba(255, 255, 255, 0.2);
-		margin-bottom: 2rem;
-	}
-	h3 {
-		text-align: center;
-		margin-bottom: 3rem;
-		font-weight: 300;
-		color: #ccc;
-		letter-spacing: 0.05em;
-	}
-	h4 {
-		font-weight: 500;
-		letter-spacing: 0.1em;
-		margin-bottom: 0.5rem;
-	}
-	p,
-	li {
-		line-height: 1.7;
-		color: #ccc;
-		max-width: 65ch; /* Improves readability */
-	}
-	ol {
-		padding-left: 20px;
-	}
-	li {
-		margin-bottom: 1rem;
-	}
-	section {
-		margin-bottom: 2.5rem;
-	}
-
-	.final-question {
-		text-align: center;
-		margin-top: 3rem;
-	}
-
-	/* Style for the new button to look like a link or a button */
-	.button-link {
-		/* Reset default button styles */
-		background: none;
-		border: 1px solid rgba(255, 255, 255, 0.6);
-		font-family: inherit;
-		font-size: 1rem;
-		cursor: pointer;
-		padding: 10px 24px;
-		border-radius: 4px;
-		color: #f0f0f0;
-		transition:
-			background-color 0.2s,
-			color 0.2s;
-	}
-
-	.button-link:hover {
-		background-color: white;
-		color: black;
-	}
-</style>

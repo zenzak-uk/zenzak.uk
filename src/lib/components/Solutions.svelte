@@ -3,6 +3,10 @@
 	let showVideo = $state(false);
 </script>
 
+<svelte:head>
+	<link rel="stylesheet" href="/src/lib/styles/content.css" />
+</svelte:head>
+
 <div class="content-wrapper">
 	<h2>3D SOLUTIONS</h2>
 	<hr />
@@ -79,6 +83,7 @@
 	/* --- Video Player Styles --- */
 	.video-container {
 		margin-top: 2rem;
+		margin-bottom: 2rem;
 		aspect-ratio: 16 / 9;
 		width: 100%;
 		border-radius: 8px;
@@ -98,6 +103,7 @@
 		height: 100%;
 		padding: 0;
 		border: 0;
+		cursor: pointer;
 	}
 
 	.thumbnail-image {
@@ -126,14 +132,4 @@
 	.video-thumbnail:hover .play-button-icon {
 		transform: translate(-50%, -50%) scale(1.1);
 	}
-
-	/* Other component styles */
-	.content-wrapper { max-width: 700px; margin: 0 auto; }
-	h2 { text-align: center; letter-spacing: 0.2em; margin-bottom: 1rem; font-weight: 300; }
-	hr { border: 0; border-top: 1px solid rgba(255, 255, 255, 0.2); margin-bottom: 2rem; }
-	h3 { font-weight: 300; color: #ccc; letter-spacing: 0.05em; }
-	p, li { line-height: 1.7; color: #ccc; }
-	ul { padding-left: 20px; }
-	li { margin-bottom: 1rem; }
-	strong { color: white; font-weight: 500; }
 </style>

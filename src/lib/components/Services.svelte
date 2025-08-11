@@ -1,3 +1,7 @@
+<svelte:head>
+	<link rel="stylesheet" href="/src/lib/styles/content.css" />
+</svelte:head>
+
 <div class="content-wrapper">
 	<h2>SERVICES</h2>
 	<hr />
@@ -33,27 +37,3 @@
 	</section>
 
 </div>
-
-<style>
-	h2 {
-		text-align: center;
-		letter-spacing: 0.2em;
-		margin-bottom: 1rem;
-		font-weight: 300;
-	}
-	hr {
-		border: 0;
-		border-top: 1px solid rgba(255, 255, 255, 0.2);
-		margin-bottom: 2rem;
-	}
-	h3 {
-		letter-spacing: 0.1em;
-	}
-	p {
-		line-height: 1.7;
-		color: #ccc;
-	}
-	section {
-		margin-bottom: 2rem;
-	}
-</style>
