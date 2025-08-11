@@ -1,26 +1,10 @@
 <script>
 	import { onMount } from 'svelte';
-	import Modal from '$lib/components/Modal.svelte';
-	import Services from '$lib/components/Services.svelte';
-	import Solutions from '$lib/components/Solutions.svelte';
-	import Faq from '$lib/components/Faq.svelte';
-	import Contact from '$lib/components/Contact.svelte';
 	import Button from '$lib/components/Button.svelte';
 
-	let activeModal = $state(null);
 	let contentVisible = $state(false);
 
-	const modalComponentMap = {
-		services: Services,
-		solutions: Solutions,
-		faq: Faq,
-		contact: Contact
-	};
-
-	const ActiveComponent = $derived(activeModal ? modalComponentMap[activeModal] : null);
-
 	onMount(() => {
-		// Trigger fade-in animation
 		const timer = setTimeout(() => {
 			contentVisible = true;
 		}, 100);
@@ -31,6 +15,7 @@
 <!-- A new wrapper for robust centering and layout -->
 <div class="page-container">
 	<main class="home-content" class:visible={contentVisible}>
+		<!-- The hero content remains identical -->
 		<div class="logo-icon-container hero-element">
 			<img src="/lightbulb.svg" alt="Idea lightbulb icon" class="logo-icon" />
 		</div>
@@ -40,23 +25,25 @@
 		</div>
 
 		<div class="subtitle-panel-wrapper hero-element">
-	<p class="subtitle">
-		MAKING COMPLEX IDEAS CLEAR, <br>PERSUASIVE, AND READY FOR MARKET.
-	</p>
-</div>
+			<p class="subtitle">
+				MAKING COMPLEX IDEAS CLEAR, <br />PERSUASIVE, AND READY FOR MARKET.
+			</p>
+		</div>
 
 		<div class="hero-element quote-button-wrapper">
-			<Button variant="fill" size="large" onclick={() => (activeModal = 'contact')}>
+			<!-- Link to the new contact page -->
+			<Button variant="fill" size="large" href="/contact">
 				Get a Project Quote
 			</Button>
 		</div>
 
 		<nav class="main-nav">
-			<Button onclick={() => (activeModal = 'services')}>SERVICES</Button>
-			<Button onclick={() => (activeModal = 'solutions')}>3D SOLUTIONS</Button>
-			<Button onclick={() => (activeModal = 'faq')}>FAQS</Button>
+			<!-- Update buttons to use href for navigation -->
+			<Button href="/services">SERVICES</Button>
+			<Button href="/solutions">3D SOLUTIONS</Button>
+			<Button href="/faq">FAQS</Button>
 			<Button href="/blog">BLOG</Button>
-			<Button onclick={() => (activeModal = 'contact')}>CONTACT</Button>
+			<Button href="/contact">CONTACT</Button>
 		</nav>
 	</main>
 
@@ -65,12 +52,6 @@
 		BACKGROUND ANIMATION BY ZENZAK ANIMATION.
 	</footer>
 </div>
-
-{#if ActiveComponent}
-	<Modal onclose={() => (activeModal = null)}>
-		<ActiveComponent on:switchmodal={(event) => (activeModal = event.detail)} />
-	</Modal>
-{/if}
 
 <style>
 	/* --- NEW: Page Layout Container --- */
