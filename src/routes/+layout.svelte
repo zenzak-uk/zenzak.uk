@@ -51,11 +51,10 @@
 <style>
 	.app-container {
 		position: relative;
-		min-height: 100vh;
+		min-height: 100dvh;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		justify-content: center;
 		overflow: hidden;
 	}
 
@@ -93,8 +92,9 @@
 		justify-content: center;
 		flex-grow: 1;
 
-		/* 3. Add padding to prevent content from hiding under the fixed header */
-		padding-top: 80px; /* Adjust this value based on your header's height */
+		/* Make the content area take up the remaining height */
+		min-height: calc(100dvh - 20px);
+		margin-top: 20px; /* Push the container down from the top */
 	}
 
 	@media (prefers-reduced-motion: reduce) {
