@@ -26,7 +26,7 @@
 
 		<div class="subtitle-panel-wrapper hero-element">
 			<p class="subtitle">
-				MAKING COMPLEX IDEAS CLEAR, <br />PERSUASIVE, AND READY FOR MARKET.
+				MAKING COMPLEX IDEAS CLEAR, PERSUASIVE, AND READY FOR MARKET.
 			</p>
 		</div>
 
@@ -59,7 +59,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center; /* This horizontally centers the main content and footer */
-		min-height: 100dvh; /* Use dynamic viewport height for best mobile support */
+		min-height: 90dvh; /* Use dynamic viewport height for best mobile support */
 		padding: 2rem;
 	}
 
@@ -68,12 +68,11 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		justify-content: center; /* This vertically centers your hero content */
+		justify-content: flex-start; /* This vertically centers your hero content */
 		flex-grow: 1; /* This is key: it makes the main area expand to push the footer down */
 		text-align: center;
 		width: 100%;
 		max-width: 1200px;
-		/* margin: auto; and padding: 2rem; are no longer needed here */
 	}
 
 	/* --- ANIMATION STYLES (Footer selector corrected) --- */
@@ -157,15 +156,20 @@
 		font-weight: 200;
 		color: #f0f0f0;
 	}
-	.subtitle {
-		max-width: none;
-		margin: 0;
-		line-height: 1.8;
-		font-size: clamp(1rem, 2.5vw, 1.2rem); /* Responsive font size */
-		font-weight: 600;
-		color: #ccc;
-		letter-spacing: 0.05em;
-	}
+.subtitle {
+    max-width: none;
+    margin: 0;
+    line-height: 1.8;
+    font-size: clamp(1rem, 2.5vw, 1.2rem); /* Responsive font size */
+    font-weight: 600;
+    color: #ccc;
+    letter-spacing: 0.05em;
+    /* ADD THIS LINE */
+    min-height: 3.6em; /* 2 (lines) * 1.8 (line-height) = 3.6em */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 	.subtitle-panel-wrapper {
 	/* The Glass Effect */
 	background: rgba(227, 227, 240, 0.0); /* A dark, semi-transparent background */
