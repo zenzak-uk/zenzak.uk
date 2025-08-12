@@ -1,26 +1,10 @@
 <script>
 	import { onMount } from 'svelte';
-	import Modal from '$lib/components/Modal.svelte';
-	import Services from '$lib/components/Services.svelte';
-	import Solutions from '$lib/components/Solutions.svelte';
-	import Faq from '$lib/components/Faq.svelte';
-	import Contact from '$lib/components/Contact.svelte';
 	import Button from '$lib/components/Button.svelte';
 
-	let activeModal = $state(null);
 	let contentVisible = $state(false);
 
-	const modalComponentMap = {
-		services: Services,
-		solutions: Solutions,
-		faq: Faq,
-		contact: Contact
-	};
-
-	const ActiveComponent = $derived(activeModal ? modalComponentMap[activeModal] : null);
-
 	onMount(() => {
-		// Trigger fade-in animation
 		const timer = setTimeout(() => {
 			contentVisible = true;
 		}, 100);
@@ -31,42 +15,35 @@
 <!-- A new wrapper for robust centering and layout -->
 <div class="page-container">
 	<main class="home-content" class:visible={contentVisible}>
-		<div class="logo-icon-container hero-element">
-			<img src="/lightbulb.svg" alt="Idea lightbulb icon" class="logo-icon" />
-		</div>
-
 		<div class="title-container hero-element">
 			<h1 class="title">ZENZAK ANIMATION</h1>
 		</div>
 
-		<p class="subtitle hero-element">
-			MAKING COMPLEX IDEAS CLEAR, PERSUASIVE, AND READY FOR MARKET.
-		</p>
+		<div class="subtitle-panel-wrapper hero-element">
+			<p class="subtitle">
+				MAKING COMPLEX IDEAS CLEAR, PERSUASIVE, AND READY FOR MARKET.
+			</p>
+		</div>
 
-		<button class="quote-button hero-element" onclick={() => (activeModal = 'contact')}>
-			Get a Project Quote
-		</button>
+		<div class="hero-element quote-button-wrapper">
+			<Button variant="fill" size="large" href="/contact">
+				Get a Project Quote
+			</Button>
+		</div>
 
 		<nav class="main-nav">
-			<Button onclick={() => (activeModal = 'services')}>SERVICES</Button>
-			<Button onclick={() => (activeModal = 'solutions')}>3D SOLUTIONS</Button>
-			<Button onclick={() => (activeModal = 'faq')}>FAQS</Button>
+			<Button href="/services">SERVICES</Button>
+			<Button href="/solutions">3D SOLUTIONS</Button>
+			<Button href="/faq">FAQS</Button>
 			<Button href="/blog">BLOG</Button>
-			<Button onclick={() => (activeModal = 'contact')}>CONTACT</Button>
+			<Button href="/contact">CONTACT</Button>
 		</nav>
 	</main>
 
-	<!-- The footer is now a flex-item, centered by its parent -->
 	<footer class="footer-credit" class:visible={contentVisible}>
 		BACKGROUND ANIMATION BY ZENZAK ANIMATION.
 	</footer>
 </div>
-
-{#if ActiveComponent}
-	<Modal onclose={() => (activeModal = null)}>
-		<ActiveComponent on:switchmodal={(event) => (activeModal = event.detail)} />
-	</Modal>
-{/if}
 
 <style>
 	/* --- NEW: Page Layout Container --- */
@@ -75,7 +52,9 @@
 		flex-direction: column;
 		align-items: center; /* This horizontally centers the main content and footer */
 		min-height: 100dvh; /* Use dynamic viewport height for best mobile support */
-		padding: 2rem;
+		/* UPDATED: Using clamp for responsive horizontal and vertical padding */
+		padding: clamp(1rem, 3vh, 2rem) clamp(1rem, 4vw, 2rem);
+		box-sizing: border-box; /* Ensures padding is included in the element's total width and height */
 	}
 
 	/* --- MODIFIED: Home Content --- */
@@ -88,10 +67,10 @@
 		text-align: center;
 		width: 100%;
 		max-width: 1200px;
-		/* margin: auto; and padding: 2rem; are no longer needed here */
+		margin-top: 2.5rem;
 	}
 
-	/* --- ANIMATION STYLES (Footer selector corrected) --- */
+	/* --- ANIMATION STYLES (Largely Unchanged) --- */
 	.hero-element,
 	.main-nav,
 	.footer-credit {
@@ -101,15 +80,12 @@
 			opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1),
 			transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
 	}
-	/* Note: No longer need to reference .home-content to style .footer-credit */
 	.home-content.visible .hero-element,
 	.home-content.visible .main-nav,
 	.footer-credit.visible {
-		/* CORRECTED SELECTOR */
 		opacity: 1;
 		transform: translateY(0);
 	}
-	/* Stagger the animation */
 	.home-content.visible .hero-element:nth-child(1) {
 		transition-delay: 0.1s;
 	}
@@ -126,15 +102,15 @@
 		transition-delay: 0.6s;
 	}
 	.footer-credit.visible {
-		/* CORRECTED SELECTOR */
 		transition-delay: 0.7s;
 		opacity: 0.5;
 	}
 
-	/* --- UI STYLES (Largely unchanged) --- */
+	/* --- UI STYLES (With Proportional Spacing) --- */
 	.logo-icon-container {
 		position: relative;
-		margin-bottom: 2rem;
+		/* UPDATED: Proportional bottom margin */
+		margin-bottom: clamp(1rem, 4vh, 2rem);
 	}
 	.logo-icon {
 		width: 56px;
@@ -143,8 +119,9 @@
 	}
 	.title-container {
 		position: relative;
-		padding: 1.5rem 0;
-		margin: 0.5rem 0;
+		/* UPDATED: Proportional vertical padding and margin */
+		padding: clamp(1rem, 2.5vh, 1.5rem) 0;
+		margin: clamp(0.25rem, 1vh, 0.5rem) 0;
 		width: 100%;
 		max-width: 550px;
 	}
@@ -165,7 +142,7 @@
 		bottom: 0;
 	}
 	.title {
-		font-size: clamp(2rem, 6vw, 3.2rem); /* Responsive font size */
+		font-size: clamp(2rem, 6vw, 3.2rem);
 		letter-spacing: 0.4em;
 		margin: 0;
 		padding: 0 1rem;
@@ -173,31 +150,34 @@
 		color: #f0f0f0;
 	}
 	.subtitle {
-		max-width: 500px;
+		max-width: none;
+		margin: 0;
 		line-height: 1.8;
-		margin: 2rem 0 3rem 0;
-		font-size: clamp(1rem, 2.5vw, 1.2rem); /* Responsive font size */
-		font-weight: 300;
+		font-size: clamp(1rem, 2.5vw, 1.2rem);
+		font-weight: 600;
 		color: #ccc;
 		letter-spacing: 0.05em;
 	}
-	.quote-button {
-		border: 1px solid rgba(255, 255, 255, 0.6);
-		padding: 14px 32px;
-		margin-bottom: 4rem;
-		transition: all 0.2s;
-		border-radius: 4px;
-		font-size: 1rem;
-		letter-spacing: 0.1em;
-		font-weight: 400;
-	}
-	.quote-button:hover {
-		background-color: white;
-		color: black;
-		border-color: white;
+	.subtitle-panel-wrapper {
+		background: rgba(227, 227, 240, 0.0);
+		-webkit-backdrop-filter: blur(5px);
+		backdrop-filter: blur(5px);
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		border-radius: 18px;
+		box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+		/* UPDATED: Proportional vertical padding and margin */
+		padding: clamp(0.5rem, 2vh, 1rem) clamp(1rem, 5vw, 2rem);
+		margin: clamp(1.5rem, 4vh, 2rem) 0 clamp(2rem, 5vh, 3rem) 0;
+		max-width: 500px;
+		width: 100%;
 	}
 
-	/* --- MODERN NAVIGATION STYLES (Unchanged) --- */
+	.quote-button-wrapper {
+		/* UPDATED: Proportional bottom margin */
+		margin-bottom: clamp(2rem, 6vh, 4rem);
+	}
+
+	/* --- MODERN NAVIGATION STYLES --- */
 	.main-nav {
 		display: flex;
 		justify-content: center;
@@ -205,13 +185,21 @@
 		gap: 0.5rem;
 		width: 100%;
 		max-width: 700px;
+		/* UPDATED: Proportional bottom margin */
+		margin-bottom: clamp(2rem, 5vh, 3rem);
 	}
 
 	/* --- MODIFIED: Footer Credit --- */
 	.footer-credit {
-		/* position: fixed and bottom are no longer needed */
 		font-size: 0.8rem;
 		letter-spacing: 0.1em;
-		flex-shrink: 0; /* Prevents the footer from shrinking */
+		margin-bottom: 0.25rem;
+	}
+	.sections-wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+		padding: 0 2rem;
 	}
 </style>

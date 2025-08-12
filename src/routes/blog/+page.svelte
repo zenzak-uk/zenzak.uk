@@ -45,7 +45,7 @@
 		margin: 4rem auto;
 		padding: 2rem;
 		width: 90%;
-		background: rgba(5, 5, 5, 0.35);
+		background: rgba(5, 5, 5, 0.7);
 		border-radius: 12px;
 		-webkit-backdrop-filter: blur(10px);
 		backdrop-filter: blur(10px);
@@ -54,12 +54,12 @@
 		text-align: center;
 		letter-spacing: 0.2em;
 		font-weight: 300;
+		font-size: 2.8rem;
 	}
 	.subtitle {
 		text-align: center;
 		color: #ccc;
-		margin-top: -0.5rem;
-		margin-bottom: 2rem;
+		margin-bottom: 0.5rem;
 	}
 	hr {
 		border: 0;

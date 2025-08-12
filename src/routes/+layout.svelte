@@ -1,6 +1,7 @@
 <script>
 	import '../app.css';
 	import { base } from '$app/paths';
+	import Header from '$lib/components/Header.svelte'; // 1. Import the new Header
 	let { children } = $props();
 </script>
 
@@ -33,15 +34,16 @@
 <div class="app-container" style="--poster-url: url({base}/videos/poster.jpg)">
 	<div class="background-video-container">
 		<video autoplay muted loop playsinline poster="{base}/videos/poster.jpg">
-			<!-- Make sure you have this video file in your /static folder -->
 			<source src="{base}/videos/bg.mp4" type="video/mp4" />
 			Your browser does not support the video tag.
 		</video>
 		<div class="video-overlay"></div>
 	</div>
 
+	<!-- 2. Add the Header component here -->
+	<Header></Header>
+
 	<div class="content-container">
-		<!-- 2. Use the {@render} tag to display the page content -->
 		{@render children()}
 	</div>
 </div>
@@ -49,11 +51,10 @@
 <style>
 	.app-container {
 		position: relative;
-		min-height: 100vh;
+		min-height: 100dvh;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		justify-content: center;
 		overflow: hidden;
 	}
 
@@ -90,6 +91,10 @@
 		align-items: center;
 		justify-content: center;
 		flex-grow: 1;
+
+		/* Make the content area take up the remaining height */
+		min-height: calc(100dvh - 20px);
+		margin-top: 20px; /* Push the container down from the top */
 	}
 
 	@media (prefers-reduced-motion: reduce) {

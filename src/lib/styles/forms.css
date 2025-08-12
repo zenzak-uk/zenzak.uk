@@ -1,0 +1,57 @@
+/* src/lib/styles/forms.css */
+
+.form-wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	margin-top: 2rem;
+}
+
+.form-row {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+/* On larger screens, place inputs side-by-side */
+@media (min-width: 640px) {
+	.form-row {
+		flex-direction: row;
+	}
+}
+
+.form-wrapper input,
+.form-wrapper textarea {
+	width: 100%;
+	background: #2a2a2a;
+	border: 1px solid #444;
+	color: white;
+	padding: 0.8rem 1.2rem; /* Adjusted padding for better visual balance */
+	font-family: inherit;
+	font-size: 1rem;
+	transition: border-color 0.2s ease;
+}
+
+.form-wrapper input:focus,
+.form-wrapper textarea:focus {
+	outline: none;
+	border-color: #888;
+}
+
+/* Style inputs with rounded corners */
+.form-wrapper input {
+	border-radius: 30px;
+}
+
+/* Style textareas with a different rounding */
+.form-wrapper textarea {
+	border-radius: 12px;
+	resize: vertical; /* Allow users to resize the textarea */
+}
+
+.form-buttons {
+	margin-top: 1rem;
+	display: flex;
+	gap: 1rem;
+	justify-content: flex-end; /* Align buttons to the right */
+}

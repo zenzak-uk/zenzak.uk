@@ -1,10 +1,10 @@
 <script>
 	// We use state to track if the video should be visible.
 	let showVideo = $state(false);
+	import '$lib/styles/content.css';
 </script>
 
 <div class="content-wrapper">
-	<h2>3D SOLUTIONS</h2>
 	<hr />
 
 	<h3>WHERE I CREATE VALUE:</h3>
@@ -49,11 +49,7 @@
 				aria-label="Play portfolio video"
 			>
 				<!-- Your local thumbnail image -->
-				<img
-					src="/thumb.jpg"
-					alt="Portfolio showreel thumbnail"
-					class="thumbnail-image"
-				/>
+				<img src="/thumb.jpg" alt="Portfolio showreel thumbnail" class="thumbnail-image" />
 				<!-- A simple SVG play button icon -->
 				<div class="play-button-icon">
 					<svg viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -67,18 +63,19 @@
 	</div>
 
 	<h3>Engineering-Grade 3D Animation</h3>
-	<p>
+	<h4>
 		Your vision is technically brilliant. But can your investors, clients, and customers truly see
-		it?<br />
-		I bridge the gap. As a mechanical engineer, I speak your language. As a 3D animator, I translate
-		it for the world.
-	</p>
+		it?
+	</h4>
+	<strong>I bridge the gap.</strong> As a mechanical engineer, I speak your language. As a 3D animator,
+	I translate it for the world.
 </div>
 
 <style>
 	/* --- Video Player Styles --- */
 	.video-container {
 		margin-top: 2rem;
+		margin-bottom: 2rem;
 		aspect-ratio: 16 / 9;
 		width: 100%;
 		border-radius: 8px;
@@ -98,6 +95,7 @@
 		height: 100%;
 		padding: 0;
 		border: 0;
+		cursor: pointer;
 	}
 
 	.thumbnail-image {
@@ -126,14 +124,4 @@
 	.video-thumbnail:hover .play-button-icon {
 		transform: translate(-50%, -50%) scale(1.1);
 	}
-
-	/* Other component styles */
-	.content-wrapper { max-width: 700px; margin: 0 auto; }
-	h2 { text-align: center; letter-spacing: 0.2em; margin-bottom: 1rem; font-weight: 300; }
-	hr { border: 0; border-top: 1px solid rgba(255, 255, 255, 0.2); margin-bottom: 2rem; }
-	h3 { font-weight: 300; color: #ccc; letter-spacing: 0.05em; }
-	p, li { line-height: 1.7; color: #ccc; }
-	ul { padding-left: 20px; }
-	li { margin-bottom: 1rem; }
-	strong { color: white; font-weight: 500; }
 </style>
