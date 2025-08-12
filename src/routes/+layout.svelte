@@ -31,9 +31,9 @@
 	<meta property="twitter:image" content="https://www.zenzak.uk/social-preview.png" />
 </svelte:head>
 
-<div class="app-container" style="--poster-url: url({base}/videos/poster.jpg)">
+<div class="app-container" style="--poster-url: url({base}/videos/poster.avif)">
 	<div class="background-video-container">
-		<video autoplay muted loop playsinline poster="{base}/videos/poster.jpg">
+		<video autoplay muted loop playsinline poster="{base}/videos/poster.avif">
 			<source src="{base}/videos/bg.mp4" type="video/mp4" />
 			Your browser does not support the video tag.
 		</video>
