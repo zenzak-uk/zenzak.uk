@@ -59,7 +59,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center; /* This horizontally centers the main content and footer */
-		min-height: 100dvh; /* Use dynamic viewport height for best mobile support */
+		min-height: 100dvh -22px; /* Use dynamic viewport height for best mobile support */
 		padding: 2rem;
 	}
 
@@ -192,6 +192,7 @@
 		gap: 0.5rem;
 		width: 100%;
 		max-width: 700px;
+		margin-bottom: 3rem;
 	}
 
 	.quote-button-wrapper {
@@ -200,10 +201,8 @@
 
 	/* --- MODIFIED: Footer Credit --- */
 	.footer-credit {
-		/* position: fixed and bottom are no longer needed */
 		font-size: 0.8rem;
 		letter-spacing: 0.1em;
-		flex-shrink: 0; /* Prevents the footer from shrinking */
 	}
 	.sections-wrapper {
 		display: flex;

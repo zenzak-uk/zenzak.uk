@@ -41,7 +41,7 @@
 	</div>
 
 	<!-- 2. Add the Header component here -->
-	<Header />
+	<Header></Header>
 
 	<div class="content-container">
 		{@render children()}

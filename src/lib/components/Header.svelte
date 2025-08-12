@@ -14,7 +14,7 @@
 	<nav class="main-nav">
 		<a href="{base}/" class="nav-logo">
 			<img src="/lightbulb.svg" alt="Zenzak Animation Home" class="home-icon" />
-			<span>Zenzak Animation</span>
+			<span>ZENZAK ANIMATION</span>
 		</a>
 
 		<!-- Desktop Navigation Links (Now always hidden) -->
@@ -68,6 +68,9 @@
 		align-items: center;
 		max-width: 1200px;
 		margin: 0 auto;
+		font-size: 1.5rem;
+		color: white;
+		text-decoration: none;
 	}
 
 	.nav-logo {
@@ -77,6 +80,11 @@
 		font-size: 1.5rem;
 		color: white;
 		text-decoration: none;
+	}
+
+	.nav-logo span {
+		font-weight: 200;
+		letter-spacing: 0.25em;
 	}
 
     .home-icon {
