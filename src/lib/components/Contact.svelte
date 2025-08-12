@@ -11,7 +11,6 @@
 </svelte:head>
 
 <div class="content-wrapper">
-	<h2>CONTACT</h2>
 	<hr />
 	<p class="center-text">
 		Ready to see your vision realized? Fill out the form below to tell me about your project. I'll

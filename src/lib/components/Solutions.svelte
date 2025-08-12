@@ -8,7 +8,6 @@
 </svelte:head>
 
 <div class="content-wrapper">
-	<h2>3D SOLUTIONS</h2>
 	<hr />
 
 	<h3>WHERE I CREATE VALUE:</h3>
@@ -67,12 +66,12 @@
 	</div>
 
 	<h3>Engineering-Grade 3D Animation</h3>
-	<p>
+	<h4>
 		Your vision is technically brilliant. But can your investors, clients, and customers truly see
-		it?<br />
-		I bridge the gap. As a mechanical engineer, I speak your language. As a 3D animator, I translate
-		it for the world.
-	</p>
+		it?
+	</h4>
+	<strong>I bridge the gap.</strong> As a mechanical engineer, I speak your language. As a 3D animator, I translate it
+	for the world.
 </div>
 
 <style>

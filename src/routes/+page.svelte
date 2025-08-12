@@ -67,7 +67,7 @@
 		text-align: center;
 		width: 100%;
 		max-width: 1200px;
-		margin-top: 60px;
+		margin-top: 2.5rem;
 	}
 
 	/* --- ANIMATION STYLES (Largely Unchanged) --- */
@@ -193,6 +193,7 @@
 	.footer-credit {
 		font-size: 0.8rem;
 		letter-spacing: 0.1em;
+		margin-bottom: 0.25rem;
 	}
 	.sections-wrapper {
 		display: flex;

@@ -17,7 +17,6 @@
 </svelte:head>
 
 <div class="content-wrapper">
-	<h2>FREQUENTLY ASKED QUESTIONS</h2>
 	<hr />
 
 	<h3 class="center-text">A straightforward process is key. Here’s what you can expect.</h3>

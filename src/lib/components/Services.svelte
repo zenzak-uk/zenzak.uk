@@ -3,7 +3,6 @@
 </svelte:head>
 
 <div class="content-wrapper">
-	<h2>SERVICES</h2>
 	<hr />
 
 	<section>
