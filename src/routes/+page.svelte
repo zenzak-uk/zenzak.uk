@@ -59,8 +59,10 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center; /* This horizontally centers the main content and footer */
-		min-height: 100dvh -22px; /* Use dynamic viewport height for best mobile support */
-		padding: 2rem;
+		min-height: 100dvh; /* Use dynamic viewport height for best mobile support */
+		/* UPDATED: Using clamp for responsive horizontal and vertical padding */
+		padding: clamp(1rem, 3vh, 2rem) clamp(1rem, 4vw, 2rem);
+		box-sizing: border-box; /* Ensures padding is included in the element's total width and height */
 	}
 
 	/* --- MODIFIED: Home Content --- */
@@ -73,10 +75,10 @@
 		text-align: center;
 		width: 100%;
 		max-width: 1200px;
-		/* margin: auto; and padding: 2rem; are no longer needed here */
+		margin-top: 60px;
 	}
 
-	/* --- ANIMATION STYLES (Footer selector corrected) --- */
+	/* --- ANIMATION STYLES (Largely Unchanged) --- */
 	.hero-element,
 	.main-nav,
 	.footer-credit {
@@ -86,15 +88,12 @@
 			opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1),
 			transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
 	}
-	/* Note: No longer need to reference .home-content to style .footer-credit */
 	.home-content.visible .hero-element,
 	.home-content.visible .main-nav,
 	.footer-credit.visible {
-		/* CORRECTED SELECTOR */
 		opacity: 1;
 		transform: translateY(0);
 	}
-	/* Stagger the animation */
 	.home-content.visible .hero-element:nth-child(1) {
 		transition-delay: 0.1s;
 	}
@@ -111,15 +110,15 @@
 		transition-delay: 0.6s;
 	}
 	.footer-credit.visible {
-		/* CORRECTED SELECTOR */
 		transition-delay: 0.7s;
 		opacity: 0.5;
 	}
 
-	/* --- UI STYLES (Largely unchanged) --- */
+	/* --- UI STYLES (With Proportional Spacing) --- */
 	.logo-icon-container {
 		position: relative;
-		margin-bottom: 2rem;
+		/* UPDATED: Proportional bottom margin */
+		margin-bottom: clamp(1rem, 4vh, 2rem);
 	}
 	.logo-icon {
 		width: 56px;
@@ -128,8 +127,9 @@
 	}
 	.title-container {
 		position: relative;
-		padding: 1.5rem 0;
-		margin: 0.5rem 0;
+		/* UPDATED: Proportional vertical padding and margin */
+		padding: clamp(1rem, 2.5vh, 1.5rem) 0;
+		margin: clamp(0.25rem, 1vh, 0.5rem) 0;
 		width: 100%;
 		max-width: 550px;
 	}
@@ -150,7 +150,7 @@
 		bottom: 0;
 	}
 	.title {
-		font-size: clamp(2rem, 6vw, 3.2rem); /* Responsive font size */
+		font-size: clamp(2rem, 6vw, 3.2rem);
 		letter-spacing: 0.4em;
 		margin: 0;
 		padding: 0 1rem;
@@ -161,30 +161,31 @@
 		max-width: none;
 		margin: 0;
 		line-height: 1.8;
-		font-size: clamp(1rem, 2.5vw, 1.2rem); /* Responsive font size */
+		font-size: clamp(1rem, 2.5vw, 1.2rem);
 		font-weight: 600;
 		color: #ccc;
 		letter-spacing: 0.05em;
 	}
 	.subtitle-panel-wrapper {
-	/* The Glass Effect */
-	background: rgba(227, 227, 240, 0.0); /* A dark, semi-transparent background */
-	-webkit-backdrop-filter: blur(5px); /* For Safari */
-	backdrop-filter: blur(5px); /* The "frosted glass" blur effect */
-	border: 1px solid rgba(255, 255, 255, 0.1);
-	border-radius: 18px; /* Rounded corners for the panel */
-	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* A subtle shadow adds depth */
+		background: rgba(227, 227, 240, 0.0);
+		-webkit-backdrop-filter: blur(5px);
+		backdrop-filter: blur(5px);
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		border-radius: 18px;
+		box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+		/* UPDATED: Proportional vertical padding and margin */
+		padding: clamp(0.5rem, 2vh, 1rem) clamp(1rem, 5vw, 2rem);
+		margin: clamp(1.5rem, 4vh, 2rem) 0 clamp(2rem, 5vh, 3rem) 0;
+		max-width: 500px;
+		width: 100%;
+	}
 
-	/* Layout and Spacing */
-		padding: 0.5rem 2rem;
-	max-width: 500px; /* Give it a max width */
-	width: 100%;
+	.quote-button-wrapper {
+		/* UPDATED: Proportional bottom margin */
+		margin-bottom: clamp(2rem, 6vh, 4rem);
+	}
 
-	/* We move the margin from the original .subtitle to this wrapper */
-	margin: 2rem 0 3rem 0;
-}
-
-	/* --- MODERN NAVIGATION STYLES (Unchanged) --- */
+	/* --- MODERN NAVIGATION STYLES --- */
 	.main-nav {
 		display: flex;
 		justify-content: center;
@@ -192,11 +193,8 @@
 		gap: 0.5rem;
 		width: 100%;
 		max-width: 700px;
-		margin-bottom: 3rem;
-	}
-
-	.quote-button-wrapper {
-		margin-bottom: 4rem;
+		/* UPDATED: Proportional bottom margin */
+		margin-bottom: clamp(2rem, 5vh, 3rem);
 	}
 
 	/* --- MODIFIED: Footer Credit --- */
