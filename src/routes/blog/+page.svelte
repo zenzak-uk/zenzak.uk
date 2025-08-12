@@ -54,12 +54,12 @@
 		text-align: center;
 		letter-spacing: 0.2em;
 		font-weight: 300;
+		font-size: 2.8rem;
 	}
 	.subtitle {
 		text-align: center;
 		color: #ccc;
-		margin-top: -0.5rem;
-		margin-bottom: 2rem;
+		margin-bottom: 0.5rem;
 	}
 	hr {
 		border: 0;

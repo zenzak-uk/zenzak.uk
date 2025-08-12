@@ -15,11 +15,6 @@
 <!-- A new wrapper for robust centering and layout -->
 <div class="page-container">
 	<main class="home-content" class:visible={contentVisible}>
-		<!-- The hero content remains identical -->
-		<div class="logo-icon-container hero-element">
-			<img src="/lightbulb.svg" alt="Idea lightbulb icon" class="logo-icon" />
-		</div>
-
 		<div class="title-container hero-element">
 			<h1 class="title">ZENZAK ANIMATION</h1>
 		</div>
@@ -31,14 +26,12 @@
 		</div>
 
 		<div class="hero-element quote-button-wrapper">
-			<!-- Link to the new contact page -->
 			<Button variant="fill" size="large" href="/contact">
 				Get a Project Quote
 			</Button>
 		</div>
 
 		<nav class="main-nav">
-			<!-- Update buttons to use href for navigation -->
 			<Button href="/services">SERVICES</Button>
 			<Button href="/solutions">3D SOLUTIONS</Button>
 			<Button href="/faq">FAQS</Button>
@@ -47,7 +40,6 @@
 		</nav>
 	</main>
 
-	<!-- The footer is now a flex-item, centered by its parent -->
 	<footer class="footer-credit" class:visible={contentVisible}>
 		BACKGROUND ANIMATION BY ZENZAK ANIMATION.
 	</footer>
