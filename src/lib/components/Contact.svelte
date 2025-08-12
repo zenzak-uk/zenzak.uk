@@ -1,14 +1,10 @@
 <!-- src/lib/components/Contact.svelte -->
 <script>
 	import Button from '$lib/components/Button.svelte';
+	import '$lib/styles/content.css';
+	import '$lib/styles/forms.css';
 	export const prerender = true;
 </script>
-
-<svelte:head>
-	<!-- Import both global stylesheets -->
-	<link rel="stylesheet" href="/src/lib/styles/content.css" />
-	<link rel="stylesheet" href="/src/lib/styles/forms.css" />
-</svelte:head>
 
 <div class="content-wrapper">
 	<hr />

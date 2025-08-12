@@ -1,6 +1,7 @@
-<svelte:head>
-	<link rel="stylesheet" href="/src/lib/styles/content.css" />
-</svelte:head>
+<script>
+  import '$lib/styles/content.css';
+  import '$lib/styles/forms.css';
+</script>
 
 <div class="content-wrapper">
 	<hr />

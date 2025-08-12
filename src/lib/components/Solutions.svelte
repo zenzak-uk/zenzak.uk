@@ -1,11 +1,8 @@
 <script>
 	// We use state to track if the video should be visible.
 	let showVideo = $state(false);
+	import '$lib/styles/content.css';
 </script>
-
-<svelte:head>
-	<link rel="stylesheet" href="/src/lib/styles/content.css" />
-</svelte:head>
 
 <div class="content-wrapper">
 	<hr />
@@ -70,8 +67,8 @@
 		Your vision is technically brilliant. But can your investors, clients, and customers truly see
 		it?
 	</h4>
-	<strong>I bridge the gap.</strong> As a mechanical engineer, I speak your language. As a 3D animator, I translate it
-	for the world.
+	<strong>I bridge the gap.</strong> As a mechanical engineer, I speak your language. As a 3D animator,
+	I translate it for the world.
 </div>
 
 <style>

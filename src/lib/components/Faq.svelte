@@ -2,7 +2,7 @@
 <script>
 	import { createEventDispatcher } from 'svelte';
 	import Button from '$lib/components/Button.svelte';
-
+	import '$lib/styles/content.css';
 	const dispatch = createEventDispatcher();
 
 	function switchToContact() {
@@ -11,10 +11,6 @@
 		dispatch('switchmodal', 'contact');
 	}
 </script>
-
-<svelte:head>
-	<link rel="stylesheet" href="/src/lib/styles/content.css" />
-</svelte:head>
 
 <div class="content-wrapper">
 	<hr />
