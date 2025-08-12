@@ -6,8 +6,8 @@
 
 <svelte:head>
 	<!-- Import both global stylesheets -->
-	<link rel="stylesheet" href="/src/lib/styles/content.css" />
-	<link rel="stylesheet" href="/src/lib/styles/forms.css" />
+	<link rel="stylesheet" href="$lib/styles/content.css" />
+	<link rel="stylesheet" href="$lib/styles/forms.css" />
 </svelte:head>
 
 <div class="content-wrapper">

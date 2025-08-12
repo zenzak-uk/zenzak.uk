@@ -13,7 +13,7 @@
 </script>
 
 <svelte:head>
-	<link rel="stylesheet" href="/src/lib/styles/content.css" />
+	<link rel="stylesheet" href="$lib/styles/content.css" />
 </svelte:head>
 
 <div class="content-wrapper">
