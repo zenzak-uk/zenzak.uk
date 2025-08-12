@@ -45,7 +45,7 @@
 		margin: 4rem auto;
 		padding: 2rem;
 		width: 90%;
-		background: rgba(5, 5, 5, 0.35);
+		background: rgba(5, 5, 5, 0.7);
 		border-radius: 12px;
 		-webkit-backdrop-filter: blur(10px);
 		backdrop-filter: blur(10px);
