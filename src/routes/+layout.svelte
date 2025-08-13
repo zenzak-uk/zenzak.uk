@@ -41,7 +41,6 @@
 		<div class="video-overlay"></div>
 	</div>
 
-	<!-- 2. Add the Header component here -->
 	<Header></Header>
 
 	<div class="content-container">
@@ -55,7 +54,7 @@
 		min-height: 100dvh;
 		display: flex;
 		flex-direction: column;
-		align-items: center;
+		align-items: stretch;
 		overflow: hidden;
 	}
 
@@ -84,18 +83,14 @@
 	}
 
 	.content-container {
-		position: relative;
-		z-index: 1;
-		width: 100%;
+		flex: 1 1 auto;
 		display: flex;
-		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		flex-grow: 1;
-
-		/* Make the content area take up the remaining height */
-		min-height: calc(100dvh - 20px);
-		margin-top: 20px; /* Push the container down from the top */
+		min-height: 0;
+		margin: 0;
+		padding: 0;
+		width: 100%;
 	}
 
 	@media (prefers-reduced-motion: reduce) {

@@ -1,6 +1,4 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "tailwindcss";
 /* src/app.css */
 :root {
 	/* Define colors and fonts as custom properties for easy theming */

@@ -1,12 +1,45 @@
 <script>
 	import { base } from '$app/paths';
+	import { scale } from 'svelte/transition';
+	import { cubicOut } from 'svelte/easing';
 
-	// State to control the visibility of the mobile menu
 	let isMobileMenuOpen = false;
+	let buttonEl;
+	let firstLinkEl;
 
-	// Function to toggle the menu's open/closed state
 	function toggleMobileMenu() {
 		isMobileMenuOpen = !isMobileMenuOpen;
+	}
+
+	function closeMenu() {
+		isMobileMenuOpen = false;
+	}
+
+	// Click-outside action
+	function clickOutside(node) {
+		const handlePointer = (event) => {
+			if (!node.contains(event.target)) {
+				node.dispatchEvent(new CustomEvent('outclick'));
+			}
+		};
+		document.addEventListener('pointerdown', handlePointer, true);
+		return {
+			destroy() {
+				document.removeEventListener('pointerdown', handlePointer, true);
+			}
+		};
+	}
+
+	// Focus first item when opening
+	$: if (isMobileMenuOpen) {
+		setTimeout(() => firstLinkEl?.focus(), 0);
+	}
+
+	function handleKeydown(e) {
+		if (e.key === 'Escape') {
+			closeMenu();
+			buttonEl?.focus();
+		}
 	}
 </script>
 
@@ -17,7 +50,7 @@
 			<span>ZENZAK ANIMATION</span>
 		</a>
 
-		<!-- Desktop Navigation Links (Now always hidden) -->
+		<!-- Desktop links (keep hidden if you want only hamburger) -->
 		<div class="nav-links-desktop">
 			<a href="{base}/services">Services</a>
 			<a href="{base}/solutions">3D Solutions</a>
@@ -26,23 +59,49 @@
 			<a href="{base}/contact">Contact</a>
 		</div>
 
-		<!-- Hamburger Menu Button -->
-		<button class="hamburger-menu" on:click={toggleMobileMenu} aria-label="Open navigation menu">
-			<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<path d="M5 8.75H25" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
-				<path d="M5 15H25" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
-				<path d="M5 21.25H25" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
-			</svg>
+		<!-- Hamburger button -->
+		<button
+			class="hamburger-menu"
+			bind:this={buttonEl}
+			on:click={toggleMobileMenu}
+			aria-label={isMobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+			aria-expanded={isMobileMenuOpen}
+			aria-haspopup="true"
+			aria-controls="mobile-menu-dropdown"
+		>
+			{#if !isMobileMenuOpen}
+				<!-- Hamburger icon -->
+				<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M5 8.75H25" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+					<path d="M5 15H25" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+					<path d="M5 21.25H25" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+				</svg>
+			{:else}
+				<!-- Close (X) icon -->
+				<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M8 8L22 22" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+					<path d="M22 8L8 22" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+				</svg>
+			{/if}
 		</button>
 
-		<!-- Mobile Navigation Links (conditionally rendered) -->
+		<!-- Dropdown (anchored, not full-screen) -->
 		{#if isMobileMenuOpen}
-			<div class="nav-links-mobile">
-				<a href="{base}/services" on:click={toggleMobileMenu}>Services</a>
-				<a href="{base}/solutions" on:click={toggleMobileMenu}>3D Solutions</a>
-				<a href="{base}/faq" on:click={toggleMobileMenu}>FAQs</a>
-				<a href="{base}/blog" on:click={toggleMobileMenu}>Blog</a>
-				<a href="{base}/contact" on:click={toggleMobileMenu}>Contact</a>
+			<div
+				id="mobile-menu-dropdown"
+				class="nav-dropdown"
+				tabindex="-1"
+				use:clickOutside
+				on:outclick={closeMenu}
+				on:keydown={handleKeydown}
+				role="menu"
+				transition:scale={{ duration: 150, start: 0.96, opacity: 0.25, easing: cubicOut }}
+			>
+				<a href="{base}/services" on:click={closeMenu} role="menuitem" bind:this={firstLinkEl}>Services</a>
+				<a href="{base}/solutions" on:click={closeMenu} role="menuitem">3D Solutions</a>
+				<a href="{base}/faq" on:click={closeMenu} role="menuitem">FAQs</a>
+				<a href="{base}/blog" on:click={closeMenu} role="menuitem">Blog</a>
+				<a href="{base}/contact" on:click={closeMenu} role="menuitem">Contact</a>
 			</div>
 		{/if}
 	</nav>
@@ -71,11 +130,12 @@
 		font-size: 1.5rem;
 		color: white;
 		text-decoration: none;
+		position: relative; /* anchor for dropdown */
 	}
 
 	.nav-logo {
-        display: flex;
-  		align-items: center;
+		display: flex;
+		align-items: center;
 		font-weight: bold;
 		font-size: 1.5rem;
 		color: white;
@@ -87,63 +147,76 @@
 		letter-spacing: 0.25em;
 	}
 
-    .home-icon {
-	  height: 1.4em; /* Adjust this value to get the perfect size */
-	  width: auto; /* Maintains the aspect ratio */
-	  margin-right: 0.5em; /* Adjust for spacing */
+	.home-icon {
+		height: 1.4em;
+		width: auto;
+		margin-right: 0.5em;
 	}
 
-	/* Hamburger Menu Button Styling - NOW ALWAYS VISIBLE */
+	/* Hamburger always visible */
 	.hamburger-menu {
-		display: block; /* Changed from none to block */
+		display: block;
 		background: none;
 		border: none;
 		cursor: pointer;
 		z-index: 1001;
+		color: white;
+		padding: 0.25rem;
+		border-radius: 10px;
+		transition: background-color 160ms ease;
+	}
+	.hamburger-menu:hover,
+	.hamburger-menu:focus-visible {
+		background: rgba(255, 255, 255, 0.06);
+		outline: none;
 	}
 
-	/* Desktop links styling - NOW ALWAYS HIDDEN */
-	.nav-links-desktop {
-		display: none; /* Hide the desktop links by default */
-	}
-
+	/* Desktop links hidden by default if you want only hamburger */
+	.nav-links-desktop { display: none; }
 	.nav-links-desktop a {
 		color: white;
 		text-decoration: none;
 		margin-left: 1.5rem;
 		transition: color 0.3s ease;
 	}
+	.nav-links-desktop a:hover { color: #ccc; }
 
-	.nav-links-desktop a:hover {
-		color: #ccc;
+	/* Modern, glassy dropdown */
+	.nav-dropdown {
+		position: absolute;
+		top: calc(100% + 0.75rem);
+		right: 0;
+		width: min(92vw, 320px);
+		padding: 0.5rem;
+		border-radius: 14px;
+		background: rgba(0, 0, 0, 0.788);
+		backdrop-filter: blur(8px);
+		-webkit-backdrop-filter: blur(8px);
+		border: 1px solid rgba(255, 255, 255, 0.08);
+		box-shadow: 0 12px 40px rgba(0, 0, 0, 0.28);
+		z-index: 1002;
+		transform-origin: top right;
 	}
 
-	/* Mobile navigation container */
-	.nav-links-mobile {
-		position: fixed;
-		top: 0;
-		left: 0;
+	.nav-dropdown a {
+		display: block;
 		width: 100%;
-		height: 100vh;
-		background: rgba(10, 10, 15, 0.95); /* Darker overlay */
-		backdrop-filter: blur(5px);
-		-webkit-backdrop-filter: blur(5px);
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		gap: 2rem;
-	}
-
-	.nav-links-mobile a {
 		color: white;
 		text-decoration: none;
-		font-size: 1.5rem;
-		font-weight: 500;
+		font-size: 1.15rem;
+		font-weight: 300;
+		padding: 0.85rem 2rem;
+		border-radius: 10px;
+		outline: none;
 	}
-	
-	/* Media query is no longer needed for controlling menu visibility, but can be kept for other responsive adjustments */
-	@media (max-width: 768px) {
-		/* You can keep this for other mobile-specific styles if needed */
+	.nav-dropdown a:hover,
+	.nav-dropdown a:focus-visible {
+		background: rgba(255, 255, 255, 0.08);
+	}
+
+
+	/* Respect reduced motion preferences */
+	@media (prefers-reduced-motion: reduce) {
+		.hamburger-menu { transition: none; }
 	}
 </style>
