@@ -23,7 +23,7 @@
 .form-wrapper input,
 .form-wrapper textarea {
 	width: 100%;
-	background: #2a2a2a;
+	background: #00000098;
 	border: 1px solid #444;
 	color: white;
 	padding: 0.8rem 1.2rem; /* Adjusted padding for better visual balance */

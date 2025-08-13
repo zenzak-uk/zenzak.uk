@@ -106,17 +106,6 @@
 		opacity: 0.5;
 	}
 
-	/* --- UI STYLES (With Proportional Spacing) --- */
-	.logo-icon-container {
-		position: relative;
-		/* UPDATED: Proportional bottom margin */
-		margin-bottom: clamp(1rem, 4vh, 2rem);
-	}
-	.logo-icon {
-		width: 56px;
-		height: 56px;
-		opacity: 0.8;
-	}
 	.title-container {
 		position: relative;
 		/* UPDATED: Proportional vertical padding and margin */
@@ -194,12 +183,5 @@
 		font-size: 0.8rem;
 		letter-spacing: 0.1em;
 		margin-bottom: 0.25rem;
-	}
-	.sections-wrapper {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		width: 100%;
-		padding: 0 2rem;
 	}
 </style>
