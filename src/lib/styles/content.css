@@ -44,7 +44,6 @@
 .content-wrapper li {
 	line-height: 1.7;
 	color: #ccc;
-	max-width: 65ch; /* Improves readability */
 }
 
 .content-wrapper ul,
