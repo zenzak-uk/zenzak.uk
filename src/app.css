@@ -1,5 +1,7 @@
+/* app.css */
 @import "tailwindcss";
 
+/* Design tokens (kept your values) */
 @theme {
   /* Colors */
   --color-brand-50: rgb(52, 28, 0);
@@ -12,6 +14,7 @@
   --color-brand-700: rgb(255, 203, 71);
   --color-brand-800: rgb(241, 161, 13);
   --color-brand-900: rgb(254, 243, 221);
+
   --color-neutral-0: rgb(9, 9, 11);
   --color-neutral-50: rgb(24, 24, 27);
   --color-neutral-100: rgb(39, 39, 42);
@@ -24,6 +27,7 @@
   --color-neutral-800: rgb(244, 244, 245);
   --color-neutral-900: rgb(250, 250, 250);
   --color-neutral-950: rgb(255, 255, 255);
+
   --color-error-50: rgb(60, 24, 26);
   --color-error-100: rgb(72, 26, 29);
   --color-error-200: rgb(84, 27, 31);
@@ -34,6 +38,7 @@
   --color-error-700: rgb(242, 85, 90);
   --color-error-800: rgb(255, 99, 105);
   --color-error-900: rgb(254, 236, 238);
+
   --color-warning-50: rgb(52, 28, 0);
   --color-warning-100: rgb(63, 34, 0);
   --color-warning-200: rgb(74, 41, 0);
@@ -44,6 +49,7 @@
   --color-warning-700: rgb(255, 203, 71);
   --color-warning-800: rgb(241, 161, 13);
   --color-warning-900: rgb(254, 243, 221);
+
   --color-success-50: rgb(19, 40, 25);
   --color-success-100: rgb(22, 48, 29);
   --color-success-200: rgb(25, 57, 33);
@@ -54,6 +60,7 @@
   --color-success-700: rgb(85, 180, 103);
   --color-success-800: rgb(99, 193, 116);
   --color-success-900: rgb(229, 251, 235);
+
   --color-brand-primary: rgb(255, 178, 36);
   --color-default-font: rgb(250, 250, 250);
   --color-subtext-color: rgb(161, 161, 170);
@@ -61,51 +68,58 @@
   --color-black: rgb(9, 9, 11);
   --color-default-background: rgb(9, 9, 11);
 
-  /* Fonts */
+  /* Fonts (tokens preserved) */
   --text-caption: 12px;
   --text-caption--font-weight: 400;
   --text-caption--letter-spacing: 0em;
   --text-caption--line-height: 16px;
+
   --text-caption-bold: 12px;
   --text-caption-bold--font-weight: 500;
   --text-caption-bold--letter-spacing: 0em;
   --text-caption-bold--line-height: 16px;
+
   --text-body: 14px;
   --text-body--font-weight: 400;
   --text-body--letter-spacing: 0em;
   --text-body--line-height: 20px;
+
   --text-body-bold: 14px;
   --text-body-bold--font-weight: 500;
   --text-body-bold--letter-spacing: 0em;
   --text-body-bold--line-height: 20px;
+
   --text-heading-3: 16px;
   --text-heading-3--font-weight: 400;
   --text-heading-3--letter-spacing: 0em;
   --text-heading-3--line-height: 20px;
+
   --text-heading-2: 20px;
   --text-heading-2--font-weight: 400;
   --text-heading-2--letter-spacing: 0em;
   --text-heading-2--line-height: 24px;
+
   --text-heading-1: 30px;
   --text-heading-1--font-weight: 400;
   --text-heading-1--letter-spacing: 0em;
   --text-heading-1--line-height: 36px;
+
   --text-monospace-body: 14px;
   --text-monospace-body--font-weight: 400;
   --text-monospace-body--letter-spacing: 0em;
   --text-monospace-body--line-height: 20px;
 
   /* Font families */
-  --font-caption: Inter;
-  --font-caption-bold: Inter;
-  --font-body: Inter;
-  --font-body-bold: Inter;
-  --font-heading-3: Inter;
-  --font-heading-2: Inter;
-  --font-heading-1: Inter;
-  --font-monospace-body: monospace;
+  --font-caption: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-caption-bold: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans";
+  --font-body: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans";
+  --font-body-bold: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans";
+  --font-heading-3: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans";
+  --font-heading-2: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans";
+  --font-heading-1: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans";
+  --font-monospace-body: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
-  /* Box shadows */
+  /* Shadows */
   --shadow-sm: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
   --shadow-default: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
   --shadow-md: 0px 4px 16px -2px rgba(0, 0, 0, 0.08),
@@ -115,14 +129,14 @@
   --shadow-overlay: 0px 12px 32px -4px rgba(0, 0, 0, 0.08),
     0px 4px 8px -2px rgba(0, 0, 0, 0.08);
 
-  /* Border radiuses */
+  /* Radiuses */
   --radius-sm: 8px;
   --radius-md: 16px;
   --radius-DEFAULT: 16px;
   --radius-lg: 24px;
   --radius-full: 9999px;
 
-  /* Spacing */
+  /* Extra spacing scale for big layouts */
   --spacing-112: 28rem;
   --spacing-144: 36rem;
   --spacing-192: 48rem;
@@ -130,7 +144,10 @@
   --spacing-320: 80rem;
 }
 
-/* Container */
+/* Convenience variant for small screens */
+@custom-variant mobile (@media (max-width: 767px));
+
+/* Container utility that centers at breakpoints with smooth gutters */
 @utility container {
   padding-left: 16px;
   padding-right: 16px;
@@ -161,4 +178,255 @@
   }
 }
 
-@custom-variant mobile (@media (max-width: 767px));
+/* Global element defaults */
+@layer base {
+  :root { color-scheme: dark; }
+  html { -webkit-text-size-adjust: 100%; text-rendering: optimizeLegibility; }
+  body {
+    margin: 0;
+    color: var(--color-default-font);
+    background-color: var(--color-default-background);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Headings */
+  h1, h2, h3, h4, h5, h6 { letter-spacing: -0.01em; color: var(--color-neutral-900); }
+  h1 { font-size: clamp(2rem, 1.2vw + 1.6rem, 2.5rem); font-weight: 700; line-height: 1.15; }
+  h2 { margin-top: 2rem; font-size: clamp(1.5rem, 0.9vw + 1.2rem, 2rem); font-weight: 600; line-height: 1.2; }
+  h3 { margin-top: 1.5rem; font-size: 1.25rem; font-weight: 600; line-height: 1.3; }
+  h4 { margin-top: 1.25rem; font-size: 1.125rem; font-weight: 600; line-height: 1.35; }
+
+  /* Paragraphs & small text */
+  p { line-height: 1.7; margin-block: 1rem; color: var(--color-neutral-800); }
+  small { font-size: 0.875rem; color: var(--color-subtext-color); }
+
+  /* Links */
+  a {
+    color: var(--color-brand-700);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 1px;
+    transition: color .15s ease;
+  }
+  a:hover { color: var(--color-brand-600); }
+
+  /* Lists */
+  ul, ol { margin-block: 1rem; padding-inline-start: 1.25rem; }
+  ul { list-style: disc; }
+  ol { list-style: decimal; }
+  ul ul, ol ol, ul ol, ol ul { margin-top: .5rem; margin-bottom: .5rem; }
+
+  /* Divider element */
+  hr {
+    border: 0;
+    border-top: 1px solid var(--color-neutral-border);
+    margin-block: 2rem;
+    opacity: .8;
+  }
+
+  /* Blockquotes */
+  blockquote {
+    border-inline-start: 2px solid var(--color-brand-600);
+    padding-inline-start: 1rem;
+    margin: 1.25rem 0;
+    color: var(--color-neutral-700);
+    font-style: italic;
+  }
+  blockquote cite {
+    display: block;
+    margin-top: .5rem;
+    color: var(--color-subtext-color);
+    font-style: normal;
+  }
+
+  /* Inline and block code */
+  code {
+    font-family: var(--font-monospace-body);
+    background-color: color-mix(in oklab, var(--color-neutral-50), transparent 60%);
+    border: 1px solid var(--color-neutral-200);
+    border-radius: 6px;
+    padding: .125rem .375rem;
+    color: var(--color-neutral-900);
+  }
+  pre {
+    background-color: color-mix(in oklab, var(--color-neutral-50), transparent 30%);
+    border: 1px solid var(--color-neutral-200);
+    border-radius: 12px;
+    padding: 1rem;
+    overflow: auto;
+  }
+  pre code {
+    all: unset;
+    font-family: var(--font-monospace-body);
+    color: var(--color-neutral-900);
+  }
+
+  /* Keyboard keys */
+  kbd {
+    font-family: var(--font-monospace-body);
+    font-size: .825rem;
+    padding: .125rem .375rem;
+    border-radius: 6px;
+    border: 1px solid var(--color-neutral-200);
+    background: color-mix(in oklab, var(--color-neutral-50), transparent 50%);
+    box-shadow: var(--shadow-sm);
+  }
+
+  /* Tables */
+  table { width: 100%; border-collapse: separate; border-spacing: 0; }
+  th, td { padding: .625rem .75rem; }
+  thead th {
+    text-align: left;
+    color: var(--color-neutral-700);
+    font-weight: 600;
+    border-bottom: 1px solid var(--color-neutral-200);
+  }
+  tbody td { border-bottom: 1px solid color-mix(in oklab, var(--color-neutral-200), transparent 60%); }
+  tbody tr:nth-child(even) { background: color-mix(in oklab, var(--color-neutral-50), transparent 70%); }
+
+  /* Selection & focus */
+  ::selection { background: color-mix(in oklab, var(--color-brand-600), transparent 60%); color: var(--color-neutral-950); }
+  :where(a, button, [role="button"], input, select, textarea):focus-visible {
+    outline: none;
+    box-shadow:
+      0 0 0 2px var(--color-neutral-0),
+      0 0 0 4px var(--color-brand-600);
+    border-radius: 8px;
+  }
+
+  /* Subtle scrollbars (webkit) */
+  *::-webkit-scrollbar { height: 10px; width: 10px; }
+  *::-webkit-scrollbar-thumb {
+    background-color: color-mix(in oklab, var(--color-neutral-200), transparent 35%);
+    border: 2px solid var(--color-neutral-0);
+    border-radius: 999px;
+  }
+  *::-webkit-scrollbar-track { background: transparent; }
+}
+
+/* Utilities & component-like helpers */
+@layer utilities {
+  /* Divider utilities */
+  .divider { border: 0; border-top: 1px solid var(--color-neutral-border); height: 0; margin-block: 2rem; opacity: .9; }
+  .divider--dashed { border-top-style: dashed; opacity: .7; }
+  .divider--heavy { border-top-width: 2px; }
+  .divider--brand { border-top-color: var(--color-brand-600); }
+  .divider--soft { border-top-color: color-mix(in oklab, var(--color-neutral-200), transparent 35%); }
+
+  /* Gradient divider (1px line) */
+  .divider--gradient {
+    height: 1px;
+    border: 0;
+    background: linear-gradient(
+      to right,
+      transparent,
+      color-mix(in oklab, var(--color-neutral-200), transparent 30%),
+      transparent
+    );
+  }
+
+  /* Vertical divider */
+  .divider-v {
+    width: 1px;
+    align-self: stretch;
+    background: var(--color-neutral-border);
+    opacity: .9;
+  }
+  .divider-v--soft {
+    background: color-mix(in oklab, var(--color-neutral-200), transparent 35%);
+  }
+
+  /* Divider with centered text
+     Usage: <div class="divider-text"><span>Label</span></div> */
+  .divider-text {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    color: var(--color-subtext-color);
+    margin-block: 2rem;
+  }
+  .divider-text::before,
+  .divider-text::after {
+    content: "";
+    flex: 1 1 0%;
+    border-top: 1px solid var(--color-neutral-border);
+    opacity: .9;
+  }
+  .divider-text--soft::before,
+  .divider-text--soft::after {
+    border-top-color: color-mix(in oklab, var(--color-neutral-200), transparent 35%);
+  }
+
+  /* Marker color helpers (for normal ul/ol lists) */
+  .marker-brand > li::marker { color: var(--color-brand-700); }
+  .marker-muted > li::marker { color: var(--color-neutral-500); }
+  .marker-success > li::marker { color: var(--color-success-700); }
+  .marker-error > li::marker { color: var(--color-error-700); }
+
+  /* List rhythm helpers */
+  .list-tight > li { margin-block: .25rem; }
+  .list-loose > li { margin-block: .5rem; }
+
+  /* Dash list (— bullets) */
+  .list-dash { list-style: none; padding-left: 0; margin: 1rem 0; }
+  .list-dash > li { position: relative; padding-left: 1.25rem; margin: .375rem 0; }
+  .list-dash > li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--color-neutral-500);
+  }
+
+  /* Check list (✓ bullets) */
+  .list-check { list-style: none; padding-left: 0; margin: 1rem 0; }
+  .list-check > li { position: relative; padding-left: 1.5rem; margin: .375rem 0; }
+  .list-check > li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--color-success-700);
+    font-weight: 700;
+  }
+
+  /* Arrow list (› bullets) */
+  .list-arrow { list-style: none; padding-left: 0; margin: 1rem 0; }
+  .list-arrow > li { position: relative; padding-left: 1.25rem; margin: .375rem 0; }
+  .list-arrow > li::before {
+    content: "›";
+    position: absolute;
+    left: 0;
+    color: var(--color-brand-700);
+    font-weight: 600;
+  }
+
+  /* Ordered list with custom counter (1., 1.1., …) */
+  .list-ol { list-style: none; counter-reset: item; padding-left: 0; margin: 1rem 0; }
+  .list-ol > li { counter-increment: item; position: relative; padding-left: 1.75rem; margin: .375rem 0; }
+  .list-ol > li::before {
+    content: counters(item, ".") ".";
+    position: absolute;
+    left: 0;
+    color: var(--color-neutral-500);
+  }
+
+  /* Callouts (nice for notes/warnings/success) */
+  .callout {
+    border: 1px solid var(--color-neutral-200);
+    background: color-mix(in oklab, var(--color-neutral-50), transparent 50%);
+    border-radius: 12px;
+    padding: .875rem 1rem;
+  }
+  .callout--brand { border-color: color-mix(in oklab, var(--color-brand-600), transparent 40%); }
+  .callout--warning { border-color: var(--color-warning-600); background: color-mix(in oklab, var(--color-warning-50), transparent 55%); }
+  .callout--error { border-color: var(--color-error-600); background: color-mix(in oklab, var(--color-error-50), transparent 55%); }
+  .callout--success { border-color: var(--color-success-600); background: color-mix(in oklab, var(--color-success-50), transparent 55%); }
+}
+
+/* Optional: typography-leaning defaults for headings & links (keeps your flavor) */
+@layer base {
+  h1 { /* accent option: */ }
+  h2 { color: var(--color-neutral-900); }
+  h3 { color: var(--color-neutral-900); }
+}

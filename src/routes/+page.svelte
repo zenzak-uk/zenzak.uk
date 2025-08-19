@@ -48,8 +48,8 @@
 			</nav>
 		</main>
 
-		<footer class="footer-credit" class:visible={contentVisible}>
-			BACKGROUND ANIMATION BY ZENZAK ANIMATION.
+		<footer>
+			<h5>BACKGROUND ANIMATION BY ZENZAK ANIMATION.</h5>
 		</footer>
 	</div>
 </div>
@@ -188,11 +188,7 @@
 	}
 
 	/* --- MODIFIED: Footer Credit --- */
-	.footer-credit {
-		font-size: 0.8rem;
-		letter-spacing: 0.1em;
-		margin-bottom: 0.25rem;
-	}
+
 
 	.app-container {
 		position: relative;

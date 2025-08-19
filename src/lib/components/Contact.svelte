@@ -1,8 +1,6 @@
 <!-- src/lib/components/Contact.svelte -->
 <script>
 	import Button from '$lib/components/Button.svelte';
-	import '$lib/styles/content.css';
-	import '$lib/styles/forms.css';
 	export const prerender = true;
 </script>
 
