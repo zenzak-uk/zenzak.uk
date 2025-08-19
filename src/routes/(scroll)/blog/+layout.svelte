@@ -6,7 +6,6 @@
 <div class="blog-wrapper">
 
 	<main>
-		<!-- This renders the content of +page.svelte -->
 		{@render children()}
 	</main>
 </div>

@@ -26,7 +26,7 @@ export function entries() {
 export async function load({ params }) {
 	try {
 		// Dynamically import the post using the slug from the URL
-		const post = await import(`../../../lib/posts/${params.slug}.md`);
+		const post = await import(`$lib/posts/${params.slug}.md`);
 
 		return {
 			content: post.default, // The Svelte component rendered from Markdown
