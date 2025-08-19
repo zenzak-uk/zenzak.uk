@@ -18,6 +18,9 @@
 	// Click-outside action
 	function clickOutside(node) {
 		const handlePointer = (event) => {
+			if (buttonEl && buttonEl.contains(event.target)) {
+				return;
+			}
 			if (!node.contains(event.target)) {
 				node.dispatchEvent(new CustomEvent('outclick'));
 			}
