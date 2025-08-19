@@ -1,6 +1,8 @@
 <script>
 	import { onMount } from 'svelte';
 	import Button from '$lib/components/Button.svelte';
+	import { base } from '$app/paths';
+	import Header from '$lib/components/Header.svelte';
 
 	let contentVisible = $state(false);
 
@@ -12,37 +14,44 @@
 	});
 </script>
 
-<!-- A new wrapper for robust centering and layout -->
-<div class="page-container">
-	<main class="home-content" class:visible={contentVisible}>
-		<div class="title-container hero-element">
-			<h1 class="title">ZENZAK ANIMATION</h1>
-		</div>
+<div class="app-container" style="--poster-url: url({base}/videos/poster.avif)">
+	<div class="background-video-container">
+		<video autoplay muted loop playsinline poster="{base}/videos/poster.avif">
+			<source src="{base}/videos/bg.webm" type="video/webm" />
+			<source src="{base}/videos/bg.mp4" type="video/mp4" />
+			Your browser does not support the video tag.
+		</video>
+		<div class="video-overlay"></div>
+	</div>
 
-		<div class="subtitle-panel-wrapper hero-element">
-			<p class="subtitle">
-				MAKING COMPLEX IDEAS CLEAR, PERSUASIVE, AND READY FOR MARKET.
-			</p>
-		</div>
+	<Header></Header>
+	<div class="page-container">
+		<main class="home-content" class:visible={contentVisible}>
+			<div class="title-container hero-element">
+				<h1 class="title">ZENZAK ANIMATION</h1>
+			</div>
 
-		<div class="hero-element quote-button-wrapper">
-			<Button variant="fill" size="large" href="/contact">
-				Get a Project Quote
-			</Button>
-		</div>
+			<div class="subtitle-panel-wrapper hero-element">
+				<p class="subtitle">MAKING COMPLEX IDEAS CLEAR, PERSUASIVE, AND READY FOR MARKET.</p>
+			</div>
 
-		<nav class="main-nav">
-			<Button href="/services">SERVICES</Button>
-			<Button href="/solutions">3D SOLUTIONS</Button>
-			<Button href="/faq">FAQS</Button>
-			<Button href="/blog">BLOG</Button>
-			<Button href="/contact">CONTACT</Button>
-		</nav>
-	</main>
+			<div class="hero-element quote-button-wrapper">
+				<Button variant="fill" size="large" href="/contact">Get a Project Quote</Button>
+			</div>
 
-	<footer class="footer-credit" class:visible={contentVisible}>
-		BACKGROUND ANIMATION BY ZENZAK ANIMATION.
-	</footer>
+			<nav class="main-nav">
+				<Button href="/services">SERVICES</Button>
+				<Button href="/solutions">3D SOLUTIONS</Button>
+				<Button href="/faq">FAQS</Button>
+				<Button href="/blog">BLOG</Button>
+				<Button href="/contact">CONTACT</Button>
+			</nav>
+		</main>
+
+		<footer class="footer-credit" class:visible={contentVisible}>
+			BACKGROUND ANIMATION BY ZENZAK ANIMATION.
+		</footer>
+	</div>
 </div>
 
 <style>
@@ -148,7 +157,7 @@
 		letter-spacing: 0.05em;
 	}
 	.subtitle-panel-wrapper {
-		background: rgba(227, 227, 240, 0.0);
+		background: rgba(227, 227, 240, 0);
 		-webkit-backdrop-filter: blur(5px);
 		backdrop-filter: blur(5px);
 		border: 1px solid rgba(255, 255, 255, 0.1);
@@ -183,5 +192,58 @@
 		font-size: 0.8rem;
 		letter-spacing: 0.1em;
 		margin-bottom: 0.25rem;
+	}
+
+	.app-container {
+		position: relative;
+		min-height: 100dvh;
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		overflow: hidden;
+	}
+
+	.background-video-container {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+	}
+
+	video {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.video-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.8) 70%);
+	}
+
+	.content-container {
+		flex: 1 1 auto;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		min-height: 0;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		video {
+			display: none;
+		}
+		.background-video-container {
+			background: var(--poster-url);
+		}
 	}
 </style>

@@ -1,11 +1,9 @@
 <script>
 	let { data } = $props();
-	// In Svelte 5, we assign the component to a capitalized variable.
 	const PostContent = data.content;
 </script>
 
 <article class="post-content">
-	<h1>{data.meta.title}</h1>
 	<p class="post-meta">
 		Published on {new Date(data.meta.date).toLocaleDateString('en-US', {
 			year: 'numeric',
@@ -15,11 +13,10 @@
 	</p>
 
 	<div class="content-body">
-		<!-- OLD WAY: <svelte:component this={data.content} /> -->
-
-		<!-- NEW SVELTE 5 WAY: -->
-		<PostContent />
-	</div>
+			<h1 class="page-title">{data.meta.title}</h1>
+ 
+         <PostContent />
+     </div>
 
 	<a href="/blog" class="back-link">&larr; Back to all posts</a>
 </article>
@@ -35,13 +32,7 @@
 		-webkit-backdrop-filter: blur(10px);
 		backdrop-filter: blur(10px);
 	}
-	h1 {
-		font-size: 2.5rem;
-		line-height: 1.2;
-		margin-bottom: 1rem;
-		color: #f0f0f0;
-		font-weight: 400;
-	}
+
 	.post-meta {
 		color: #aaa;
 		margin-bottom: 3rem;
@@ -155,4 +146,15 @@
 		color: #000;
 		border-color: #fff;
 	}
+
+    /* Ensure the page H1 matches site headings and wins over global rules */
+    .post-content .content-body :global(.page-title),
+    .post-content .content-body :global(h1.page-title) {
+        color: #f0f0f0;
+        font-weight: 500;
+        line-height: 1.3;
+        letter-spacing: 0.05em;
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+    }
 </style>

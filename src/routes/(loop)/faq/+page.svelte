@@ -1,16 +1,11 @@
 <!-- src/routes/services/+page.svelte -->
 <script>
-	// You can import any child components this page might need
-	// For example, if Services.svelte was complex and had its own components
-	import Contact from '$lib/components/Contact.svelte';
+	import Faq from '$lib/components/Faq.svelte';
 </script>
 
 <div class="page-content-wrapper">
-	<h1 class="page-title">Get in Touch</h1>
-	<div class="content-area">
-		<!-- Previously, this was your <Services /> component -->
-		<Contact />
-	</div>
+	<h1 class="page-title">Frequently Asked Questions</h1>
+		<Faq />
 </div>
 
 <style>
@@ -34,7 +29,4 @@
 		margin-bottom: 2rem;
 	}
 
-	.content-area {
-		line-height: 1.7;
-	}
 </style>

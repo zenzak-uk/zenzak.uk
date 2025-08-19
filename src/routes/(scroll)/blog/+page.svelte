@@ -51,10 +51,15 @@
 		backdrop-filter: blur(10px);
 	}
 	h1 {
-		text-align: center;
-		letter-spacing: 0.2em;
-		font-weight: 300;
-		font-size: 2.8rem;
+			/* match site headings and force light color */
+			text-align: center;
+			letter-spacing: 0.2em;
+			font-weight: 300;
+			font-size: 2.8rem; /* ≈44.8px */
+			color: var(--text-color, #e0e0e0) !important;
+			line-height: 1.3;
+			margin-top: 0;
+			margin-bottom: 0.5rem;
 	}
 	.subtitle {
 		text-align: center;

@@ -1,12 +1,12 @@
 <!-- src/routes/services/+page.svelte -->
 <script>
-	import Faq from '$lib/components/Faq.svelte';
+	import Solutions from '$lib/components/Solutions.svelte';
 </script>
 
 <div class="page-content-wrapper">
-	<h1 class="page-title">Frequently Asked Questions</h1>
+	<h1 class="page-title">Solutions</h1>
 	<div class="content-area">
-		<Faq />
+		<Solutions />
 	</div>
 </div>
 
@@ -29,9 +29,5 @@
 		color: #f0f0f0;
 		text-align: center;
 		margin-bottom: 2rem;
-	}
-
-	.content-area {
-		line-height: 1.7;
 	}
 </style>
