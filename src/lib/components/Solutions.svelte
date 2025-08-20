@@ -22,10 +22,10 @@
       I’m a photographer, engineer, and designer turned 3D artist. I build detailed, high-quality models with a focus on clean topology—then light, render, and animate them so they’re impossible to ignore.
     </p>
     <div class="flex items-center justify-center gap-2 text-sm text-muted-foreground">
-      <span class="px-2 py-1 rounded bg-muted/50">Photographer’s eye</span>
-      <span class="px-2 py-1 rounded bg-muted/50">Engineer’s rigor</span>
-      <span class="px-2 py-1 rounded bg-muted/50">Designer’s taste</span>
-      <span class="px-2 py-1 rounded bg-muted/50">Animator’s clarity</span>
+      <span class="px-2 py-1 rounded bg-muted/50">Photographer</span>
+      <span class="px-2 py-1 rounded bg-muted/50">Engineer</span>
+      <span class="px-2 py-1 rounded bg-muted/50">Designer</span>
+      <span class="px-2 py-1 rounded bg-muted/50">Animator</span>
     </div>
   </div>
 

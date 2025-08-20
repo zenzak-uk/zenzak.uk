@@ -1,6 +1,5 @@
 <script>
 	import Card from '$lib/components/transparent/Card.svelte';
-
 	import { CardHeader, CardTitle, CardDescription, CardContent } from '$lib/components/ui/card';
 	import { Tabs, TabsList, TabsTrigger, TabsContent } from '$lib/components/ui/tabs';
 	import { Dialog, DialogContent, DialogTrigger } from '$lib/components/ui/dialog';
@@ -9,7 +8,6 @@
 </script>
 
 <section class="mx-auto max-w-6xl space-y-16 px-4 py-16">
-	<!-- Intro / Positioning -->
 	<div class="space-y-4 text-center">
 		<p class="font-xl text-sm tracking-widest text-primary uppercase">Our Services</p>
 		<h2 class="text-4xl font-semibold text-foreground md:text-5xl">A Full‑Cycle Design Partner</h2>
