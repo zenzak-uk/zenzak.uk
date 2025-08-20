@@ -3,7 +3,7 @@
 	const PostContent = data.content;
 </script>
 
-<article class="post-content">
+<article class="prose prose-zinc dark:prose-invert lg:prose-lg mx-auto px-4">
 	<p class="post-meta">
 		Published on {new Date(data.meta.date).toLocaleDateString('en-US', {
 			year: 'numeric',
@@ -22,17 +22,6 @@
 </article>
 
 <style>
-	.post-content {
-		max-width: 700px;
-		margin: 4rem auto;
-		padding: 2rem;
-		width: 90%;
-		background: rgba(5, 5, 5, 0.45);
-		border-radius: 12px;
-		-webkit-backdrop-filter: blur(10px);
-		backdrop-filter: blur(10px);
-	}
-
 	.post-meta {
 		color: #aaa;
 		margin-bottom: 3rem;

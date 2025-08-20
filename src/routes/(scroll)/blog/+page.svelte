@@ -43,15 +43,10 @@
 	.blog-container {
 		max-width: 800px;
 		margin: 4rem auto;
-		padding: 2rem;
+		padding: 1rem;
 		width: 90%;
-		background: rgba(5, 5, 5, 0.7);
-		border-radius: 12px;
-		-webkit-backdrop-filter: blur(10px);
-		backdrop-filter: blur(10px);
 	}
 	h1 {
-			/* match site headings and force light color */
 			text-align: center;
 			letter-spacing: 0.2em;
 			font-weight: 300;

@@ -3,7 +3,7 @@
 	let { children } = $props();
 </script>
 
-<div class="blog-wrapper">
+<div class="rounded-2xl border border-white/20 bg-white/10 dark:bg-black/20 backdrop-blur-md shadow-lg p-20">
 
 	<main>
 		{@render children()}
@@ -11,12 +11,6 @@
 </div>
 
 <style>
-	.blog-wrapper {
-		width: 100%;
-		min-height: 100vh;
-		display: flex;
-		flex-direction: column;
-	}
 	
 	main {
 		flex-grow: 1;
