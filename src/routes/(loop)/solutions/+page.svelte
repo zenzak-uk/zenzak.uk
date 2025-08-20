@@ -4,7 +4,6 @@
 </script>
 
 <div class="page-content-wrapper">
-	<h1 class="page-title">Solutions</h1>
 	<div class="content-area">
 		<Solutions />
 	</div>
@@ -15,7 +14,7 @@
 		width: 100%;
 		max-width: 1200px;
 		padding: 4rem 2rem;
-		margin: 4rem 0;
+		margin: 2rem 0;
 		background: rgba(10, 10, 10, 0.5);
 		border-radius: 16px;
 		-webkit-backdrop-filter: blur(10px);
@@ -24,10 +23,5 @@
 		color: #ccc;
 	}
 
-	.page-title {
-		font-size: clamp(2rem, 5vw, 2.8rem);
-		color: #f0f0f0;
-		text-align: center;
-		margin-bottom: 2rem;
-	}
+
 </style>
