@@ -1,12 +1,12 @@
 <script>
 	let showVideo = $state(false);
 	  import {
-    Card,
     CardHeader,
     CardTitle,
     CardDescription,
     CardContent
   } from '$lib/components/ui/card';
+  import Card from '$lib/components/transparent/Card.svelte';
   import { Tabs, TabsList, TabsTrigger, TabsContent } from '$lib/components/ui/tabs';
   import { Dialog, DialogContent, DialogTrigger } from '$lib/components/ui/dialog';
   import { AspectRatio } from '$lib/components/ui/aspect-ratio';
@@ -28,6 +28,40 @@
       <span class="px-2 py-1 rounded bg-muted/50">Animator’s clarity</span>
     </div>
   </div>
+
+<div class="video-container">
+	{#if showVideo}
+		<!-- This iframe is only rendered AFTER the click. -->
+		<!-- The `&autoplay=1` parameter makes it play immediately. -->
+		<iframe
+			src="https://player.vimeo.com/video/1099649861?h=00ba6dd0ad&dnt=1&autoplay=1"
+			width="100%"
+			height="100%"
+			frameborder="0"
+			allow="fullscreen; picture-in-picture"
+			allowfullscreen
+			title="Zenzak Portfolio Video"
+		></iframe>
+	{:else}
+		<!-- This is the clickable thumbnail that loads instantly. -->
+		<button
+			class="video-thumbnail"
+			onclick={() => (showVideo = true)}
+			aria-label="Play portfolio video"
+		>
+			<!-- Your local thumbnail image -->
+			<img src="/thumb.jpg" alt="Portfolio showreel thumbnail" class="thumbnail-image" />
+			<!-- A simple SVG play button icon -->
+			<div class="play-button-icon">
+				<svg viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<circle cx="35" cy="35" r="35" fill="white" fill-opacity="0.2" />
+					<circle cx="35" cy="35" r="29" stroke="white" stroke-opacity="0.8" stroke-width="2" />
+					<path d="M49 35L28.75 47.1244L28.75 22.8756L49 35Z" fill="white" />
+				</svg>
+			</div>
+		</button>
+	{/if}
+</div>
 
   <!-- Outcomes Grid (Product Design & Modeling first) -->
   <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -92,296 +126,9 @@
     </Card>
   </div>
 
-  <!-- Deep Dives (Tabs) -->
-  <div class="space-y-6 rounded-xl bg-muted/30 p-6 md:p-8">
-    <h3 class="text-3xl font-semibold text-foreground">Deep dives</h3>
-    <Tabs class="w-full" value="concept">
-      <TabsList class="grid w-full grid-cols-2 md:grid-cols-5 bg-muted p-1.5 h-auto rounded-lg gap-1">
-        <TabsTrigger value="concept" class="data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-md transition-all py-3 px-4 text-sm font-xl rounded-md hover:bg-background/50">Concept Modeling</TabsTrigger>
-        <TabsTrigger value="cad" class="data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-md transition-all py-3 px-4 text-sm font-xl rounded-md hover:bg-background/50">Parametric CAD</TabsTrigger>
-        <TabsTrigger value="dfm" class="data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-md transition-all py-3 px-4 text-sm font-xl rounded-md hover:bg-background/50">DFM & Handoff</TabsTrigger>
-        <TabsTrigger value="cmf" class="data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-md transition-all py-3 px-4 text-sm font-xl rounded-md hover:bg-background/50">CMF & Lighting</TabsTrigger>
-        <TabsTrigger value="viz" class="data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-md transition-all py-3 px-4 text-sm font-xl rounded-md hover:bg-background/50">Renders & Interactive</TabsTrigger>
-      </TabsList>
-
-      <!-- Concept Modeling -->
-      <TabsContent value="concept" class="mt-6 data-[state=active]:block data-[state=inactive]:hidden">
-        <Card>
-          <CardContent class="p-6 space-y-4 text-base text-card-foreground">
-            <h4 class="text-xl font-semibold">What it is</h4>
-            <p>Turn sketches and references into clean, presentable geometry. Iterate on proportions, ergonomics, and key surfaces fast.</p>
-
-            <h4 class="text-xl font-semibold">Deliverables</h4>
-            <ul class="list-disc pl-6 space-y-1">
-              <li>SubD/NURBS concept models (OBJ/FBX/STEP/IGES)</li>
-              <li>Styleframes with lighting comps for stakeholder buy‑in</li>
-              <li>Optional: low‑poly real‑time proxy for quick interaction</li>
-            </ul>
-
-            <h4 class="text-xl font-semibold">Great for</h4>
-            <ul class="list-disc pl-6 space-y-1">
-              <li>Early design reviews and board presentations</li>
-              <li>Testing forms, interfaces, and CMF directions</li>
-            </ul>
-
-            <div class="pt-2 flex gap-3">
-              <Button size="lg" variant="default" href="https://calendly.com/zenzak">Start a concept sprint</Button>
-            </div>
-          </CardContent>
-        </Card>
-      </TabsContent>
-
-      <!-- Parametric CAD -->
-      <TabsContent value="cad" class="mt-6 data-[state=active]:block data-[state=inactive]:hidden">
-        <Card>
-          <CardContent class="p-6 space-y-4 text-base text-card-foreground">
-            <h4 class="text-xl font-semibold">What it is</h4>
-            <p>Production‑minded CAD: clean parametric rebuilds from concepts or vendor STEP files, with assemblies, constraints, and hardware libraries.</p>
-
-            <h4 class="text-xl font-semibold">Deliverables</h4>
-            <ul class="list-disc pl-6 space-y-1">
-              <li>Native CAD (SolidWorks/Fusion/Onshape) + neutral (STEP/IGES)</li>
-              <li>Structured assemblies with mates, configurations, and exploded views</li>
-              <li>Optional: control prints for critical interfaces</li>
-            </ul>
-
-            <h4 class="text-xl font-semibold">Notes</h4>
-            <p>Geometry is organized for both manufacturing handoff and downstream visualization (UVs/instances for renders & real‑time).</p>
-
-            <div class="pt-2">
-              <Button size="lg" variant="default" href="https://calendly.com/zenzak">Scope a CAD rebuild</Button>
-            </div>
-          </CardContent>
-        </Card>
-      </TabsContent>
-
-      <!-- DFM & Handoff -->
-      <TabsContent value="dfm" class="mt-6 data-[state=active]:block data-[state=inactive]:hidden">
-        <Card>
-          <CardContent class="p-6 space-y-4 text-base text-card-foreground">
-            <h4 class="text-xl font-semibold">What it is</h4>
-            <p>A practical review to de‑risk manufacturing and accelerate quotes.</p>
-
-            <h4 class="text-xl font-semibold">Includes</h4>
-            <ul class="list-disc pl-6 space-y-1">
-              <li>Drafts, wall thickness, undercuts, fasteners, clearance checks</li>
-              <li>Material and process recommendations (injection molding, CNC, sheet)</li>
-              <li>Handoff pack: cleaned STEP, PDF summary, vendor notes, BOM starter</li>
-            </ul>
-
-            <div class="pt-2">
-              <Button size="lg" variant="default" href="https://calendly.com/zenzak">Run a DFM review</Button>
-            </div>
-          </CardContent>
-        </Card>
-      </TabsContent>
-
-      <!-- CMF & Lighting -->
-      <TabsContent value="cmf" class="mt-6 data-[state=active]:block data-[state=inactive]:hidden">
-        <Card>
-          <CardContent class="p-6 space-y-4 text-base text-card-foreground">
-            <h4 class="text-xl font-semibold">What it is</h4>
-            <p>Physically‑based material development and lighting exploration led by a photographer’s eye.</p>
-
-            <h4 class="text-xl font-semibold">Deliverables</h4>
-            <ul class="list-disc pl-6 space-y-1">
-              <li>Material swatch explorations and look development boards</li>
-              <li>Studio vs. lifestyle lighting kits, HDRI capture or custom rigs</li>
-              <li>EXR/ACES pipeline setups for consistent cross‑platform color</li>
-            </ul>
-
-            <div class="pt-2">
-              <Button size="lg" variant="default" href="https://calendly.com/zenzak">Explore CMF directions</Button>
-            </div>
-          </CardContent>
-        </Card>
-      </TabsContent>
-
-      <!-- Renders & Interactive -->
-      <TabsContent value="viz" class="mt-6 data-[state=active]:block data-[state=inactive]:hidden">
-        <Card>
-          <CardContent class="p-6 space-y-4 text-base text-card-foreground">
-            <h4 class="text-xl font-semibold">What it is</h4>
-            <p>Hero renders, explainers, and interactive viewers built from the same accurate CAD—so what you show is what you ship.</p>
-
-            <h4 class="text-xl font-semibold">Options</h4>
-            <ul class="list-disc pl-6 space-y-1">
-              <li>8K hero imagery, cutdowns, transparent/alpha variants</li>
-              <li>20–90s animations with exploded views and callouts</li>
-              <li>Web embeds (Three.js/Threlte) with hotspots, sections, and analytics</li>
-              <li>AR/WebXR exports (USDZ/GLB) with fallback images</li>
-            </ul>
-
-            <div class="flex flex-wrap gap-3 pt-2">
-              <Dialog>
-                <DialogTrigger asChild>
-                  <Button size="lg" variant="default">Preview an interactive model</Button>
-                </DialogTrigger>
-                <DialogContent class="max-w-4xl">
-                  <AspectRatio ratio={16/9} class="rounded-md overflow-hidden">
-                    <iframe
-                      src="https://your-3d-demo.example.com"
-                      title="Interactive 3D Demo"
-                      class="w-full h-full border-0"
-                      allow="xr-spatial-tracking; fullscreen; autoplay"
-                    ></iframe>
-                  </AspectRatio>
-                </DialogContent>
-              </Dialog>
-              <Button size="lg" variant="secondary" href="https://calendly.com/zenzak">Plan your visuals</Button>
-            </div>
-          </CardContent>
-        </Card>
-      </TabsContent>
-    </Tabs>
-  </div>
-
-  <!-- Packs (Integrated skills) -->
-  <div class="space-y-6">
-    <h3 class="text-3xl font-semibold text-foreground">Integrated packs</h3>
-    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      <Card class="h-full">
-        <CardHeader>
-          <CardTitle class="text-xl">Concept Sprint Pack</CardTitle>
-          <CardDescription class="text-base">From sketch to review‑ready model in days.</CardDescription>
-        </CardHeader>
-        <CardContent class="text-base text-card-foreground space-y-2">
-          <ul class="list-disc pl-6 space-y-1">
-            <li>Concept model (SubD/NURBS) + 2 proportion passes</li>
-            <li>Lighting lookframes and CMF draft</li>
-            <li>Optional: interactive proxy for stakeholder reviews</li>
-          </ul>
-          <div class="pt-2">
-            <Button size="sm" variant="default" href="https://calendly.com/zenzak">Kick off a sprint</Button>
-          </div>
-        </CardContent>
-      </Card>
-
-      <Card class="h-full">
-        <CardHeader>
-          <CardTitle class="text-xl">CAD Rebuild + DFM Pack</CardTitle>
-          <CardDescription class="text-base">Clean parametric CAD, ready for quotes.</CardDescription>
-        </CardHeader>
-        <CardContent class="text-base text-card-foreground space-y-2">
-          <ul class="list-disc pl-6 space-y-1">
-            <li>Parametric rebuild + assembly structure</li>
-            <li>DFM review and supplier handoff pack</li>
-            <li>Exploded views and key interface callouts</li>
-          </ul>
-          <div class="pt-2">
-            <Button size="sm" variant="default" href="https://calendly.com/zenzak">Scope your rebuild</Button>
-          </div>
-        </CardContent>
-      </Card>
-
-      <Card class="h-full">
-        <CardHeader>
-          <CardTitle class="text-xl">CMF + Launch Toolkit</CardTitle>
-          <CardDescription class="text-base">Materials dialed in, visuals that ship.</CardDescription>
-        </CardHeader>
-        <CardContent class="text-base text-card-foreground space-y-2">
-          <ul class="list-disc pl-6 space-y-1">
-            <li>CMF explorations + lighting kits</li>
-            <li>3 hero renders + 15s promo loop</li>
-            <li>Interactive 3D viewer embed + fallbacks</li>
-          </ul>
-          <div class="pt-2">
-            <Button size="sm" variant="default" href="https://calendly.com/zenzak">Plan your launch</Button>
-          </div>
-        </CardContent>
-      </Card>
-    </div>
-  </div>
-
-  <!-- Toolchain & Formats -->
-  <div class="space-y-6 rounded-xl bg-muted/30 p-6 md:p-8">
-    <h3 class="text-3xl font-semibold text-foreground">Toolchain & formats</h3>
-    <div class="grid gap-6 md:grid-cols-3">
-      <Card><CardContent class="p-4">
-        <strong>CAD</strong><br/>SolidWorks, Fusion 360, Onshape<br/>STEP, IGES
-      </CardContent></Card>
-      <Card><CardContent class="p-4">
-        <strong>Modeling & Texturing</strong><br/>Blender/SubD, Substance, retopo & UVs
-      </CardContent></Card>
-      <Card><CardContent class="p-4">
-        <strong>Rendering & Color</strong><br/>Cycles/Octane/Redshift, ACES/EXR pipeline
-      </CardContent></Card>
-      <Card><CardContent class="p-4">
-        <strong>Interactive</strong><br/>Three.js/Threlte, GLB/glTF (Draco/KTX2), WebXR
-      </CardContent></Card>
-      <Card><CardContent class="p-4">
-        <strong>Photography</strong><br/>Studio lighting, HDRI capture, photo‑CG composites
-      </CardContent></Card>
-      <Card><CardContent class="p-4">
-        <strong>Delivery</strong><br/>Native files + neutral, organized source, usage docs
-      </CardContent></Card>
-    </div>
-  </div>
-
-  <!-- Process -->
-  <div class="space-y-4">
-    <h3 class="text-3xl font-semibold text-foreground">How we’ll ship it</h3>
-    <div class="grid gap-6 md:grid-cols-5">
-      <Card><CardContent class="p-4"><strong>1. Discover</strong><br/>Goals, constraints, references, CAD intake.</CardContent></Card>
-      <Card><CardContent class="p-4"><strong>2. Explore</strong><br/>Concept models, proportion passes, CMF directions.</CardContent></Card>
-      <Card><CardContent class="p-4"><strong>3. Build</strong><br/>Parametric CAD, assemblies, and DFM review.</CardContent></Card>
-      <Card><CardContent class="p-4"><strong>4. Visualize</strong><br/>Lighting, materials, hero renders, animations.</CardContent></Card>
-      <Card><CardContent class="p-4"><strong>5. Launch</strong><br/>Interactive embeds, handoff packs, support.</CardContent></Card>
-    </div>
-  </div>
-
-  <!-- CTA -->
-  <Card class="bg-gradient-to-br from-slate-900 to-slate-800 text-white border-slate-700">
-    <CardContent class="p-8 md:p-10 space-y-4">
-      <p class="text-sm uppercase tracking-widest text-slate-300">From idea to accurate model to launch‑ready visuals</p>
-      <h3 class="text-3xl md:text-4xl font-semibold text-white">
-        Let’s design it, model it, and show it—properly.
-      </h3>
-      <p class="text-lg text-slate-200 max-w-3xl">
-        One partner for CAD, DFM, CMF, photography‑grade lighting, renders, animation, and interactive web delivery.
-      </p>
-      <div class="pt-2 flex gap-3">
-        <Button size="lg" variant="default" href="https://calendly.com/zenzak">Book a consult</Button>
-        <Button size="lg" variant="secondary" href="/work">See work</Button>
-      </div>
-    </CardContent>
-  </Card>
 </section>
 
 
-<div class="video-container">
-	{#if showVideo}
-		<!-- This iframe is only rendered AFTER the click. -->
-		<!-- The `&autoplay=1` parameter makes it play immediately. -->
-		<iframe
-			src="https://player.vimeo.com/video/1099649861?h=00ba6dd0ad&dnt=1&autoplay=1"
-			width="100%"
-			height="100%"
-			frameborder="0"
-			allow="fullscreen; picture-in-picture"
-			allowfullscreen
-			title="Zenzak Portfolio Video"
-		></iframe>
-	{:else}
-		<!-- This is the clickable thumbnail that loads instantly. -->
-		<button
-			class="video-thumbnail"
-			onclick={() => (showVideo = true)}
-			aria-label="Play portfolio video"
-		>
-			<!-- Your local thumbnail image -->
-			<img src="/thumb.jpg" alt="Portfolio showreel thumbnail" class="thumbnail-image" />
-			<!-- A simple SVG play button icon -->
-			<div class="play-button-icon">
-				<svg viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<circle cx="35" cy="35" r="35" fill="white" fill-opacity="0.2" />
-					<circle cx="35" cy="35" r="29" stroke="white" stroke-opacity="0.8" stroke-width="2" />
-					<path d="M49 35L28.75 47.1244L28.75 22.8756L49 35Z" fill="white" />
-				</svg>
-			</div>
-		</button>
-	{/if}
-</div>
 
 <style>
 	/* --- Video Player Styles --- */
