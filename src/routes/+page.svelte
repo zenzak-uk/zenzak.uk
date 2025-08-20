@@ -49,7 +49,7 @@
 		</main>
 
 		<footer>
-			<h5 class="text-gray-400 tracking-wide">BACKGROUND ANIMATION BY ZENZAK ANIMATION.</h5>
+			<h5 class="text-gray-400 text-sm text-center tracking-wide">BACKGROUND ANIMATION BY ZENZAK ANIMATION.</h5>
 		</footer>
 	</div>
 </div>
