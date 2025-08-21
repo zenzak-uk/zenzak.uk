@@ -76,14 +76,8 @@ I’m a photographer, engineer, and designer turned 3D artist. I build detailed,
 
 ---
 
-## Technology Stack
-
-*   **Framework:** [SvelteKit](https://kit.svelte.dev/)
-*   **Language:** TypeScript
-*   **Styling:** PostCSS / CSS3
-
 ## Get in Touch
 
 Interested in collaborating or have a project in mind?
 
-[**Book a consult**](https://www.zenzak-animation.com/#contact) <!-- Replace with your actual contact link -->
+[**Book a consult**](https://www.zenzak.uk/contact)
