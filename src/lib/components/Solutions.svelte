@@ -1,75 +1,134 @@
 <script>
-	// We use state to track if the video should be visible.
 	let showVideo = $state(false);
-	import '$lib/styles/content.css';
+	  import {
+    CardHeader,
+    CardTitle,
+    CardDescription,
+    CardContent
+  } from '$lib/components/ui/card';
+  import Card from '$lib/components/transparent/Card.svelte';
+  import { Tabs, TabsList, TabsTrigger, TabsContent } from '$lib/components/ui/tabs';
+  import { Dialog, DialogContent, DialogTrigger } from '$lib/components/ui/dialog';
+  import { AspectRatio } from '$lib/components/ui/aspect-ratio';
+  import Button from '$lib/components/Button.svelte';
 </script>
 
-<div class="content-wrapper">
-	<hr />
+<section class="mx-auto max-w-6xl px-4 py-16 space-y-16">
+  <!-- Hero / Positioning -->
+  <div class="text-center space-y-4">
+    <p class="text-sm font-xl tracking-widest text-primary uppercase">Solutions</p>
+    <h2 class="text-4xl md:text-5xl font-semibold text-foreground">Product Design, Modeling, and Launch‑Ready Visuals</h2>
+    <p class="text-lg text-muted-foreground max-w-3xl mx-auto">
+      I’m a photographer, engineer, and designer turned 3D artist. I build detailed, high-quality models with a focus on clean topology—then light, render, and animate them so they’re impossible to ignore.
+    </p>
+    <div class="flex items-center justify-center gap-2 text-sm text-muted-foreground">
+      <span class="px-2 py-1 rounded bg-muted/50">Photographer</span>
+      <span class="px-2 py-1 rounded bg-muted/50">Engineer</span>
+      <span class="px-2 py-1 rounded bg-muted/50">Designer</span>
+      <span class="px-2 py-1 rounded bg-muted/50">Animator</span>
+    </div>
+  </div>
 
-	<h3>WHERE I CREATE VALUE:</h3>
-
-	<ul>
-		<li>
-			<strong>For Startups: Secure Funding.</strong> Turn your pitch deck into an undeniable demonstration
-			of value with a product animation that proves your concept is brilliant and ready.
-		</li>
-		<li>
-			<strong>For Engineering Firms: Win Bids.</strong> Eliminate ambiguity and showcase the superiority
-			of your mechanisms with technically-perfect animations that leave no room for doubt.
-		</li>
-		<li>
-			<strong>For Marketing Teams: Drive Sales.</strong> I create scroll-stopping content that turns
-			dense features into must-have benefits, captivating your audience and boosting conversion.
-		</li>
-		<li>
-			<strong>For Product Designers: Impress Clients.</strong> Move beyond static blueprints. Present
-			your work with photorealistic renders that showcase every detail and win immediate client approval.
-		</li>
-	</ul>
-
-	<div class="video-container">
-		{#if showVideo}
-			<!-- This iframe is only rendered AFTER the click. -->
-			<!-- The `&autoplay=1` parameter makes it play immediately. -->
-			<iframe
-				src="https://player.vimeo.com/video/1099649861?h=00ba6dd0ad&dnt=1&autoplay=1"
-				width="100%"
-				height="100%"
-				frameborder="0"
-				allow="fullscreen; picture-in-picture"
-				allowfullscreen
-				title="Zenzak Portfolio Video"
-			></iframe>
-		{:else}
-			<!-- This is the clickable thumbnail that loads instantly. -->
-			<button
-				class="video-thumbnail"
-				onclick={() => (showVideo = true)}
-				aria-label="Play portfolio video"
-			>
-				<!-- Your local thumbnail image -->
-				<img src="/thumb.jpg" alt="Portfolio showreel thumbnail" class="thumbnail-image" />
-				<!-- A simple SVG play button icon -->
-				<div class="play-button-icon">
-					<svg viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<circle cx="35" cy="35" r="35" fill="white" fill-opacity="0.2" />
-						<circle cx="35" cy="35" r="29" stroke="white" stroke-opacity="0.8" stroke-width="2" />
-						<path d="M49 35L28.75 47.1244L28.75 22.8756L49 35Z" fill="white" />
-					</svg>
-				</div>
-			</button>
-		{/if}
-	</div>
-
-	<h3>Engineering-Grade 3D Animation</h3>
-	<h4>
-		Your vision is technically brilliant. But can your investors, clients, and customers truly see
-		it?
-	</h4>
-	<strong>I bridge the gap.</strong> As a mechanical engineer, I speak your language. As a 3D animator,
-	I translate it for the world.
+<div class="video-container">
+	{#if showVideo}
+		<!-- This iframe is only rendered AFTER the click. -->
+		<!-- The `&autoplay=1` parameter makes it play immediately. -->
+		<iframe
+			src="https://player.vimeo.com/video/1099649861?h=00ba6dd0ad&dnt=1&autoplay=1"
+			width="100%"
+			height="100%"
+			frameborder="0"
+			allow="fullscreen; picture-in-picture"
+			allowfullscreen
+			title="Zenzak Portfolio Video"
+		></iframe>
+	{:else}
+		<!-- This is the clickable thumbnail that loads instantly. -->
+		<button
+			class="video-thumbnail"
+			onclick={() => (showVideo = true)}
+			aria-label="Play portfolio video"
+		>
+			<!-- Your local thumbnail image -->
+			<img src="/thumb.jpg" alt="Portfolio showreel thumbnail" class="thumbnail-image" />
+			<!-- A simple SVG play button icon -->
+			<div class="play-button-icon">
+				<svg viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<circle cx="35" cy="35" r="35" fill="white" fill-opacity="0.2" />
+					<circle cx="35" cy="35" r="29" stroke="white" stroke-opacity="0.8" stroke-width="2" />
+					<path d="M49 35L28.75 47.1244L28.75 22.8756L49 35Z" fill="white" />
+				</svg>
+			</div>
+		</button>
+	{/if}
 </div>
+
+  <!-- Outcomes Grid (Product Design & Modeling first) -->
+  <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <Card class="h-full">
+      <CardHeader>
+        <CardTitle class="text-xl">Concept Modeling & Sculpting</CardTitle>
+        <CardDescription class="text-base">From sketch to clean 3D geometry.</CardDescription>
+      </CardHeader>
+      <CardContent class="text-base text-card-foreground">
+        Rapid ideation models, hard-surface and organic sculpting, and Subdivision Surface modeling to solve proportions and ergonomics for confident reviews.
+      </CardContent>
+    </Card>
+
+    <Card class="h-full">
+      <CardHeader>
+        <CardTitle class="text-xl">High-Fidelity Surfacing & Texturing</CardTitle>
+        <CardDescription class="text-base">Models ready for their close-ups.</CardDescription>
+      </CardHeader>
+      <CardContent class="text-base text-card-foreground">
+        Clean polygonal modeling, detailed sculpting, and meticulous UV unwrapping for flawless texture application.
+      </CardContent>
+    </Card>
+
+    <Card class="h-full">
+      <CardHeader>
+        <CardTitle class="text-xl">Retopology & UV Mapping</CardTitle>
+        <CardDescription class="text-base">Optimized models for any application.</CardDescription>
+      </CardHeader>
+      <CardContent class="text-base text-card-foreground">
+        Efficient retopology for clean, animatable geometry and expert UV mapping for distortion-free texturing.
+      </CardContent>
+    </Card>
+
+    <Card class="h-full">
+      <CardHeader>
+        <CardTitle class="text-xl">CMF & Lighting Studies</CardTitle>
+        <CardDescription class="text-base">Get the material story right.</CardDescription>
+      </CardHeader>
+      <CardContent class="text-base text-card-foreground">
+        Realistic materials, texture authoring, and studio/lifestyle lighting from a photographer’s perspective.
+      </CardContent>
+    </Card>
+
+    <Card class="h-full">
+      <CardHeader>
+        <CardTitle class="text-xl">Hero Renders & Photo Composites</CardTitle>
+        <CardDescription class="text-base">Centerpiece imagery that sells.</CardDescription>
+      </CardHeader>
+      <CardContent class="text-base text-card-foreground">
+        8K hero shots, transparent variants for web and print, and photo-real composites that blend real-world photography with CG precision.
+      </CardContent>
+    </Card>
+
+    <Card class="h-full">
+      <CardHeader>
+        <CardTitle class="text-xl">Explainers & Interactive 3D</CardTitle>
+        <CardDescription class="text-base">Clarity for reviews, sales, and documentation.</CardDescription>
+      </CardHeader>
+      <CardContent class="text-base text-card-foreground">
+        Exploded views, mechanism breakdowns, and embedded 3D/AR viewers for web and trade shows.
+      </CardContent>
+    </Card>
+  </div>
+
+</section>
+
+
 
 <style>
 	/* --- Video Player Styles --- */

@@ -1,6 +1,8 @@
 <script>
 	import { onMount } from 'svelte';
 	import Button from '$lib/components/Button.svelte';
+	import { base } from '$app/paths';
+	import Header from '$lib/components/Header.svelte';
 
 	let contentVisible = $state(false);
 
@@ -12,37 +14,44 @@
 	});
 </script>
 
-<!-- A new wrapper for robust centering and layout -->
-<div class="page-container">
-	<main class="home-content" class:visible={contentVisible}>
-		<div class="title-container hero-element">
-			<h1 class="title">ZENZAK ANIMATION</h1>
-		</div>
+<div class="app-container" style="--poster-url: url({base}/videos/poster.avif)">
+	<div class="background-video-container">
+		<video autoplay muted loop playsinline poster="{base}/videos/poster.avif">
+			<source src="{base}/videos/bg.webm" type="video/webm" />
+			<source src="{base}/videos/bg.mp4" type="video/mp4" />
+			Your browser does not support the video tag.
+		</video>
+		<div class="video-overlay"></div>
+	</div>
 
-		<div class="subtitle-panel-wrapper hero-element">
-			<p class="subtitle">
-				MAKING COMPLEX IDEAS CLEAR, PERSUASIVE, AND READY FOR MARKET.
-			</p>
-		</div>
+	<Header></Header>
+	<div class="page-container">
+		<main class="home-content" class:visible={contentVisible}>
+			<div class="title-container hero-element">
+				<h1 class="title">ZENZAK ANIMATION</h1>
+			</div>
 
-		<div class="hero-element quote-button-wrapper">
-			<Button variant="fill" size="large" href="/contact">
-				Get a Project Quote
-			</Button>
-		</div>
+			<div class="subtitle-panel-wrapper hero-element">
+				<p class="subtitle">MAKING COMPLEX IDEAS CLEAR, PERSUASIVE, AND READY FOR MARKET.</p>
+			</div>
 
-		<nav class="main-nav">
-			<Button href="/services">SERVICES</Button>
-			<Button href="/solutions">3D SOLUTIONS</Button>
-			<Button href="/faq">FAQS</Button>
-			<Button href="/blog">BLOG</Button>
-			<Button href="/contact">CONTACT</Button>
-		</nav>
-	</main>
+			<div class="hero-element quote-button-wrapper">
+				<Button variant="fill" size="large" href="/contact">Get a Project Quote</Button>
+			</div>
 
-	<footer class="footer-credit" class:visible={contentVisible}>
-		BACKGROUND ANIMATION BY ZENZAK ANIMATION.
-	</footer>
+			<nav class="main-nav">
+				<Button href="/services">SERVICES</Button>
+				<Button href="/solutions">3D SOLUTIONS</Button>
+				<Button href="/faq">FAQS</Button>
+				<Button href="/blog">BLOG</Button>
+				<Button href="/contact">CONTACT</Button>
+			</nav>
+		</main>
+
+		<footer>
+			<h5 class="text-gray-400 text-sm text-center tracking-wide">BACKGROUND ANIMATION BY ZENZAK ANIMATION.</h5>
+		</footer>
+	</div>
 </div>
 
 <style>
@@ -68,42 +77,6 @@
 		width: 100%;
 		max-width: 1200px;
 		margin-top: 2.5rem;
-	}
-
-	/* --- ANIMATION STYLES (Largely Unchanged) --- */
-	.hero-element,
-	.main-nav,
-	.footer-credit {
-		opacity: 0;
-		transform: translateY(20px);
-		transition:
-			opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1),
-			transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-	}
-	.home-content.visible .hero-element,
-	.home-content.visible .main-nav,
-	.footer-credit.visible {
-		opacity: 1;
-		transform: translateY(0);
-	}
-	.home-content.visible .hero-element:nth-child(1) {
-		transition-delay: 0.1s;
-	}
-	.home-content.visible .hero-element:nth-child(2) {
-		transition-delay: 0.2s;
-	}
-	.home-content.visible .hero-element:nth-child(3) {
-		transition-delay: 0.3s;
-	}
-	.home-content.visible .hero-element:nth-child(4) {
-		transition-delay: 0.4s;
-	}
-	.home-content.visible .main-nav {
-		transition-delay: 0.6s;
-	}
-	.footer-credit.visible {
-		transition-delay: 0.7s;
-		opacity: 0.5;
 	}
 
 	.title-container {
@@ -148,7 +121,7 @@
 		letter-spacing: 0.05em;
 	}
 	.subtitle-panel-wrapper {
-		background: rgba(227, 227, 240, 0.0);
+		background: rgba(227, 227, 240, 0);
 		-webkit-backdrop-filter: blur(5px);
 		backdrop-filter: blur(5px);
 		border: 1px solid rgba(255, 255, 255, 0.1);
@@ -179,9 +152,47 @@
 	}
 
 	/* --- MODIFIED: Footer Credit --- */
-	.footer-credit {
-		font-size: 0.8rem;
-		letter-spacing: 0.1em;
-		margin-bottom: 0.25rem;
+
+
+	.app-container {
+		position: relative;
+		min-height: 100dvh;
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		overflow: hidden;
+	}
+
+	.background-video-container {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+	}
+
+	video {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.video-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.8) 70%);
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		video {
+			display: none;
+		}
+		.background-video-container {
+			background: var(--poster-url);
+		}
 	}
 </style>

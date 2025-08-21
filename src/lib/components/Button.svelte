@@ -10,64 +10,45 @@
 
 {#if href}
 	<!-- If an href is passed, render an anchor tag -->
-	<a {href} {...rest} class="btn" class:fill={variant === 'fill'}>
+	<a
+		{href}
+		{...rest}
+		class="
+            inline-flex items-center justify-center rounded-full
+            font-medium uppercase tracking-wider
+            transition-all duration-200 ease-in-out
+            backdrop-blur-lg
+            {size === 'normal' ? 'px-6 py-3 text-sm' : ''}
+            {size === 'large' ? 'px-8 py-4 text-base' : ''}
+            {variant === 'outline'
+			? 'border border-gray-400 bg-white/10 text-gray-300 hover:border-gray-200 hover:bg-white/20 hover:text-white'
+			: ''}
+            {variant === 'fill'
+			? 'border border-gray-200 bg-gray-200 text-gray-800 hover:bg-white hover:border-white'
+			: ''}
+        "
+	>
 		{@render children()}
 	</a>
 {:else}
 	<!-- Otherwise, render a button -->
-	<button {...rest} class="btn" class:fill={variant === 'fill'}>
+	<button
+		{...rest}
+		class="
+            inline-flex items-center justify-center rounded-full
+            font-medium uppercase tracking-wider
+            transition-all duration-200 ease-in-out
+            backdrop-blur-lg
+            {size === 'normal' ? 'px-6 py-3 text-sm' : ''}
+            {size === 'large' ? 'px-8 py-4 text-base' : ''}
+            {variant === 'outline'
+			? 'border border-gray-400 bg-white/10 text-gray-300 hover:border-gray-200 hover:bg-white/20 hover:text-white'
+			: ''}
+            {variant === 'fill'
+			? 'border border-gray-200 bg-gray-200 text-gray-800 hover:bg-white hover:border-white'
+			: ''}
+        "
+	>
 		{@render children()}
 	</button>
 {/if}
-
-<style>
-	.btn {
-		/* Shared base styles */
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		border-radius: 30px;
-		font-family: inherit;
-		text-transform: uppercase;
-		text-decoration: none;
-		cursor: pointer;
-		transition: all 0.2s ease;
-		font-weight: 500;
-		letter-spacing: 0.1em;
-		flex-shrink: 0; /* Prevent buttons from shrinking in flex layouts */
-
-		/* --- SIZE: Normal (default) --- */
-		padding: 0.7rem 1.5rem;
-		font-size: 0.9rem;
-
-		/* --- VARIANT: Outline (default) --- */
-		background-color: transparent;
-		color: #ccc;
-		border: 1px solid #666;
-	}
-
-	.btn:hover {
-		color: #fff;
-		border-color: #888;
-		background-color: rgba(255, 255, 255, 0.1);
-	}
-
-	/* --- VARIANT: Fill --- */
-	.btn.fill {
-		background-color: #f0f0f0;
-		color: #121212;
-		border-color: #f0f0f0;
-	}
-
-	.btn.fill:hover {
-		background-color: #fff;
-		border-color: #fff;
-		color: #121212;
-	}
-
-	/* --- SIZE: Large --- */
-	.btn.large {
-		padding: 1rem 2rem; /* More padding */
-		font-size: 1rem; /* Larger font */
-	}
-</style>
