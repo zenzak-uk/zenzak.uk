@@ -72,9 +72,9 @@
     <p class="mt-12 text-center text-sm text-gray-600 dark:text-gray-400">
         Or email me directly at
         <a
-            href="mailto:zenzak@tuta.io"
+            href="mailto:hello@zenzak.uk"
             class="font-medium text-indigo-600 hover:text-indigo-500 dark:text-indigo-400 dark:hover:text-indigo-300 underline decoration-indigo-400/40 hover:decoration-indigo-500 transition"
-            >zenzak@tuta.io</a
+            >hello@zenzak.uk</a
         >
     </p>
 </div>
