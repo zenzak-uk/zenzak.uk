@@ -54,6 +54,32 @@
 	</div>
 </div>
 
+<svelte:head>
+	<title>Zenzak Animation | Engineering-Grade 3D Animation</title>
+	<meta
+		name="description"
+		content="We translate complex engineering ideas into clear, persuasive, and high-impact 3D animations and product visualizations that help you secure funding, win bids, and drive sales."
+	/>
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Zenzak Animation | Engineering-Grade 3D Animation" />
+	<meta
+		property="og:description"
+		content="High-impact 3D animations and product visualizations that make complex technical ideas clear and persuasive."
+	/>
+	<meta property="og:image" content="https://www.zenzak.uk/social-preview.png" />
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image" />
+	<meta property="twitter:title" content="Zenzak Animation | Engineering-Grade 3D Animation" />
+	<meta
+		property="twitter:description"
+		content="High-impact 3D animations and product visualizations that make complex technical ideas clear and persuasive."
+	/>
+	<meta property="twitter:image" content="https://www.zenzak.uk/social-preview.png" />
+</svelte:head>
+
 <style>
 	/* --- NEW: Page Layout Container --- */
 	.page-container {
