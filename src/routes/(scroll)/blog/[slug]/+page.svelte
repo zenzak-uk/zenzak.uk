@@ -135,15 +135,4 @@
 		color: #000;
 		border-color: #fff;
 	}
-
-    /* Ensure the page H1 matches site headings and wins over global rules */
-    .post-content .content-body :global(.page-title),
-    .post-content .content-body :global(h1.page-title) {
-        color: #f0f0f0;
-        font-weight: 500;
-        line-height: 1.3;
-        letter-spacing: 0.05em;
-        margin-top: 0;
-        margin-bottom: 0.5rem;
-    }
 </style>

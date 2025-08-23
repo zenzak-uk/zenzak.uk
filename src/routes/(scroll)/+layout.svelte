@@ -1,34 +1,9 @@
 <script>
 	import { base } from '$app/paths';
-	import Header from '$lib/components/Header.svelte'; // 1. Import the new Header
+	import Header from '$lib/components/Header.svelte';
 	let { children } = $props();
 </script>
 
-<svelte:head>
-	<title>Zenzak Animation | Engineering-Grade 3D Animation</title>
-	<meta
-		name="description"
-		content="We translate complex engineering ideas into clear, persuasive, and high-impact 3D animations and product visualizations that help you secure funding, win bids, and drive sales."
-	/>
-
-	<!-- Open Graph / Facebook -->
-	<meta property="og:type" content="website" />
-	<meta property="og:title" content="Zenzak Animation | Engineering-Grade 3D Animation" />
-	<meta
-		property="og:description"
-		content="High-impact 3D animations and product visualizations that make complex technical ideas clear and persuasive."
-	/>
-	<meta property="og:image" content="https://www.zenzak.uk/social-preview.png" />
-
-	<!-- Twitter -->
-	<meta property="twitter:card" content="summary_large_image" />
-	<meta property="twitter:title" content="Zenzak Animation | Engineering-Grade 3D Animation" />
-	<meta
-		property="twitter:description"
-		content="High-impact 3D animations and product visualizations that make complex technical ideas clear and persuasive."
-	/>
-	<meta property="twitter:image" content="https://www.zenzak.uk/social-preview.png" />
-</svelte:head>
 
 <Header></Header>
 
@@ -89,40 +64,6 @@
 		margin: 0;
 		padding: 0;
 		width: 100%;
-	}
-
-	.glass-card {
-		width: min(92%, 900px);
-		margin: 2.5rem auto;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		padding: clamp(1rem, 3vw, 2.25rem);
-		border-radius: 14px;
-		background: rgba(255, 255, 255, 0.04);
-		backdrop-filter: blur(10px) saturate(120%);
-		-webkit-backdrop-filter: blur(10px) saturate(120%);
-		border: 1px solid rgba(255, 255, 255, 0.06);
-		box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
-		text-align: center;
-	}
-
-	.glass-inner {
-		width: 100%;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		gap: 0.5rem;
-	}
-
-	@media (prefers-reduced-transparency: reduce) {
-		.glass-card {
-			background: rgba(0, 0, 0, 0.5);
-			backdrop-filter: none;
-			-webkit-backdrop-filter: none;
-			box-shadow: none;
-		}
 	}
 
 	@media (prefers-reduced-motion: reduce) {

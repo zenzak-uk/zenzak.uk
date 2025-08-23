@@ -1,9 +1,16 @@
 <!-- src/routes/services/+page.svelte -->
 <script>
-	// You can import any child components this page might need
-	// For example, if Services.svelte was complex and had its own components
 	import Services from '$lib/components/Services.svelte';
+	import SEO from '$lib/components/SEO/index.svelte';
+	const seoProps = {
+		title: '3D Animation for Engineering, Marketing & Startups | Zenzak Animation',
+		metadescription: 'Zenzak Animation offers full-cycle 3D services, from product visualization and technical explainers to UI/UX demos. We help startups, engineers, and marketers bring their vision to market.'
+	}
+
 </script>
+
+<SEO {...seoProps} />
+
 
 <div class="page-content-wrapper">
 		<Services />

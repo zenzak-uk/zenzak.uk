@@ -2,27 +2,22 @@
 	import hash from 'object-hash';
 
 	let {
-		article = false,
 		author,
-		breadcrumbs,
-		datePublished,
-		entity,
-		lastUpdated,
-		featuredImage,
-		metadescription,
-		siteLanguage,
+		siteUrl,
 		siteTitle,
 		siteTitleAlt,
-		siteUrl,
-		title,
+		entity,
+		metadescription,
 		url,
-		facebookPage,
+		title,
+		featuredImage,
+		datePublished,
+		lastUpdated,
+		siteLanguage,
+		twitterUsername,
 		githubPage,
 		linkedinProfile,
-		telegramUsername,
-		tiktokUsername,
-		twitterUsername,
-		entityMeta = null,
+		facebookPage,
 	} = $props();
 
 	/**
@@ -31,78 +26,94 @@
 
 	const entityHash = hash({ author }, { algorithm: 'md5' });
 
-	const schemaOrgEntity =
-		entityMeta !== null
-			? {
-					'@type': ['Person', 'Organization'],
-					'@id': `${siteUrl}/#/schema/person/${entityHash}`,
-					name: author,
-					image: {
-						'@type': 'ImageObject',
-						'@id': `${siteUrl}/#personlogo`,
-						inLanguage: siteLanguage,
-						url: entityMeta.url,
-						width: entityMeta.faviconWidth,
-						height: entityMeta.faviconHeight,
-						caption: author,
-					},
-					logo: {
-						'@id': `${siteUrl}/#personlogo`,
-					},
-					sameAs: [
-						`https://twitter.com/${twitterUsername}`,
-						`https://github.com/${githubPage}`,
-						`https://www.tiktok.com/${tiktokUsername}`,
-						`https://t.me/${telegramUsername}`,
-						`https://uk.linkedin.com/in/${linkedinProfile}`,
-						facebookPage,
-					],
-				}
-			: null;
+	const schemaOrgOrganization = {
+		'@type': 'ProfessionalService',
+		'@id': `${siteUrl}/#organization`,
+		name: 'Zenzak Animation',
+		url: siteUrl,
+		logo: `${siteUrl}/favicon.ico`,
+		image: featuredImage.url,
+		description: metadescription,
+		sameAs: [
+			`https://github.com/${githubPage}`,
+			`https://uk.linkedin.com/company/${linkedinProfile}`,
+			'https://vimeo.com/$(vimeoProfile)',
+		],
+		provider: {
+			'@type': 'Person',
+			name: author,
+		},
+	};
 
-	const schemaOrgWebsite = {
+	// Detailed Service Schemas
+	const schemaOrgServices = {
+		'@type': 'ItemList',
+		itemListElement: [
+			{
+				'@type': 'ListItem',
+				position: 1,
+				item: {
+					'@type': 'Service',
+					name: 'Product Visualization & Renders',
+					description: 'The definitive hero shot for decks, campaigns, and e-commerce. Photorealistic images that demand attention and drive interest.',
+					serviceType: '3D Rendering Service',
+					audience: {
+						'@type': 'Audience',
+						audienceType: ['Marketing Teams', 'Product Designers'],
+					},
+					provider: {
+						'@id': `${siteUrl}/#organization`,
+					},
+				},
+			},
+			{
+				'@type': 'ListItem',
+				position: 2,
+				item: {
+					'@type': 'Service',
+					name: 'Technical & Explainer Animations',
+					description: 'Make the complex crystal-clear. Turn intricate mechanics and internal processes into intuitive visuals that educate and persuade.',
+					serviceType: '3D Animation Service',
+					audience: {
+						'@type': 'Audience',
+						audienceType: ['Engineering Firms', 'Startups'],
+					},
+					provider: {
+						'@id': `${siteUrl}/#organization`,
+					},
+				},
+			},
+			{
+				'@type': 'ListItem',
+				position: 3,
+				item: {
+					'@type': 'Service',
+					name: 'UI/UX & App Demonstrations',
+					description: 'Create & showcase a flawless user experience. Fluid interface animations for promos and tutorials that drive adoption.',
+					serviceType: 'UI/UX Design Service',
+					audience: {
+						'@type': 'Audience',
+						audienceType: ['Startups', 'Marketing Teams'],
+					},
+					provider: {
+						'@id': `${siteUrl}/#organization`,
+					},
+				},
+			},
+            // Add more list items for other services like 'Concept Modeling & Sculpting', etc.
+		],
+	};
+
+	const schemaOrgWebSite = {
 		'@type': 'WebSite',
 		'@id': `${siteUrl}/#website`,
 		url: siteUrl,
 		name: siteTitle,
 		description: siteTitleAlt,
 		publisher: {
-			'@id': `${siteUrl}/#/schema/person/${entityHash}`,
+			'@id': `${siteUrl}/#organization`,
 		},
-		potentialAction: [
-			{
-				'@type': 'SearchAction',
-				target: `${siteUrl}/?s={search_term_string}`,
-				'query-input': 'required name=search_term_string',
-			},
-		],
 		inLanguage: siteLanguage,
-	};
-
-	const schemaOrgImageObject = {
-		'@type': 'ImageObject',
-		'@id': `${url}#primaryimage`,
-		inLanguage: siteLanguage,
-		url: featuredImage.url,
-		contentUrl: featuredImage.url,
-		width: featuredImage.width,
-		height: featuredImage.height,
-		caption: featuredImage.caption,
-	};
-
-	const schemaOrgBreadcrumbList = {
-		'@type': 'BreadcrumbList',
-		'@id': `${url}#breadcrumb`,
-		itemListElement: breadcrumbs.map((element, index) => ({
-			'@type': 'ListItem',
-			position: index + 1,
-			item: {
-				'@type': 'WebPage',
-				'@id': `${siteUrl}/${element.slug}`,
-				url: `${siteUrl}/${element.slug}`,
-				name: element.name,
-			},
-		})),
 	};
 
 	const schemaOrgWebPage = {
@@ -118,86 +129,30 @@
 		},
 		datePublished,
 		dateModified: lastUpdated,
-		author: {
-			'@id': `${siteUrl}/#/schema/person/${entityHash}`,
-		},
 		description: metadescription,
-		breadcrumb: {
-			'@id': `${url}#breadcrumb`,
-		},
 		inLanguage: siteLanguage,
-		potentialAction: [
-			{
-				'@type': 'ReadAction',
-				target: [url],
-			},
-		],
 	};
 
-	let schemaOrgArticle = null;
-	if (article) {
-		schemaOrgArticle = {
-			'@type': 'Article',
-			'@id': `${url}#article`,
-			isPartOf: {
-				'@id': `${url}#webpage`,
-			},
-			author: {
-				'@id': `${siteUrl}/#/schema/person/${entityHash}`,
-			},
-			headline: title,
-			datePublished,
-			dateModified: lastUpdated,
-			mainEntityOfPage: {
-				'@id': `${url}#webpage`,
-			},
-			publisher: {
-				'@id': `${siteUrl}/#/schema/person/${entityHash}`,
-			},
-			image: {
-				'@id': `${url}#primaryimage`,
-			},
-			articleSection: ['blog'],
-			inLanguage: siteLanguage,
-		};
-	}
-
-	const schemaOrgPublisher = {
-		'@type': ['Person', 'Organization'],
-		'@id': `${siteUrl}/#/schema/person/${entityHash}`,
-		name: entity,
-		image: {
-			'@type': 'ImageObject',
-			'@id': `${siteUrl}/#personlogo`,
-			inLanguage: siteLanguage,
-			url: `${siteUrl}/assets/rodneylab-logo.png`,
-			contentUrl: `${siteUrl}/assets/rodneylab-logo.png`,
-			width: 512,
-			height: 512,
-			caption: entity,
-		},
-		logo: {
-			'@id': `${siteUrl}/#personlogo`,
-		},
-		sameAs: [
-			`https://twitter.com/${twitterUsername}`,
-			`https://github.com/${githubPage}`,
-			`https://www.tiktok.com/${tiktokUsername}`,
-			`https://t.me/${telegramUsername}`,
-			`https://uk.linkedin.com/in/${linkedinProfile}`,
-			facebookPage,
-		],
+    const schemaOrgImageObject = {
+		'@type': 'ImageObject',
+		'@id': `${url}#primaryimage`,
+		inLanguage: siteLanguage,
+		url: featuredImage.url,
+		contentUrl: featuredImage.url,
+		width: featuredImage.width,
+		height: featuredImage.height,
+		caption: featuredImage.caption,
 	};
+
 
 	const schemaOrgArray = [
-		schemaOrgEntity,
-		schemaOrgWebsite,
-		schemaOrgImageObject,
+		schemaOrgOrganization,
+		schemaOrgServices,
+		schemaOrgWebSite,
 		schemaOrgWebPage,
-		schemaOrgBreadcrumbList,
-		...(article ? [schemaOrgArticle] : []),
-		schemaOrgPublisher,
+        schemaOrgImageObject,
 	];
+
 	const schemaOrgObject = {
 		'@context': 'https://schema.org',
 		'@graph': schemaOrgArray,
@@ -211,6 +166,5 @@
 </script>
 
 <svelte:head>
-	<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 	{@html jsonLdScript}
 </svelte:head>

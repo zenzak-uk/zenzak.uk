@@ -10,13 +10,9 @@ const website = {
 	backgroundColor: '#040b14ff',
 	themeColor: '#234880ff',
 	contactEmail: 'hello@zenzak.uk',
-	githubPage: 'https://github.com/zenzak-uk',
-	linkedinProfile: 'https://www.linkedin.com/company/zenzak/',
-	telegramUsername: PUBLIC_TELEGRAM_USERNAME,
-	tiktokUsername: PUBLIC_TIKTOK_USERNAME,
-	twitterUsername: PUBLIC_TWITTER_USERNAME,
-	twitterUserId: PUBLIC_TWITTER_USER_ID,
-	wireUsername: PUBLIC_WIRE_USERNAME,
+	githubPage: 'zenzak-uk',
+	linkedinProfile: 'zenzak',
+	vimeoProfile: 'zenzak',
 };
 
 export { website as default };
