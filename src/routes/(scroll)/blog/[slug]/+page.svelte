@@ -3,9 +3,9 @@
 	const PostContent = data.content;
 </script>
 
-<article class="prose prose-zinc dark:prose-invert lg:prose-lg mx-auto px-4">
-	<p class="post-meta">
-		Published on {new Date(data.meta.date).toLocaleDateString('en-US', {
+<article class="prose prose-zinc dark:prose-invert lg:prose-lg mx-auto px-2">
+	<p class="mt-24">
+		Published on {new Date(data.meta.date).toLocaleDateString('en-GB', {
 			year: 'numeric',
 			month: 'long',
 			day: 'numeric'
@@ -13,7 +13,7 @@
 	</p>
 
 	<div class="content-body">
-			<h1 class="page-title">{data.meta.title}</h1>
+			<h1>{data.meta.title}</h1>
  
          <PostContent />
      </div>
@@ -22,13 +22,8 @@
 </article>
 
 <style>
-	.post-meta {
-		color: #aaa;
-		margin-bottom: 3rem;
-	}
 	.content-body {
-		line-height: 1.8;
-		font-size: 1.1rem;
+		line-height: 1.3;
 		color: #ccc;
 	}
 
