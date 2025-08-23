@@ -3,8 +3,8 @@
 	const PostContent = data.content;
 </script>
 
-<article class="prose prose-zinc dark:prose-invert lg:prose-lg mx-auto px-2">
-	<p class="mt-24">
+<article class="prose prose-zinc dark:prose-invert lg:prose-lg px-2 pt-24 lg:pt-28">
+	<p>
 		Published on {new Date(data.meta.date).toLocaleDateString('en-GB', {
 			year: 'numeric',
 			month: 'long',
@@ -12,7 +12,7 @@
 		})}
 	</p>
 
-	<div class="content-body">
+	<div>
 			<h1>{data.meta.title}</h1>
  
          <PostContent />
