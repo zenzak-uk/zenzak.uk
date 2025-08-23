@@ -4,15 +4,15 @@
 	import { base } from '$app/paths';
 	import Header from '$lib/components/Header.svelte';
 
-	let contentVisible = $state(false);
+	import SEO from '$lib/components/SEO/index.svelte';
+	const seoProps = {
+		title: 'Engineering-Grade 3D Animation & Product Visualization',
+		metadescription: 'Zenzak Animation provides engineering-grade 3D animation, product visualization, and design services to bring your vision to market. Secure funding, win bids, and drive sales with stunning visuals.'
+	}
 
-	onMount(() => {
-		const timer = setTimeout(() => {
-			contentVisible = true;
-		}, 100);
-		return () => clearTimeout(timer);
-	});
 </script>
+
+<SEO {...seoProps} />
 
 <div class="app-container" style="--poster-url: url({base}/videos/poster.avif)">
 	<div class="background-video-container">
@@ -26,13 +26,13 @@
 
 	<Header></Header>
 	<div class="page-container">
-		<main class="home-content" class:visible={contentVisible}>
+		<main class="home-content">
 			<div class="title-container hero-element">
 				<h1 class="title">ZENZAK ANIMATION</h1>
 			</div>
 
 			<div class="subtitle-panel-wrapper hero-element">
-				<p class="subtitle">MAKING COMPLEX IDEAS CLEAR, PERSUASIVE, AND READY FOR MARKET.</p>
+				<h2 class="subtitle">MAKING COMPLEX IDEAS CLEAR, PERSUASIVE, AND READY FOR MARKET.</h2>
 			</div>
 
 			<div class="hero-element quote-button-wrapper">
@@ -49,7 +49,9 @@
 		</main>
 
 		<footer>
-			<h5 class="text-gray-400 text-sm text-center tracking-wide">BACKGROUND ANIMATION BY ZENZAK ANIMATION.</h5>
+			<h5 class="text-gray-400 text-sm text-center tracking-wide">
+				BACKGROUND ANIMATION BY ZENZAK ANIMATION.
+			</h5>
 		</footer>
 	</div>
 </div>
@@ -81,24 +83,21 @@
 </svelte:head>
 
 <style>
-	/* --- NEW: Page Layout Container --- */
 	.page-container {
 		display: flex;
 		flex-direction: column;
-		align-items: center; /* This horizontally centers the main content and footer */
-		min-height: 100dvh; /* Use dynamic viewport height for best mobile support */
-		/* UPDATED: Using clamp for responsive horizontal and vertical padding */
+		align-items: center; 
+		min-height: 100dvh; 
 		padding: clamp(1rem, 3vh, 2rem) clamp(1rem, 4vw, 2rem);
-		box-sizing: border-box; /* Ensures padding is included in the element's total width and height */
+		box-sizing: border-box; 
 	}
 
-	/* --- MODIFIED: Home Content --- */
 	.home-content {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		justify-content: center; /* This vertically centers your hero content */
-		flex-grow: 1; /* This is key: it makes the main area expand to push the footer down */
+		justify-content: center;
+		flex-grow: 1;
 		text-align: center;
 		width: 100%;
 		max-width: 1200px;
@@ -107,7 +106,6 @@
 
 	.title-container {
 		position: relative;
-		/* UPDATED: Proportional vertical padding and margin */
 		padding: clamp(1rem, 2.5vh, 1.5rem) 0;
 		margin: clamp(0.25rem, 1vh, 0.5rem) 0;
 		width: 100%;
@@ -153,7 +151,6 @@
 		border: 1px solid rgba(255, 255, 255, 0.1);
 		border-radius: 18px;
 		box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-		/* UPDATED: Proportional vertical padding and margin */
 		padding: clamp(0.5rem, 2vh, 1rem) clamp(1rem, 5vw, 2rem);
 		margin: clamp(1.5rem, 4vh, 2rem) 0 clamp(2rem, 5vh, 3rem) 0;
 		max-width: 500px;
@@ -161,11 +158,9 @@
 	}
 
 	.quote-button-wrapper {
-		/* UPDATED: Proportional bottom margin */
 		margin-bottom: clamp(2rem, 6vh, 4rem);
 	}
 
-	/* --- MODERN NAVIGATION STYLES --- */
 	.main-nav {
 		display: flex;
 		justify-content: center;
@@ -173,12 +168,8 @@
 		gap: 0.5rem;
 		width: 100%;
 		max-width: 700px;
-		/* UPDATED: Proportional bottom margin */
 		margin-bottom: clamp(2rem, 5vh, 3rem);
 	}
-
-	/* --- MODIFIED: Footer Credit --- */
-
 
 	.app-container {
 		position: relative;

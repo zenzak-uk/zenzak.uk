@@ -4,7 +4,6 @@
 	import twitterImageSrc from '$lib/assets/featured.avif';
 	import featuredImageSrc from '$lib/assets/featured.avif';
 	import website from '$lib/config/website';
-	import { VERTICAL_LINE_ENTITY } from '$lib/constants/entities';
 	import OpenGraph from './OpenGraph.svelte';
 	import SchemaOrg from './SchemaOrg.svelte';
 	import Twitter from './Twitter.svelte';
@@ -24,44 +23,44 @@
 		telegramUsername,
 		tiktokUsername,
 		twitterUsername,
+		vimeoProfile,
 	} = website;
 
-	const defaultAlt =
-		'Zenzak Animation';
+	const defaultAlt = 'Engineering-Grade 3D Animation and Product Visualization by Zenzak Animation';
 
 	let {
 		article = false,
 		breadcrumbs = [],
 		entityMeta = null,
-		lastUpdated,
-		datePublished,
-		metadescription,
-		slug,
+		lastUpdated = new Date().toISOString(),
+		datePublished = new Date().toISOString(),
+		metadescription = 'Zenzak Animation provides engineering-grade 3D animation, product visualization, and design services to bring your vision to market. Secure funding, win bids, and drive sales with stunning visuals.',
+		slug = '',
 		timeToRead = 0,
-		title,
+		title = 'Engineering-Grade 3D Animation & Product Visualization',
 		featuredImage = {
 			url: featuredImageSrc,
-			alt: defaultAlt,
-			width: 672,
-			height: 448,
-			caption: 'Home page',
+			alt: 'A stunning product render created by Zenzak Animation.',
+			width: 1200,
+			height: 675,
+			caption: 'Zenzak Animation: From Concept to Production-Ready Visuals'
 		},
 		ogImage = {
 			url: ogImageSrc,
-			alt: defaultAlt,
+			alt: defaultAlt
 		},
 		ogSquareImage = {
 			url: ogSquareImageSrc,
-			alt: defaultAlt,
+			alt: defaultAlt
 		},
 		twitterImage = {
 			url: twitterImageSrc,
-			alt: defaultAlt,
-		},
+			alt: defaultAlt
+		}
 	} = $props();
 
 	const url = `${siteUrl}/${slug}`;
-	const pageTitle = `${siteTitle} ${VERTICAL_LINE_ENTITY} ${title}`;
+	const pageTitle = `${title} | ${siteShortTitle}`;
 	const openGraphProps = {
 		article,
 		datePublished,
@@ -73,7 +72,7 @@
 		pageTitle,
 		siteTitle,
 		url,
-		...(article ? { datePublished, lastUpdated, facebookPage, facebookAuthorPage } : {}),
+		...(article ? { datePublished, lastUpdated, facebookPage, facebookAuthorPage } : {})
 	};
 	const schemaOrgProps = {
 		article,
@@ -96,14 +95,14 @@
 		linkedinProfile,
 		telegramUsername,
 		tiktokUsername,
-		twitterUsername,
+		twitterUsername
 	};
 	const twitterProps = {
 		article,
 		author,
 		twitterUsername,
 		image: twitterImage,
-		timeToRead,
+		timeToRead
 	};
 </script>
 

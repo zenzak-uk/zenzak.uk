@@ -1,38 +1,13 @@
 <script>
 	import { base } from '$app/paths';
-	import Header from '$lib/components/Header.svelte'; // 1. Import the new Header
+	import Header from '$lib/components/Header.svelte';
 	let { children } = $props();
 </script>
 
-<svelte:head>
-	<title>Zenzak Animation | Engineering-Grade 3D Animation</title>
-	<meta
-		name="description"
-		content="We translate complex engineering ideas into clear, persuasive, and high-impact 3D animations and product visualizations that help you secure funding, win bids, and drive sales."
-	/>
-
-	<!-- Open Graph / Facebook -->
-	<meta property="og:type" content="website" />
-	<meta property="og:title" content="Zenzak Animation | Engineering-Grade 3D Animation" />
-	<meta
-		property="og:description"
-		content="High-impact 3D animations and product visualizations that make complex technical ideas clear and persuasive."
-	/>
-	<meta property="og:image" content="https://www.zenzak.uk/social-preview.png" />
-
-	<!-- Twitter -->
-	<meta property="twitter:card" content="summary_large_image" />
-	<meta property="twitter:title" content="Zenzak Animation | Engineering-Grade 3D Animation" />
-	<meta
-		property="twitter:description"
-		content="High-impact 3D animations and product visualizations that make complex technical ideas clear and persuasive."
-	/>
-	<meta property="twitter:image" content="https://www.zenzak.uk/social-preview.png" />
-</svelte:head>
 
 <Header></Header>
 
-<div class="app-container" style="--poster-url: url({base}/videos/poster.avif)">
+<Background class="app-container" style="--poster-url: url({base}/videos/poster.avif)">
 	<div class="background-video-container">
 		<video autoplay muted loop playsinline poster="{base}/videos/poster.avif">
 			<source src="{base}/videos/bg.webm" type="video/webm" />
@@ -44,7 +19,7 @@
 	<div class="content-container">
 		{@render children()}
 	</div>
-</div>
+</Background>
 
 <style>
 	.app-container {

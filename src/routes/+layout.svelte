@@ -17,25 +17,4 @@
 	});
 </script>
 
-<svelte:head>
-  <title>{seoData.title}</title>
-  <meta name="description" content={seoData.description} />
-  
-  <!-- Open Graph -->
-  <meta property="og:title" content={seoData.title} />
-  <meta property="og:description" content={seoData.description} />
-  <meta property="og:image" content={seoData.image} />
-  <meta property="og:url" content={seoData.url} />
-  <meta property="og:type" content="website" />
-  
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:title" content={seoData.title} />
-  <meta property="twitter:description" content={seoData.description} />
-  <meta property="twitter:image" content={seoData.image} />
-  
-  <!-- Canonical URL -->
-  <link rel="canonical" href={seoData.url} />
-</svelte:head>
-
 {@render children()}
