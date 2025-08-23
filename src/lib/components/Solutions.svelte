@@ -21,7 +21,7 @@
 			models with a focus on clean topology—then light, render, and animate them so they’re
 			impossible to ignore.
 		</p>
-		<div class="flex items-center justify-center gap-2 text-sm text-muted-foreground">
+		<div class="flex flex-wrap items-center justify-center gap-2 text-sm text-muted-foreground">
 			<span class="rounded bg-muted/50 px-2 py-1">Photographer</span>
 			<span class="rounded bg-muted/50 px-2 py-1">Engineer</span>
 			<span class="rounded bg-muted/50 px-2 py-1">Designer</span>

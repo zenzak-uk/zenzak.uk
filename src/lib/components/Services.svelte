@@ -56,14 +56,13 @@
 		</Card>
 	</div>
 
-	<!-- Solutions by audience (Tabs) -->
-	<div class="space-y-8 rounded-xl bg-muted/30 p-6 md:p-8">
+	<div class="space-y-8 rounded-xl bg-muted/30 p-2 md:p-2">
         <div class="space-y-2 text-center">
             <h3 class="text-3xl font-semibold text-foreground">Where I Create Value</h3>
             <p class="text-muted-foreground">Tailored solutions for different audiences</p>
         </div>
         
-        <div class="grid gap-4 sm:grid-cols-2">
+        <div class="grid gap-2 sm:grid-cols-2">
             <Card class="group cursor-pointer transition-all hover:shadow-lg hover:bg-background/50">
                 <CardHeader class="pb-3">
                     <CardTitle class="flex items-center gap-2 text-lg">
