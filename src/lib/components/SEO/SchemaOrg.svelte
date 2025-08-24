@@ -1,5 +1,4 @@
 <script>
-	import hash from 'object-hash';
 
 	let {
 		author,
@@ -23,8 +22,6 @@
 	/**
 	 * @type {{ url: string; faviconWidth: number; faviconHeight: number } | null}
 	 */
-
-	const entityHash = hash({ author }, { algorithm: 'md5' });
 
 	const schemaOrgOrganization = {
 		'@type': 'ProfessionalService',
