@@ -1,6 +1,7 @@
 ---
 title: "Selling the Unbuilt: How Interactive Architectural Visualization Wins Clients"
 date: "2025-08-25"
+description: "Static renders fail to communicate your full architectural vision. Learn how interactive 3D web experiences empower clients to explore unbuilt spaces in real-time, helping you win more bids and accelerate project approvals with high-performance visualization."
 tags: ["3D Web", "Architecture", "Real Estate", "SvelteKit", "Blender", "Architectural Visualization"]
 ---
 
