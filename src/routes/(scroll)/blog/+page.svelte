@@ -18,10 +18,10 @@
 </script>
 
 <div class="mx-auto mt-24 w-full max-w-3xl px-4">
-    <h1 class="mb-2 mt-0 text-center text-5xl font-light leading-tight tracking-widest text-neutral-200">
+    <h1 class="mb-2 mt-0 text-center text-5xl tracking-wider">
         THE BLOG
     </h1>
-    <p class="mb-2 text-center text-neutral-300">
+    <p class="mb-2 text-center">
         Insights on technical animation, design, and market strategy.
     </p>
     <hr class="mb-12 border-0 border-t border-white/20" />
