@@ -1,16 +1,22 @@
-<!-- src/routes/services/+page.svelte -->
 <script>
-	// You can import any child components this page might need
-	// For example, if Services.svelte was complex and had its own components
 	import Contact from '$lib/components/Contact.svelte';
+
+	import SEO from '$lib/components/SEO/index.svelte';
+	const seoProps = {
+		title: 'Contact Zenzak Animation | Get Your 3D Project Quote',
+		metadescription:
+			'Ready to bring your vision to life? Contact Zenzak Animation for engineering-grade 3D animation, product visualization, and design services. Get your free project consultation today.'
+	};
 </script>
+
+<SEO {...seoProps} />
 
 <div class="page-content-wrapper">
 	<h1 class="page-title">Get in Touch</h1>
 		<Contact />
 </div>
 
-<style>
+<style>	
 	.page-content-wrapper {
 		width: 100%;
 		max-width: 1200px;

@@ -1,3 +1,15 @@
+<script>
+	import SEO from '$lib/components/SEO/index.svelte';
+	const seoProps = {
+		title: 'Thank You | Message Received - Zenzak Animation',
+		metadescription:
+			"Thank you for contacting Zenzak Animation. Your message has been received and we'll get back to you shortly about your 3D animation project.",
+		slug: 'success'
+	};
+</script>
+
+<SEO {...seoProps} />
+
 <div class="success-message">
 	<h1>Thank You!</h1>
 	<p>Your message has been sent. I'll get back to you shortly.</p>

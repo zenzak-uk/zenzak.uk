@@ -1,4 +1,12 @@
 <script>
+	import SEO from '$lib/components/SEO/index.svelte';
+	const seoProps = {
+		title: 'The Blog | 3D Animation & Technical Marketing Insights',
+		metadescription:
+			'Insights on technical animation, design, and market strategy from Zenzak Animation. Learn how 3D visualization drives sales, wins bids, and brings complex ideas to market.',
+		slug: 'blog'
+	};
+
 	// This helper function will process the raw data from our Markdown files
 	async function getPosts() {
 		const paths = import.meta.glob('/src/lib/posts/*.md', { eager: true });
@@ -16,6 +24,8 @@
     // Use a promise to load the posts
     const postsPromise = getPosts();
 </script>
+
+<SEO {...seoProps} />
 
 <div class="mx-auto mt-24 w-full max-w-3xl px-4">
     <h1 class="mb-2 mt-0 text-center text-5xl tracking-wider">
