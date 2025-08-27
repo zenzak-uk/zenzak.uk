@@ -23,7 +23,7 @@
 		telegramUsername,
 		tiktokUsername,
 		twitterUsername,
-		vimeoProfile,
+		vimeoProfile
 	} = website;
 
 	const defaultAlt = 'Engineering-Grade 3D Animation and Product Visualization by Zenzak Animation';

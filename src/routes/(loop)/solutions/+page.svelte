@@ -4,9 +4,9 @@
 	import SEO from '$lib/components/SEO/index.svelte';
 	const seoProps = {
 		title: 'Zenzak Animation | Launch-Ready 3D Product Renders & Animation',
-		metadescription: 'Transform your product concepts into stunning, launch-ready visuals. Zenzak Animation offers expert 3D modeling, sculpting, and animation services designed to make your products stand out. Get your centerpiece imagery here.'
-	}
-
+		metadescription:
+			'Transform your product concepts into stunning, launch-ready visuals. Zenzak Animation offers expert 3D modeling, sculpting, and animation services designed to make your products stand out. Get your centerpiece imagery here.'
+	};
 </script>
 
 <SEO {...seoProps} />
@@ -30,6 +30,4 @@
 		border: 1px solid rgba(255, 255, 255, 0.1);
 		color: #ccc;
 	}
-
-
 </style>

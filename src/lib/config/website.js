@@ -12,7 +12,7 @@ const website = {
 	contactEmail: 'hello@zenzak.uk',
 	githubPage: 'zenzak-uk',
 	linkedinProfile: 'zenzak',
-	vimeoProfile: 'zenzak',
+	vimeoProfile: 'zenzak'
 };
 
 export { website as default };

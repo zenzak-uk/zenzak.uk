@@ -45,6 +45,8 @@
 	"dependencies": {
 		"@popperjs/core": "^2.11.8",
 		"@tailwindcss/vite": "^4.1.12",
+		"@threlte/core": "^8.1.4",
+		"@threlte/extras": "^9.5.0",
 		"lucide-svelte": "^0.540.0",
 		"object-hash": "^3.0.0",
 		"scrolly-video": "^0.0.24",

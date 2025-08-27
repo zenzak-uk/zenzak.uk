@@ -11,7 +11,7 @@
 		ogLanguage,
 		pageTitle,
 		siteTitle,
-		url,
+		url
 	} = $props();
 </script>
 

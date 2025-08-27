@@ -1,119 +1,127 @@
 <!-- src/lib/components/Faq.svelte -->
 <script>
-  import {
-    Accordion,
-    AccordionContent,
-    AccordionItem,
-    AccordionTrigger
-  } from '$lib/components/ui/accordion'
-  import { Separator } from '$lib/components/ui/separator'
+	import {
+		Accordion,
+		AccordionContent,
+		AccordionItem,
+		AccordionTrigger
+	} from '$lib/components/ui/accordion';
+	import { Separator } from '$lib/components/ui/separator';
 	import Button from '$lib/components/Button.svelte';
-	  import { Sparkles, Cog, DollarSign, Clock } from 'lucide-svelte';
+	import { Sparkles, Cog, DollarSign, Clock } from 'lucide-svelte';
 </script>
 
-<div class="mx-auto max-w-3xl md:max-w-5xl space-y-8">
-  <div class="text-center md:text-left space-y-1">
-    <h3 class="text-2xl md:text-3xl font-semibold tracking-tight">
-      A straightforward process is key.
-    </h3>
-    <p class="text-muted-foreground">Here’s what you can expect.</p>
-  </div>
+<div class="mx-auto max-w-3xl space-y-8 md:max-w-5xl">
+	<div class="space-y-1 text-center md:text-left">
+		<h3 class="text-2xl font-semibold tracking-tight md:text-3xl">
+			A straightforward process is key.
+		</h3>
+		<p class="text-muted-foreground">Here’s what you can expect.</p>
+	</div>
 
-  <Accordion type="single" collapsible class="space-y-4">
-    <AccordionItem
-      value="benefit"
-      class="group rounded-xl border bg-card/60 backdrop-blur-sm shadow-sm transition-all hover:shadow-md data-[state=open]:shadow-lg"
-    >
-      <AccordionTrigger class="px-5 py-4">
-        <div class="flex items-center gap-3">
-          <Sparkles class="h-5 w-5 text-primary" />
-          <span class="text-left font-medium">
-            What's the benefit of hiring an engineer to do this?
-          </span>
-        </div>
-      </AccordionTrigger>
-      <AccordionContent class="px-5 pb-5 text-muted-foreground">
-        <p>
-          <strong class="text-foreground">Efficiency.</strong> I understand your CAD files, schematics, and technical language from
-          the start. This eliminates misinterpretation and drastically reduces revision cycles, getting you
-          to a perfect final product faster.
-        </p>
-      </AccordionContent>
-    </AccordionItem>
+	<Accordion type="single" collapsible class="space-y-4">
+		<AccordionItem
+			value="benefit"
+			class="group rounded-xl border bg-card/60 shadow-sm backdrop-blur-sm transition-all hover:shadow-md data-[state=open]:shadow-lg"
+		>
+			<AccordionTrigger class="px-5 py-4">
+				<div class="flex items-center gap-3">
+					<Sparkles class="h-5 w-5 text-primary" />
+					<span class="text-left font-medium">
+						What's the benefit of hiring an engineer to do this?
+					</span>
+				</div>
+			</AccordionTrigger>
+			<AccordionContent class="px-5 pb-5 text-muted-foreground">
+				<p>
+					<strong class="text-foreground">Efficiency.</strong> I understand your CAD files, schematics,
+					and technical language from the start. This eliminates misinterpretation and drastically reduces
+					revision cycles, getting you to a perfect final product faster.
+				</p>
+			</AccordionContent>
+		</AccordionItem>
 
-    <AccordionItem
-      value="process"
-      class="group rounded-xl border bg-card/60 backdrop-blur-sm shadow-sm transition-all hover:shadow-md data-[state=open]:shadow-lg"
-    >
-      <AccordionTrigger class="px-5 py-4">
-        <div class="flex items-center gap-3">
-          <Cog class="h-5 w-5 text-primary" />
-          <span class="text-left font-medium">What is your process?</span>
-        </div>
-      </AccordionTrigger>
-      <AccordionContent class="px-5 pb-6">
-        <ol class="relative ml-2 border-l pl-8 space-y-6">
-          <li class="relative">
-            <span class="absolute -left-[13px] top-1.5 h-2.5 w-2.5 rounded-full bg-primary ring-4 ring-background"></span>
-            <p class="text-foreground">
-              <strong>Discovery &amp; Strategy:</strong> A quick call to align on your commercial goals and technical details.
-            </p>
-          </li>
-          <li class="relative">
-            <span class="absolute -left-[13px] top-1.5 h-2.5 w-2.5 rounded-full bg-primary ring-4 ring-background"></span>
-            <p class="text-foreground">
-              <strong>Creation &amp; Review:</strong> I build the animation with key milestones for your feedback and approval.
-            </p>
-          </li>
-          <li class="relative">
-            <span class="absolute -left-[13px] top-1.5 h-2.5 w-2.5 rounded-full bg-primary ring-4 ring-background"></span>
-            <p class="text-foreground">
-              <strong>Delivery:</strong> You receive the final, high-impact animation, ready for deployment.
-            </p>
-          </li>
-        </ol>
-      </AccordionContent>
-    </AccordionItem>
+		<AccordionItem
+			value="process"
+			class="group rounded-xl border bg-card/60 shadow-sm backdrop-blur-sm transition-all hover:shadow-md data-[state=open]:shadow-lg"
+		>
+			<AccordionTrigger class="px-5 py-4">
+				<div class="flex items-center gap-3">
+					<Cog class="h-5 w-5 text-primary" />
+					<span class="text-left font-medium">What is your process?</span>
+				</div>
+			</AccordionTrigger>
+			<AccordionContent class="px-5 pb-6">
+				<ol class="relative ml-2 space-y-6 border-l pl-8">
+					<li class="relative">
+						<span
+							class="absolute top-1.5 -left-[13px] h-2.5 w-2.5 rounded-full bg-primary ring-4 ring-background"
+						></span>
+						<p class="text-foreground">
+							<strong>Discovery &amp; Strategy:</strong> A quick call to align on your commercial goals
+							and technical details.
+						</p>
+					</li>
+					<li class="relative">
+						<span
+							class="absolute top-1.5 -left-[13px] h-2.5 w-2.5 rounded-full bg-primary ring-4 ring-background"
+						></span>
+						<p class="text-foreground">
+							<strong>Creation &amp; Review:</strong> I build the animation with key milestones for your
+							feedback and approval.
+						</p>
+					</li>
+					<li class="relative">
+						<span
+							class="absolute top-1.5 -left-[13px] h-2.5 w-2.5 rounded-full bg-primary ring-4 ring-background"
+						></span>
+						<p class="text-foreground">
+							<strong>Delivery:</strong> You receive the final, high-impact animation, ready for deployment.
+						</p>
+					</li>
+				</ol>
+			</AccordionContent>
+		</AccordionItem>
 
-    <AccordionItem
-      value="cost"
-      class="group rounded-xl border bg-card/60 backdrop-blur-sm shadow-sm transition-all hover:shadow-md data-[state=open]:shadow-lg"
-    >
-      <AccordionTrigger class="px-5 py-4">
-        <div class="flex items-center gap-3">
-          <DollarSign class="h-5 w-5 text-primary" />
-          <span class="text-left font-medium">How much does a project cost?</span>
-        </div>
-      </AccordionTrigger>
-      <AccordionContent class="px-5 pb-5 text-muted-foreground">
-        <p>
-          Every project is custom-quoted to fit its specific goals. After our call, you'll receive a
-          detailed, transparent quote. No hidden fees, no surprises. Just exceptional results.
-        </p>
-      </AccordionContent>
-    </AccordionItem>
+		<AccordionItem
+			value="cost"
+			class="group rounded-xl border bg-card/60 shadow-sm backdrop-blur-sm transition-all hover:shadow-md data-[state=open]:shadow-lg"
+		>
+			<AccordionTrigger class="px-5 py-4">
+				<div class="flex items-center gap-3">
+					<DollarSign class="h-5 w-5 text-primary" />
+					<span class="text-left font-medium">How much does a project cost?</span>
+				</div>
+			</AccordionTrigger>
+			<AccordionContent class="px-5 pb-5 text-muted-foreground">
+				<p>
+					Every project is custom-quoted to fit its specific goals. After our call, you'll receive a
+					detailed, transparent quote. No hidden fees, no surprises. Just exceptional results.
+				</p>
+			</AccordionContent>
+		</AccordionItem>
 
-    <AccordionItem
-      value="timeline"
-      class="group rounded-xl border bg-card/60 backdrop-blur-sm shadow-sm transition-all hover:shadow-md data-[state=open]:shadow-lg"
-    >
-      <AccordionTrigger class="px-5 py-4">
-        <div class="flex items-center gap-3">
-          <Clock class="h-5 w-5 text-primary" />
-          <span class="text-left font-medium">How long will it take?</span>
-        </div>
-      </AccordionTrigger>
-      <AccordionContent class="px-5 pb-5 text-muted-foreground">
-        <p>
-          Most projects are delivered in 1-3 weeks. Your quote will include a reliable timeline. If you
-          have an urgent deadline, let's discuss it.
-        </p>
-      </AccordionContent>
-    </AccordionItem>
-  </Accordion>
+		<AccordionItem
+			value="timeline"
+			class="group rounded-xl border bg-card/60 shadow-sm backdrop-blur-sm transition-all hover:shadow-md data-[state=open]:shadow-lg"
+		>
+			<AccordionTrigger class="px-5 py-4">
+				<div class="flex items-center gap-3">
+					<Clock class="h-5 w-5 text-primary" />
+					<span class="text-left font-medium">How long will it take?</span>
+				</div>
+			</AccordionTrigger>
+			<AccordionContent class="px-5 pb-5 text-muted-foreground">
+				<p>
+					Most projects are delivered in 1-3 weeks. Your quote will include a reliable timeline. If
+					you have an urgent deadline, let's discuss it.
+				</p>
+			</AccordionContent>
+		</AccordionItem>
+	</Accordion>
 
-<section>
-	<h4 semibold>Still have a question?</h4>
-	<Button href="/contact">Let's talk</Button>
-</section>
+	<section>
+		<h4 semibold>Still have a question?</h4>
+		<Button href="/contact">Let's talk</Button>
+	</section>
 </div>

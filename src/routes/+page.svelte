@@ -38,9 +38,9 @@
 
 	<Header></Header>
 	<div class="flex min-h-0 flex-grow flex-col">
-        <div class="m-4 mt-20 flex flex-grow flex-col items-center sm:m-10 sm:mt-32">
+		<div class="m-4 mt-20 flex flex-grow flex-col items-center sm:m-10 sm:mt-32">
 			<main
-                class="flex w-full max-w-6xl flex-grow flex-col items-center justify-center text-center"
+				class="flex w-full max-w-6xl flex-grow flex-col items-center justify-center text-center"
 			>
 				<div
 					class="hero-element relative mx-0 my-1 w-full max-w-[550px] px-0 py-4 before:absolute before:top-0 before:left-1/2 before:h-px before:w-full before:-translate-x-1/2 before:bg-white/20 after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-full after:-translate-x-1/2 after:bg-white/20 md:my-2 md:py-6"
@@ -71,7 +71,7 @@
 				</nav>
 			</main>
 		</div>
-        
+
 		<footer class="mt-auto pb-4">
 			<p class="text-center text-sm tracking-wide text-gray-400">
 				BACKGROUND ANIMATION BY ZENZAK ANIMATION.
