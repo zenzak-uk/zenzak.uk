@@ -1,5 +1,4 @@
 <script>
-
 	let {
 		author,
 		siteUrl,
@@ -16,7 +15,7 @@
 		twitterUsername,
 		githubPage,
 		linkedinProfile,
-		facebookPage,
+		facebookPage
 	} = $props();
 
 	/**
@@ -34,12 +33,12 @@
 		sameAs: [
 			`https://github.com/${githubPage}`,
 			`https://uk.linkedin.com/company/${linkedinProfile}`,
-			'https://vimeo.com/$(vimeoProfile)',
+			'https://vimeo.com/$(vimeoProfile)'
 		],
 		provider: {
 			'@type': 'Person',
-			name: author,
-		},
+			name: author
+		}
 	};
 
 	// Detailed Service Schemas
@@ -52,16 +51,17 @@
 				item: {
 					'@type': 'Service',
 					name: 'Product Visualization & Renders',
-					description: 'The definitive hero shot for decks, campaigns, and e-commerce. Photorealistic images that demand attention and drive interest.',
+					description:
+						'The definitive hero shot for decks, campaigns, and e-commerce. Photorealistic images that demand attention and drive interest.',
 					serviceType: '3D Rendering Service',
 					audience: {
 						'@type': 'Audience',
-						audienceType: ['Marketing Teams', 'Product Designers'],
+						audienceType: ['Marketing Teams', 'Product Designers']
 					},
 					provider: {
-						'@id': `${siteUrl}/#organization`,
-					},
-				},
+						'@id': `${siteUrl}/#organization`
+					}
+				}
 			},
 			{
 				'@type': 'ListItem',
@@ -69,16 +69,17 @@
 				item: {
 					'@type': 'Service',
 					name: 'Technical & Explainer Animations',
-					description: 'Make the complex crystal-clear. Turn intricate mechanics and internal processes into intuitive visuals that educate and persuade.',
+					description:
+						'Make the complex crystal-clear. Turn intricate mechanics and internal processes into intuitive visuals that educate and persuade.',
 					serviceType: '3D Animation Service',
 					audience: {
 						'@type': 'Audience',
-						audienceType: ['Engineering Firms', 'Startups'],
+						audienceType: ['Engineering Firms', 'Startups']
 					},
 					provider: {
-						'@id': `${siteUrl}/#organization`,
-					},
-				},
+						'@id': `${siteUrl}/#organization`
+					}
+				}
 			},
 			{
 				'@type': 'ListItem',
@@ -86,19 +87,20 @@
 				item: {
 					'@type': 'Service',
 					name: 'UI/UX & App Demonstrations',
-					description: 'Create & showcase a flawless user experience. Fluid interface animations for promos and tutorials that drive adoption.',
+					description:
+						'Create & showcase a flawless user experience. Fluid interface animations for promos and tutorials that drive adoption.',
 					serviceType: 'UI/UX Design Service',
 					audience: {
 						'@type': 'Audience',
-						audienceType: ['Startups', 'Marketing Teams'],
+						audienceType: ['Startups', 'Marketing Teams']
 					},
 					provider: {
-						'@id': `${siteUrl}/#organization`,
-					},
-				},
-			},
-            // Add more list items for other services like 'Concept Modeling & Sculpting', etc.
-		],
+						'@id': `${siteUrl}/#organization`
+					}
+				}
+			}
+			// Add more list items for other services like 'Concept Modeling & Sculpting', etc.
+		]
 	};
 
 	const schemaOrgWebSite = {
@@ -108,9 +110,9 @@
 		name: siteTitle,
 		description: siteTitleAlt,
 		publisher: {
-			'@id': `${siteUrl}/#organization`,
+			'@id': `${siteUrl}/#organization`
 		},
-		inLanguage: siteLanguage,
+		inLanguage: siteLanguage
 	};
 
 	const schemaOrgWebPage = {
@@ -119,18 +121,18 @@
 		url,
 		name: title,
 		isPartOf: {
-			'@id': `${siteUrl}/#website`,
+			'@id': `${siteUrl}/#website`
 		},
 		primaryImageOfPage: {
-			'@id': `${url}#primaryimage`,
+			'@id': `${url}#primaryimage`
 		},
 		datePublished,
 		dateModified: lastUpdated,
 		description: metadescription,
-		inLanguage: siteLanguage,
+		inLanguage: siteLanguage
 	};
 
-    const schemaOrgImageObject = {
+	const schemaOrgImageObject = {
 		'@type': 'ImageObject',
 		'@id': `${url}#primaryimage`,
 		inLanguage: siteLanguage,
@@ -138,21 +140,20 @@
 		contentUrl: featuredImage.url,
 		width: featuredImage.width,
 		height: featuredImage.height,
-		caption: featuredImage.caption,
+		caption: featuredImage.caption
 	};
-
 
 	const schemaOrgArray = [
 		schemaOrgOrganization,
 		schemaOrgServices,
 		schemaOrgWebSite,
 		schemaOrgWebPage,
-        schemaOrgImageObject,
+		schemaOrgImageObject
 	];
 
 	const schemaOrgObject = {
 		'@context': 'https://schema.org',
-		'@graph': schemaOrgArray,
+		'@graph': schemaOrgArray
 	};
 	let jsonLdString = JSON.stringify(schemaOrgObject);
 	let jsonLdScript = `

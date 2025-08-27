@@ -15,16 +15,16 @@
 		{...rest}
 		class="
             inline-flex items-center justify-center rounded-full
-            font-medium uppercase tracking-wider
-            transition-all duration-200 ease-in-out
-            backdrop-blur-lg
+            font-medium tracking-wider uppercase
+            backdrop-blur-lg transition-all duration-200
+            ease-in-out
             {size === 'normal' ? 'px-6 py-3 text-sm' : ''}
             {size === 'large' ? 'px-8 py-4 text-base' : ''}
             {variant === 'outline'
 			? 'border border-gray-400 bg-white/10 text-gray-300 hover:border-gray-200 hover:bg-white/20 hover:text-white'
 			: ''}
             {variant === 'fill'
-			? 'border border-gray-200 bg-gray-200 text-gray-800 hover:bg-white hover:border-white'
+			? 'border border-gray-200 bg-gray-200 text-gray-800 hover:border-white hover:bg-white'
 			: ''}
         "
 	>
@@ -36,16 +36,16 @@
 		{...rest}
 		class="
             inline-flex items-center justify-center rounded-full
-            font-medium uppercase tracking-wider
-            transition-all duration-200 ease-in-out
-            backdrop-blur-lg
+            font-medium tracking-wider uppercase
+            backdrop-blur-lg transition-all duration-200
+            ease-in-out
             {size === 'normal' ? 'px-6 py-3 text-sm' : ''}
             {size === 'large' ? 'px-8 py-4 text-base' : ''}
             {variant === 'outline'
 			? 'border border-gray-400 bg-white/10 text-gray-300 hover:border-gray-200 hover:bg-white/20 hover:text-white'
 			: ''}
             {variant === 'fill'
-			? 'border border-gray-200 bg-gray-200 text-gray-800 hover:bg-white hover:border-white'
+			? 'border border-gray-200 bg-gray-200 text-gray-800 hover:border-white hover:bg-white'
 			: ''}
         "
 	>

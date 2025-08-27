@@ -14,12 +14,15 @@ Welcome to the public repository for the official website of **Zenzak Animation*
 From a sketch on a whiteboard to a production-ready model—get the strategic visuals to bring your vision to market.
 
 #### Product Visualization & Renders
+
 The definitive hero shot for decks, campaigns, and e-commerce. Photorealistic images that demand attention and drive interest.
 
 #### Technical & Explainer Animations
+
 Make the complex crystal-clear. Turn intricate mechanics and internal processes into intuitive visuals that educate and persuade.
 
 #### UI/UX & App Demonstrations
+
 Create & showcase a flawless user experience. Turn your static products into immersive web experiences. Fluid interface animations for promos and tutorials that drive adoption.
 
 ---
@@ -28,17 +31,17 @@ Create & showcase a flawless user experience. Turn your static products into imm
 
 Tailored solutions for different audiences.
 
-*   **For Startups**
-    Secure Funding. Turn your pitch into an undeniable demonstration of value with a product animation that proves your concept is brilliant and ready.
+- **For Startups**
+  Secure Funding. Turn your pitch into an undeniable demonstration of value with a product animation that proves your concept is brilliant and ready.
 
-*   **For Engineering Firms**
-    Win Bids. Eliminate ambiguity and showcase mechanism superiority with technically-precise animations that leave no room for doubt.
+- **For Engineering Firms**
+  Win Bids. Eliminate ambiguity and showcase mechanism superiority with technically-precise animations that leave no room for doubt.
 
-*   **For Marketing Teams**
-    Drive Sales. Scroll-stopping content that turns dense features into must-have benefits and boosts conversion.
+- **For Marketing Teams**
+  Drive Sales. Scroll-stopping content that turns dense features into must-have benefits and boosts conversion.
 
-*   **For Product Designers**
-    Impress Clients. Move beyond static blueprints with photorealistic renders that showcase every detail and win fast approval.
+- **For Product Designers**
+  Impress Clients. Move beyond static blueprints with photorealistic renders that showcase every detail and win fast approval.
 
 ---
 
@@ -56,23 +59,23 @@ As a mechanical engineer, I speak your language. As a 3D animator, I translate i
 
 I’m a photographer, engineer, and designer turned 3D artist. I build detailed, high-quality models with a focus on clean topology—then light, render, and animate them so they’re impossible to ignore.
 
-*   **Concept Modeling & Sculpting**
-    From sketch to clean 3D geometry. Rapid ideation models, hard-surface and organic sculpting, and Subdivision Surface modeling to solve proportions and ergonomics for confident reviews.
+- **Concept Modeling & Sculpting**
+  From sketch to clean 3D geometry. Rapid ideation models, hard-surface and organic sculpting, and Subdivision Surface modeling to solve proportions and ergonomics for confident reviews.
 
-*   **High-Fidelity Surfacing & Texturing**
-    Models ready for their close-ups. Clean polygonal modeling, detailed sculpting, and meticulous UV unwrapping for flawless texture application.
+- **High-Fidelity Surfacing & Texturing**
+  Models ready for their close-ups. Clean polygonal modeling, detailed sculpting, and meticulous UV unwrapping for flawless texture application.
 
-*   **Retopology & UV Mapping**
-    Optimized models for any application. Efficient retopology for clean, animatable geometry and expert UV mapping for distortion-free texturing.
+- **Retopology & UV Mapping**
+  Optimized models for any application. Efficient retopology for clean, animatable geometry and expert UV mapping for distortion-free texturing.
 
-*   **CMF & Lighting Studies**
-    Get the material story right. Realistic materials, texture authoring, and studio/lifestyle lighting from a photographer’s perspective.
+- **CMF & Lighting Studies**
+  Get the material story right. Realistic materials, texture authoring, and studio/lifestyle lighting from a photographer’s perspective.
 
-*   **Hero Renders & Photo Composites**
-    Centerpiece imagery that sells. 8K hero shots, transparent variants for web and print, and photo-real composites that blend real-world photography with CG precision.
+- **Hero Renders & Photo Composites**
+  Centerpiece imagery that sells. 8K hero shots, transparent variants for web and print, and photo-real composites that blend real-world photography with CG precision.
 
-*   **Explainers & Interactive 3D**
-    Clarity for reviews, sales, and documentation. Exploded views, mechanism breakdowns, and embedded 3D/AR viewers for web and trade shows.
+- **Explainers & Interactive 3D**
+  Clarity for reviews, sales, and documentation. Exploded views, mechanism breakdowns, and embedded 3D/AR viewers for web and trade shows.
 
 ---
 

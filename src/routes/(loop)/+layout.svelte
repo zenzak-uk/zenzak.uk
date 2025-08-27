@@ -4,7 +4,6 @@
 	let { children } = $props();
 </script>
 
-
 <Header></Header>
 
 <div class="app-container" style="--poster-url: url({base}/videos/poster.avif)">

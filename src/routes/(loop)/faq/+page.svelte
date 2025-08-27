@@ -5,7 +5,7 @@
 
 <div class="page-content-wrapper">
 	<h1 class="page-title">Frequently Asked Questions</h1>
-		<Faq />
+	<Faq />
 </div>
 
 <style>
@@ -28,5 +28,4 @@
 		text-align: center;
 		margin-bottom: 2rem;
 	}
-
 </style>

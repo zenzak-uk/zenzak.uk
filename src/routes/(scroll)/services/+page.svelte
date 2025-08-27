@@ -4,16 +4,15 @@
 	import SEO from '$lib/components/SEO/index.svelte';
 	const seoProps = {
 		title: '3D Animation for Engineering, Marketing & Startups | Zenzak Animation',
-		metadescription: 'Zenzak Animation offers full-cycle 3D services, from product visualization and technical explainers to UI/UX demos. We help startups, engineers, and marketers bring their vision to market.'
-	}
-
+		metadescription:
+			'Zenzak Animation offers full-cycle 3D services, from product visualization and technical explainers to UI/UX demos. We help startups, engineers, and marketers bring their vision to market.'
+	};
 </script>
 
 <SEO {...seoProps} />
 
-
 <div class="page-content-wrapper">
-		<Services />
+	<Services />
 </div>
 
 <style>
@@ -29,5 +28,4 @@
 		border: 1px solid rgba(255, 255, 255, 0.1);
 		color: #ccc;
 	}
-
 </style>

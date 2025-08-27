@@ -7,7 +7,7 @@
 
 <div class="page-content-wrapper">
 	<h1 class="page-title">Get in Touch</h1>
-		<Contact />
+	<Contact />
 </div>
 
 <style>
@@ -30,5 +30,4 @@
 		text-align: center;
 		margin-bottom: 2rem;
 	}
-
 </style>

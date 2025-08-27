@@ -1,5 +1,5 @@
 <script>
-	import { AspectRatio as AspectRatioPrimitive } from "bits-ui";
+	import { AspectRatio as AspectRatioPrimitive } from 'bits-ui';
 
 	let { ref = $bindable(null), ...restProps } = $props();
 </script>
