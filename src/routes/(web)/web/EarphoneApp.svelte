@@ -1,6 +1,6 @@
 <script>
 	import { Canvas } from '@threlte/core';
-	import Scene from './Scene.svelte';
+	import Scene from './EarphoneScene.svelte';
 </script>
 
 <div class="absolute inset-0 h-full w-full">
