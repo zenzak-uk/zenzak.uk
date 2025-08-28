@@ -6,7 +6,6 @@
 	import SvgApp from './SVGApp.svelte';
 	import TextApp from './TextApp.svelte';
 	import EarphoneApp from './EarphoneApp.svelte';
-	import PhysicsApp from './PhysicsApp.svelte';
 
 	const seoProps = {
 		title: 'Purposeful 3D Web Experiences',
