@@ -6,6 +6,7 @@
 	import SvgApp from './SVGApp.svelte';
 	import TextApp from './TextApp.svelte';
 	import EarphoneApp from './EarphoneApp.svelte';
+	import PhysicsApp from './PhysicsApp.svelte';
 
 	const seoProps = {
 		title: 'Purposeful 3D Web Experiences',
@@ -43,13 +44,13 @@
 
 <div class="min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-slate-900">
 	<!-- Interactive Hero Section -->
-	<section class="relative flex h-screen items-center justify-center overflow-hidden">
+	<section class="relative flex h-screen flex-col items-center justify-between overflow-hidden">
 		<div class="absolute inset-0 bg-gradient-to-br from-blue-900/5 to-purple-900/5">
 			<!-- Animated floating shapes as placeholder for 3D scene -->
 			<TextApp></TextApp>
 		</div>
 
-		<div class="relative z-10 text-center text-white">
+		<div class="relative z-10 pt-20 text-center text-white">
 			<h1
 				class="mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-6xl font-bold text-transparent"
 			>
@@ -58,24 +59,14 @@
 			<p class="mx-auto mb-8 max-w-2xl text-xl leading-relaxed">
 				Engineering-grade 3D experiences that drive engagement, understanding, and conversion
 			</p>
+		</div>
 
-			<!-- Performance Metrics -->
-			<div class="mb-8 flex justify-center gap-6">
+		<!-- Performance Metrics -->
+		<div class="relative z-10 pb-10">
+			<div class="flex justify-center gap-6">
 				<div class="rounded-lg bg-white/10 px-4 py-2 backdrop-blur-sm">
 					<div class="text-2xl font-bold text-green-400">{performanceMetrics.fps}</div>
 					<div class="text-sm text-gray-300">FPS</div>
-				</div>
-				<div class="rounded-lg bg-white/10 px-4 py-2 backdrop-blur-sm">
-					<div class="text-2xl font-bold text-blue-400">{performanceMetrics.loadTime}</div>
-					<div class="text-sm text-gray-300">Load Time</div>
-				</div>
-				<div class="rounded-lg bg-white/10 px-4 py-2 backdrop-blur-sm">
-					<div class="text-2xl font-bold text-purple-400">{performanceMetrics.triangles}</div>
-					<div class="text-sm text-gray-300">Triangles</div>
-				</div>
-				<div class="rounded-lg bg-white/10 px-4 py-2 backdrop-blur-sm">
-					<div class="text-2xl font-bold text-orange-400">{performanceMetrics.drawCalls}</div>
-					<div class="text-sm text-gray-300">Draw Calls</div>
 				</div>
 			</div>
 		</div>
@@ -84,11 +75,10 @@
 	<!-- Capability Demonstrations -->
 	<section class="px-6 py-20">
 		<div class="mx-auto max-w-6xl">
-		
 			<h2 class="mb-12 text-center text-4xl font-bold text-white">3D Web Capabilities</h2>
 			<div class="grid grid-cols-1 gap-8 md:grid-cols-2">
 				<!-- Real-time Rendering -->
-				 <PhoneApp></PhoneApp>
+				<PhoneApp></PhoneApp>
 				<div
 					class="relative rounded-lg border border-white/10 bg-white/5 p-6 shadow-lg backdrop-blur-sm"
 				>
@@ -97,8 +87,7 @@
 						<p class="text-sm leading-relaxed text-gray-300">
 							Dynamic shader effects and lighting changes that respond to user interaction.
 						</p>
-									<SvgApp></SvgApp>
-
+						<SvgApp></SvgApp>
 					</div>
 
 					<div class="mb-4 flex gap-4 text-xs text-gray-400">
@@ -290,4 +279,8 @@ let &#123; background = '#040b14', fog = true, shadows = true, children &#125; =
 			</div>
 		</div>
 	</section>
+</div>
+
+<div>
+	<PhysicsApp></PhysicsApp>
 </div>

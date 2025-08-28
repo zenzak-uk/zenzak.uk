@@ -1,6 +1,6 @@
 <script lang="ts">
   import { T } from '@threlte/core'
-  import { Align, Environment, Float, OrbitControls, Text3DGeometry } from '@threlte/extras'
+  import { Align, Environment, Float, OrbitControls, Text3DGeometry, Stars } from '@threlte/extras'
 
   export let text: string
   export let bevelEnabled: boolean
@@ -13,6 +13,9 @@
   export let size: number
   export let smooth: number
 </script>
+
+<Stars
+ />
 
 <Align>
   {#snippet children({ align })}
