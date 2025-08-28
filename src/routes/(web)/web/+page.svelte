@@ -280,7 +280,3 @@ let &#123; background = '#040b14', fog = true, shadows = true, children &#125; =
 		</div>
 	</section>
 </div>
-
-<div>
-	<PhysicsApp></PhysicsApp>
-</div>
