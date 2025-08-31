@@ -3,7 +3,7 @@
 [![Made with SvelteKit](https://img.shields.io/badge/Made%20with-SvelteKit-ff3e00.svg)](https://kit.svelte.dev/)
 [![FOSS](https://img.shields.io/badge/FOSS-♥-blueviolet)](https://en.wikipedia.org/wiki/Free_and_open-source_software)
 
-Welcome to the public repository for the official website of **Zenzak Animation**. This website is built with [SvelteKit](https://kit.svelte.dev/), and its source code is publicly available. As a big supporter of Free and Open Source Software (FOSS), I believe in transparency and sharing knowledge.
+Welcome to the public repository for the official website of [**Zenzak Animation**](https://www.zenzak.uk/). This website is built with [SvelteKit](https://kit.svelte.dev/), and its source code is publicly available. As a big supporter of Free and Open Source Software (FOSS), I believe in transparency and sharing knowledge.
 
 ---
 
