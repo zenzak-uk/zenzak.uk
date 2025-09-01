@@ -32,9 +32,3 @@
 		<Overlay />
 	</div>
 </div>
-
-<style>
-	:global(.overlay-wrapper a) {
-		pointer-events: auto;
-	}
-</style>
