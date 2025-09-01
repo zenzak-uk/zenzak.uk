@@ -1,160 +1,31 @@
-<div class="container">
-	<div class="spacer"></div>
-	<div class="main-title">
-		<p class="big-text-left">Zenzak</p>
-		<div class="spacer-small"></div>
-		<p class="big-text-right">Web</p>
+<div class="pointer-events-none fixed inset-0 flex h-screen w-screen flex-col p-8 text-white">
+	<!-- Header Section -->
+	<header class="w-full">
+		<h2 class="font-antonio mt-20 text-3xl font-bold tracking-tighter">
+			Digital Experiences that Captivate.
+		</h2>
+	</header>
+
+	<div class="flex-grow"></div>
+
+	<!-- Main Title Section -->
+	<div class="w-full">
+		<h1 class="font-antonio w-full text-left text-[clamp(4rem,18vw,12rem)] leading-none font-bold">
+			Zenzak
+		</h1>
 	</div>
 
-	<div class="sub-header">
-		<p class="sub-text">
-			<span>Solutions for the modern web</span> <br />
-			<b>—</b>
+	<div class="mt-4 w-full max-w-lg">
+		<p class="text-base leading-relaxed text-gray-300 md:text-lg">
+			I craft high-end 3D product showcases and interactive configurators that elevate brands. Turn
+			your digital presence into your most powerful asset.
 		</p>
 	</div>
 
-	<div class="spacer-auto"></div>
+	<div class="flex-grow"></div>
 
-	<div class="header">
-		<p class="title">Welcome to the 3D Web</p>
-		<div class="spacer"></div>
-	</div>
-
-	<div class="spacer-auto"></div>
-
-	<div class="footer">
-		<p class="footer-text">
-			<b>THREE.JS</b><br />
-			Credit to Stefan Reifenberg
-		</p>
-		<div class="spacer-small"></div>
-		<p class="footer-title">Made with Threlte</p>
-		<div class="spacer-small"></div>
-		<p class="footer-empty"></p>
-	</div>
+	<!-- Footer Section -->
+	<footer class="pointer-events-auto flex w-full items-end justify-between">
+		<p class="text-sm whitespace-nowrap text-neutral-400">Credit to Stefan Reifenberg</p>
+	</footer>
 </div>
-
-<style>
-	* {
-		box-sizing: border-box;
-		margin: 0;
-		padding: 0;
-	}
-
-	.container {
-		width: 100vw;
-		min-height: 100vh;
-		padding: 2rem;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: space-between;
-		pointer-events: none;
-		overflow: hidden;
-	}
-
-	.header,
-	.footer {
-		width: 100%;
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		justify-content: space-between;
-	}
-
-	.title {
-		font-family: 'Antonio', sans-serif;
-		font-size: 2rem;
-		font-weight: 700;
-		line-height: 1.2;
-		color: black;
-		letter-spacing: -2px;
-	}
-
-	.sub-header {
-		width: 100%;
-		display: flex;
-		flex-direction: row;
-		align-items: flex-start;
-		justify-content: start;
-	}
-
-	.sub-text {
-		font-size: 1rem;
-		line-height: 1.5;
-		color: black;
-		text-align: left;
-	}
-
-	.main-title {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		justify-content: space-between;
-		width: 100%;
-	}
-
-	.big-text-left {
-		font-size: clamp(6rem, 20vw, 12rem);
-		line-height: 1;
-		color: black;
-		margin: 0;
-		/* letter-spacing: -0.2em; */
-		text-align: start;
-		width: 100%;
-	}
-	.big-text-right {
-		font-size: clamp(6rem, 20vw, 12rem);
-		line-height: 1;
-		color: black;
-		margin: 0;
-		text-align: end;
-		width: 100%;
-	}
-
-	.footer {
-		width: 100%;
-		display: flex;
-		flex-direction: row;
-		align-items: flex-end;
-		justify-content: stretch;
-		pointer-events: all;
-	}
-
-	.footer-text {
-		white-space: nowrap;
-		font-size: 1rem;
-		line-height: 1.5;
-		color: black;
-	}
-
-	.footer-title {
-		font-family: 'Antonio', sans-serif;
-		font-size: 1.2rem;
-		font-weight: 700;
-		text-align: center;
-		color: black;
-		letter-spacing: -0.05em;
-		white-space: nowrap;
-	}
-
-	.footer-empty {
-		font-size: 1rem;
-		line-height: 1;
-		text-align: right;
-		color: black;
-	}
-
-	/* Flexible Spacing */
-	.spacer {
-		flex: 1;
-	}
-
-	.spacer-auto {
-		flex-grow: 1;
-	}
-
-	.spacer-small {
-		width: 0.5rem;
-	}
-</style>

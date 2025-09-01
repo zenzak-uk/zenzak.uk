@@ -7,14 +7,17 @@
 	import CustomRenderer from '$lib/components/background/CustomRenderer.svelte';
 </script>
 
-<div class="container">
+<div class="relative w-screen h-screen overflow-hidden">
 	<!-- Underlay (behind the canvas) -->
-	<div class="underlay-wrapper">
-		<Underlay />
+	<div class="absolute inset-0 z-0 bg-[url('/images/background.webp')] bg-cover bg-center">
+		<div class="absolute inset-0 bg-black/20"></div>
+		<div class="relative">
+			<Underlay />
+		</div>
 	</div>
 
 	<!-- Canvas (middle layer) -->
-	<div class="canvas-wrapper">
+	<div class="absolute inset-0 z-10">
 		<Canvas shadows>
 			<World gravity={[0, 0, 0]}>
 				<!-- <Debug /> -->
@@ -25,43 +28,12 @@
 	</div>
 
 	<!-- Overlay (above the canvas) -->
-	<div class="overlay-wrapper">
+	<div class="absolute inset-0 z-20 pointer-events-none">
 		<Overlay />
 	</div>
 </div>
 
 <style>
-	.container {
-		overflow: hidden;
-	}
-
-	.underlay-wrapper {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		z-index: -1;
-		background-color: #e7eef0;
-	}
-
-	.canvas-wrapper {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		z-index: 0;
-	}
-	.overlay-wrapper {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		z-index: 10;
-		pointer-events: none;
-	}
 	:global(.overlay-wrapper a) {
 		pointer-events: auto;
 	}
