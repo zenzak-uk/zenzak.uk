@@ -3,7 +3,9 @@
 	import Faq from '$lib/components/Faq.svelte';
 </script>
 
-<div class="w-full max-w-screen-xl mx-auto px-8 py-16 my-30 bg-brand/950 rounded-2xl backdrop-blur-[10px] border border-white/10 text-gray-200">
+<div
+	class="bg-brand/950 mx-auto my-30 w-full max-w-screen-xl rounded-2xl border border-white/10 px-8 py-16 text-gray-200 backdrop-blur-[10px]"
+>
 	<h1 class="page-title">Frequently Asked Questions</h1>
 	<Faq />
 </div>
