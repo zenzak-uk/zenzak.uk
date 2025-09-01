@@ -11,6 +11,8 @@
 
 <SEO {...seoProps} />
 
-<div class="w-full max-w-screen-xl mx-auto px-8 py-16 my-8 bg-brand/950 rounded-2xl backdrop-blur-[10px] border border-white/10 text-gray-200">
+<div
+	class="bg-brand/950 mx-auto my-8 w-full max-w-screen-xl rounded-2xl border border-white/10 px-8 py-16 text-gray-200 backdrop-blur-[10px]"
+>
 	<Services />
 </div>
