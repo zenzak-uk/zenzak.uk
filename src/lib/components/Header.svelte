@@ -108,7 +108,7 @@
 		{#if isMobileMenuOpen}
 			<div
 				id="mobile-menu-dropdown"
-				class="absolute top-[calc(100%+0.75rem)] right-0 w-[min(92vw,320px)] p-2 rounded-[14px] bg-black/[0.7] backdrop-blur-[8px] border border-white/[0.08] shadow-[0_12px_40px_rgba(0,0,0,0.28)] z-[1002] origin-top-right"
+				class="absolute top-[calc(100%+0.75rem)] right-0 w-[min(92vw,320px)] p-2 rounded-[14px] bg-black/[0.9] backdrop-blur-[8px] border border-white/[0.08] shadow-[0_12px_40px_rgba(0,0,0,0.28)] z-[1002] origin-top-right"
 				tabindex="-1"
 				use:clickOutside
 				on:outclick={closeMenu}
