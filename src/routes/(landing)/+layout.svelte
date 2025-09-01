@@ -1,77 +1,43 @@
 <script>
 	import { base } from '$app/paths';
 	import Header from '$lib/components/Header.svelte';
-	let { children } = $props();
-	import '../../app.css';
+
+	let { children, data } = $props();
+
+	const poster = `${base}/videos/poster.avif`;
+	const bgWebm = `${base}/videos/bg.webm`;
+	const bgMp4 = `${base}/videos/bg.mp4`;
 </script>
 
-<Header></Header>
+<Header />
 
-<div class="app-container" style="--poster-url: url({base}/videos/poster.avif)">
-	<div class="background-video-container">
-		<video autoplay muted loop playsinline poster="{base}/videos/poster.avif">
-			<source src="{base}/videos/bg.webm" type="video/webm" />
-			<source src="{base}/videos/bg.mp4" type="video/mp4" />
-			Your browser does not support the video tag.
-		</video>
-		<div class="video-overlay"></div>
-	</div>
-	<div class="content-container">
-		{@render children()}
-	</div>
+<!-- Fixed background -->
+<div class="pointer-events-none fixed inset-0 -z-10" style={`--poster-url: url(${poster})`}>
+	<video autoplay muted loop playsinline {poster} class="h-full w-full object-cover">
+		<source src={bgWebm} type="video/webm" />
+		<source src={bgMp4} type="video/mp4" />
+		Your browser does not support the video tag.
+	</video>
+	<div class="bg-gradient-radial absolute inset-0 from-black/30 to-black/80" />
 </div>
 
+<main class="relative z-0 min-h-dvh w-full {data?.layout ?? ''}">
+	{@render children()}
+</main>
+
 <style>
-	.app-container {
-		position: relative;
-		min-height: 100dvh;
-		display: flex;
-		flex-direction: column;
-		align-items: stretch;
-		overflow: hidden;
-	}
-
-	.background-video-container {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		z-index: -1;
-	}
-
-	video {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-	}
-
-	.video-overlay {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
+	/* Radial gradient since Tailwind doesn't have this built-in */
+	.bg-gradient-radial {
 		background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.8) 70%);
 	}
 
-	.content-container {
-		flex: 1 1 auto;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		min-height: 0;
-		margin: 0;
-		padding: 0;
-		width: 100%;
-	}
-
+	/* Reduced motion support */
 	@media (prefers-reduced-motion: reduce) {
 		video {
 			display: none;
 		}
-		.background-video-container {
-			background: var(--poster-url);
+		.fixed {
+			background: var(--poster-url) center/cover no-repeat;
 		}
 	}
 </style>

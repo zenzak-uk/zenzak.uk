@@ -58,7 +58,7 @@
 					<h2
 						class="m-0 text-base leading-[1.8] font-semibold tracking-[0.05em] text-gray-300 md:text-lg xl:text-xl"
 					>
-						MAKING COMPLEX IDEAS CLEAR, PERSUASIVE, AND READY FOR MARKET.
+						MAKING IDEAS CLEAR, PERSUASIVE, AND READY FOR MARKET.
 					</h2>
 				</div>
 
