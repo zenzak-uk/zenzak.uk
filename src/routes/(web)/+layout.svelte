@@ -1,29 +1,26 @@
+<!-- layout.svelte -->
 <script lang="ts">
-	import CanvasPortalTarget from '$lib/components/CanvasPortalTarget.svelte';
+	import CanvasPortalTarget, { clearAllSnippets } from '$lib/components/CanvasPortalTarget.svelte';
 	import { Canvas } from '@threlte/core';
+	import { beforeNavigate } from '$app/navigation';
 	import type { Snippet } from 'svelte';
 	import '../../app.css';
 	import Header from '$lib/components/Header.svelte';
 
 	let { children }: { children: Snippet } = $props();
+
+	// Clear all portal snippets before navigation
+	beforeNavigate(() => {
+		clearAllSnippets();
+	});
 </script>
 
-<Header></Header>
+<Header />
 
-<div>
+<div class="pointer-events-auto absolute inset-0 z-10">
 	<Canvas>
 		<CanvasPortalTarget />
 	</Canvas>
 </div>
 
 {@render children()}
-
-<style>
-	div {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
