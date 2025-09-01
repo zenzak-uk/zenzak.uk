@@ -12,22 +12,22 @@
 <section class="mx-auto max-w-6xl space-y-16 px-4 py-16">
 	<!-- Hero / Positioning -->
 	<div class="space-y-4 text-center">
-		<p class="font-xl text-sm tracking-widest text-primary uppercase">Solutions</p>
-		<h2 class="text-4xl font-semibold text-foreground md:text-5xl">
+		<p class="font-xl text-primary text-sm tracking-widest uppercase">Solutions</p>
+		<h2 class="text-foreground text-4xl font-semibold md:text-5xl">
 			Product Design, Modeling, and Launch‑Ready Visuals
 		</h2>
-		<p class="mx-auto max-w-3xl text-lg text-muted-foreground">
+		<p class="text-muted-foreground mx-auto max-w-3xl text-lg">
 			I’m a photographer, engineer, and designer turned 3D artist. I build detailed, high-quality
 			models with a focus on clean topology—then light, render, and animate them so they’re
 			impossible to ignore.
 		</p>
-		<div class="flex flex-wrap items-center justify-center gap-2 text-sm text-muted-foreground">
-			<span class="rounded bg-muted/50 px-2 py-1">Photographer</span>
-			<span class="rounded bg-muted/50 px-2 py-1">Engineer</span>
-			<span class="rounded bg-muted/50 px-2 py-1">Designer</span>
-			<span class="rounded bg-muted/50 px-2 py-1">Programmer</span>
-			<span class="rounded bg-muted/50 px-2 py-1">Animator</span>
-			<span class="rounded bg-muted/50 px-2 py-1">3D Artist</span>
+		<div class="text-muted-foreground flex flex-wrap items-center justify-center gap-2 text-sm">
+			<span class="bg-muted/50 rounded px-2 py-1">Photographer</span>
+			<span class="bg-muted/50 rounded px-2 py-1">Engineer</span>
+			<span class="bg-muted/50 rounded px-2 py-1">Designer</span>
+			<span class="bg-muted/50 rounded px-2 py-1">Programmer</span>
+			<span class="bg-muted/50 rounded px-2 py-1">Animator</span>
+			<span class="bg-muted/50 rounded px-2 py-1">3D Artist</span>
 		</div>
 	</div>
 
@@ -81,7 +81,7 @@
 				<CardTitle class="text-xl">Concept Modeling & Sculpting</CardTitle>
 				<CardDescription class="text-base">From sketch to clean 3D geometry.</CardDescription>
 			</CardHeader>
-			<CardContent class="text-base text-card-foreground">
+			<CardContent class="text-card-foreground text-base">
 				Rapid ideation models, hard-surface and organic sculpting, and Subdivision Surface modeling
 				to solve proportions and ergonomics for confident reviews.
 			</CardContent>
@@ -92,7 +92,7 @@
 				<CardTitle class="text-xl">High-Fidelity Surfacing & Texturing</CardTitle>
 				<CardDescription class="text-base">Models ready for their close-ups.</CardDescription>
 			</CardHeader>
-			<CardContent class="text-base text-card-foreground">
+			<CardContent class="text-card-foreground text-base">
 				Clean polygonal modeling, detailed sculpting, and meticulous UV unwrapping for flawless
 				texture application.
 			</CardContent>
@@ -103,7 +103,7 @@
 				<CardTitle class="text-xl">Retopology & UV Mapping</CardTitle>
 				<CardDescription class="text-base">Optimized models for any application.</CardDescription>
 			</CardHeader>
-			<CardContent class="text-base text-card-foreground">
+			<CardContent class="text-card-foreground text-base">
 				Efficient retopology for clean, animatable geometry and expert UV mapping for
 				distortion-free texturing.
 			</CardContent>
@@ -114,7 +114,7 @@
 				<CardTitle class="text-xl">CMF & Lighting Studies</CardTitle>
 				<CardDescription class="text-base">Get the material story right.</CardDescription>
 			</CardHeader>
-			<CardContent class="text-base text-card-foreground">
+			<CardContent class="text-card-foreground text-base">
 				Realistic materials, texture authoring, and studio/lifestyle lighting from a photographer’s
 				perspective.
 			</CardContent>
@@ -125,7 +125,7 @@
 				<CardTitle class="text-xl">Hero Renders & Photo Composites</CardTitle>
 				<CardDescription class="text-base">Centerpiece imagery that sells.</CardDescription>
 			</CardHeader>
-			<CardContent class="text-base text-card-foreground">
+			<CardContent class="text-card-foreground text-base">
 				8K hero shots, transparent variants for web and print, and photo-real composites that blend
 				real-world photography with CG precision.
 			</CardContent>
@@ -138,7 +138,7 @@
 					>Clarity for reviews, sales, and documentation.</CardDescription
 				>
 			</CardHeader>
-			<CardContent class="text-base text-card-foreground">
+			<CardContent class="text-card-foreground text-base">
 				Exploded views, mechanism breakdowns, and embedded 3D/AR viewers for web and trade shows.
 			</CardContent>
 		</Card>
