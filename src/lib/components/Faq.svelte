@@ -22,17 +22,17 @@
 	<Accordion type="single" collapsible class="space-y-4">
 		<AccordionItem
 			value="benefit"
-			class="group rounded-xl border bg-card/60 shadow-sm backdrop-blur-sm transition-all hover:shadow-md data-[state=open]:shadow-lg"
+			class="group bg-card/60 rounded-xl border shadow-sm backdrop-blur-sm transition-all hover:shadow-md data-[state=open]:shadow-lg"
 		>
 			<AccordionTrigger class="px-5 py-4">
 				<div class="flex items-center gap-3">
-					<Sparkles class="h-5 w-5 text-primary" />
+					<Sparkles class="text-primary h-5 w-5" />
 					<span class="text-left font-medium">
 						What's the benefit of hiring an engineer to do this?
 					</span>
 				</div>
 			</AccordionTrigger>
-			<AccordionContent class="px-5 pb-5 text-muted-foreground">
+			<AccordionContent class="text-muted-foreground px-5 pb-5">
 				<p>
 					<strong class="text-foreground">Efficiency.</strong> I understand your CAD files, schematics,
 					and technical language from the start. This eliminates misinterpretation and drastically reduces
@@ -43,11 +43,11 @@
 
 		<AccordionItem
 			value="process"
-			class="group rounded-xl border bg-card/60 shadow-sm backdrop-blur-sm transition-all hover:shadow-md data-[state=open]:shadow-lg"
+			class="group bg-card/60 rounded-xl border shadow-sm backdrop-blur-sm transition-all hover:shadow-md data-[state=open]:shadow-lg"
 		>
 			<AccordionTrigger class="px-5 py-4">
 				<div class="flex items-center gap-3">
-					<Cog class="h-5 w-5 text-primary" />
+					<Cog class="text-primary h-5 w-5" />
 					<span class="text-left font-medium">What is your process?</span>
 				</div>
 			</AccordionTrigger>
@@ -55,7 +55,7 @@
 				<ol class="relative ml-2 space-y-6 border-l pl-8">
 					<li class="relative">
 						<span
-							class="absolute top-1.5 -left-[13px] h-2.5 w-2.5 rounded-full bg-primary ring-4 ring-background"
+							class="bg-primary ring-background absolute top-1.5 -left-[13px] h-2.5 w-2.5 rounded-full ring-4"
 						></span>
 						<p class="text-foreground">
 							<strong>Discovery &amp; Strategy:</strong> A quick call to align on your commercial goals
@@ -64,7 +64,7 @@
 					</li>
 					<li class="relative">
 						<span
-							class="absolute top-1.5 -left-[13px] h-2.5 w-2.5 rounded-full bg-primary ring-4 ring-background"
+							class="bg-primary ring-background absolute top-1.5 -left-[13px] h-2.5 w-2.5 rounded-full ring-4"
 						></span>
 						<p class="text-foreground">
 							<strong>Creation &amp; Review:</strong> I build the animation with key milestones for your
@@ -73,7 +73,7 @@
 					</li>
 					<li class="relative">
 						<span
-							class="absolute top-1.5 -left-[13px] h-2.5 w-2.5 rounded-full bg-primary ring-4 ring-background"
+							class="bg-primary ring-background absolute top-1.5 -left-[13px] h-2.5 w-2.5 rounded-full ring-4"
 						></span>
 						<p class="text-foreground">
 							<strong>Delivery:</strong> You receive the final, high-impact animation, ready for deployment.
@@ -85,15 +85,15 @@
 
 		<AccordionItem
 			value="cost"
-			class="group rounded-xl border bg-card/60 shadow-sm backdrop-blur-sm transition-all hover:shadow-md data-[state=open]:shadow-lg"
+			class="group bg-card/60 rounded-xl border shadow-sm backdrop-blur-sm transition-all hover:shadow-md data-[state=open]:shadow-lg"
 		>
 			<AccordionTrigger class="px-5 py-4">
 				<div class="flex items-center gap-3">
-					<DollarSign class="h-5 w-5 text-primary" />
+					<DollarSign class="text-primary h-5 w-5" />
 					<span class="text-left font-medium">How much does a project cost?</span>
 				</div>
 			</AccordionTrigger>
-			<AccordionContent class="px-5 pb-5 text-muted-foreground">
+			<AccordionContent class="text-muted-foreground px-5 pb-5">
 				<p>
 					Every project is custom-quoted to fit its specific goals. After our call, you'll receive a
 					detailed, transparent quote. No hidden fees, no surprises. Just exceptional results.
@@ -103,21 +103,22 @@
 
 		<AccordionItem
 			value="timeline"
-			class="group rounded-xl border bg-card/60 shadow-sm backdrop-blur-sm transition-all hover:shadow-md data-[state=open]:shadow-lg"
+			class="group bg-card/60 rounded-xl border shadow-sm backdrop-blur-sm transition-all hover:shadow-md data-[state=open]:shadow-lg"
 		>
 			<AccordionTrigger class="px-5 py-4">
 				<div class="flex items-center gap-3">
-					<Clock class="h-5 w-5 text-primary" />
+					<Clock class="text-primary h-5 w-5" />
 					<span class="text-left font-medium">How long will it take?</span>
 				</div>
 			</AccordionTrigger>
-			<AccordionContent class="px-5 pb-5 text-muted-foreground">
+			<AccordionContent class="text-muted-foreground px-5 pb-5">
 				<p>
 					Most projects are delivered in 1-3 weeks. Your quote will include a reliable timeline. If
 					you have an urgent deadline, let's discuss it.
 				</p>
 			</AccordionContent>
 		</AccordionItem>
+		<Separator />
 	</Accordion>
 
 	<section>

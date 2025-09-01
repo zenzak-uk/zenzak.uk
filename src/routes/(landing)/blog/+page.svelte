@@ -18,12 +18,14 @@
 </script>
 
 <div class="mx-auto mt-24 w-full max-w-3xl px-4">
-	<h1 class="mt-0 mb-2 text-center text-5xl tracking-wider">THE BLOG</h1>
-	<p class="mb-2 text-center">Insights on technical animation, design, and market strategy.</p>
+	<h1 class="mt-0 mb-2 text-center text-5xl tracking-wider text-white">The Blog</h1>
+	<h2 class="mb-2 text-center font-semibold text-neutral-600">
+		Insights on technical animation, design, and market strategy.
+	</h2>
 	<hr class="mb-12 border-0 border-t border-white/20" />
 
 	{#await postsPromise}
-		<p class="text-neutral-300">Loading posts...</p>
+		<p class="text-neutral-400">Loading posts...</p>
 	{:then posts}
 		<div class="grid gap-8">
 			{#each posts as post}
@@ -31,7 +33,7 @@
 					href={`/blog/${post.slug}`}
 					class="block rounded-lg border border-white/15 p-6 text-inherit no-underline transition-all duration-200 hover:border-white/40 hover:bg-white/5"
 				>
-					<h2 class="mt-0 mb-2 font-medium tracking-wide text-neutral-100">
+					<h2 class="mt-0 mb-2 font-medium tracking-wide text-white">
 						{post.title}
 					</h2>
 					<p class="mb-4 text-sm text-neutral-500">
@@ -41,7 +43,7 @@
 							day: 'numeric'
 						})}
 					</p>
-					<p class="leading-relaxed text-neutral-300">
+					<p class="leading-relaxed text-neutral-600">
 						{post.description}
 					</p>
 					<span class="mt-4 inline-block font-medium text-white"> Read More &rarr; </span>

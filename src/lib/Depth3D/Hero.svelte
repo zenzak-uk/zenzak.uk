@@ -15,13 +15,13 @@
 			<div class="flex flex-col justify-center sm:max-w-xl xl:col-end-1 xl:row-start-1">
 				<div class="mt-20 text-lg leading-8 text-stone-400">
 					<h1 class="mb-8 max-w-2xl text-4xl font-bold tracking-tight text-stone-50 sm:text-6xl">
-						Engineering in Motion.
+						Where Technical Brilliance Meets Visual Storytelling.
 					</h1>
-					I see the world through two lenses: the exacting precision of an engineer and the emotive power
-					of a visual artist. I see these forces as the blueprint and the impact of true innovation.
-					My passion is to be the bridge between them, translating your technical brilliance into a visual
-					story that connects with audiences, convinces stakeholders, and helps you claim the success
-					your vision deserves.
+					I see the world through two lenses: the exacting precision of a mechanical engineer and the
+					emotive power of a visual artist. For years, I've been driven by a passion to bridge the gap
+					between technical brilliance and compelling communication. At Zenzak, we translate your complex
+					ideas into visual stories that not only connect with your audience but also convince stakeholders
+					and accelerate the success your vision deserves.
 				</div>
 			</div>
 

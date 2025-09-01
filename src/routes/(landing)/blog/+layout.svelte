@@ -1,5 +1,4 @@
 <script>
-	// Get the children prop, which is the page content being rendered.
 	let { children } = $props();
 </script>
 

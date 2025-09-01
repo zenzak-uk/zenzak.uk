@@ -2,6 +2,7 @@
 	import { base } from '$app/paths';
 	import Header from '$lib/components/Header.svelte';
 	let { children } = $props();
+	import '../../app.css';
 </script>
 
 <Header></Header>

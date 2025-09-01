@@ -9,9 +9,9 @@
 
 <section class="mx-auto max-w-6xl space-y-16 px-4 py-16">
 	<div class="space-y-4 text-center">
-		<p class="font-xl text-sm tracking-widest text-primary uppercase">Our Services</p>
-		<h2 class="text-4xl font-semibold text-foreground md:text-5xl">A Full‑Cycle Design Partner</h2>
-		<p class="mx-auto max-w-3xl text-lg text-muted-foreground">
+		<p class="font-xl text-primary text-sm tracking-widest uppercase">Our Services</p>
+		<h2 class="text-foreground text-4xl font-semibold md:text-5xl">A Full‑Cycle Design Partner</h2>
+		<p class="text-muted-foreground mx-auto max-w-3xl text-lg">
 			From a sketch on a whiteboard to a production‑ready model—get the strategic visuals to bring
 			your vision to market.
 		</p>
@@ -26,7 +26,7 @@
 					>The definitive hero shot for decks, campaigns, and e‑commerce.</CardDescription
 				>
 			</CardHeader>
-			<CardContent class="text-base text-card-foreground">
+			<CardContent class="text-card-foreground text-base">
 				Photorealistic images that demand attention and drive interest.
 			</CardContent>
 		</Card>
@@ -36,7 +36,7 @@
 				<CardTitle class="text-xl">Technical & Explainer Animations</CardTitle>
 				<CardDescription class="text-base">Make the complex crystal‑clear.</CardDescription>
 			</CardHeader>
-			<CardContent class="text-base text-card-foreground">
+			<CardContent class="text-card-foreground text-base">
 				Turn intricate mechanics and internal processes into intuitive visuals that educate and
 				persuade.
 			</CardContent>
@@ -49,26 +49,26 @@
 					>Create & showcase a flawless user experience.</CardDescription
 				>
 			</CardHeader>
-			<CardContent class="text-base text-card-foreground">
+			<CardContent class="text-card-foreground text-base">
 				Turn your static products into immersive web experiences. Fluid interface animations for
 				promos and tutorials that drive adoption.
 			</CardContent>
 		</Card>
 	</div>
 
-	<div class="space-y-8 rounded-xl bg-muted/30 p-2 md:p-2">
+	<div class="bg-muted/30 space-y-8 rounded-xl p-2 md:p-2">
 		<div class="space-y-2 text-center">
-			<h3 class="text-3xl font-semibold text-foreground">Where I Create Value</h3>
+			<h3 class="text-foreground text-3xl font-semibold">Where I Create Value</h3>
 			<p class="text-muted-foreground">Tailored solutions for different audiences</p>
 		</div>
 
 		<div class="grid gap-2 sm:grid-cols-2">
-			<Card class="group cursor-pointer transition-all hover:bg-background/50 hover:shadow-lg">
-				<CardHeader class="pb-3">
+			<Card class="group hover:bg-background/50 cursor-pointer transition-all hover:shadow-lg">
+				<CardHeader>
 					<CardTitle class="flex items-center gap-2 text-lg">
-						<div class="rounded-lg bg-primary/10 p-2">
+						<div class="bg-primary/10 rounded-lg p-2">
 							<svg
-								class="h-5 w-5 text-primary"
+								class="text-primary h-5 w-5"
 								fill="none"
 								stroke="currentColor"
 								viewBox="0 0 24 24"
@@ -93,12 +93,12 @@
 				</CardContent>
 			</Card>
 
-			<Card class="group cursor-pointer transition-all hover:bg-background/50 hover:shadow-lg">
-				<CardHeader class="pb-3">
+			<Card class="group hover:bg-background/50 cursor-pointer transition-all hover:shadow-lg">
+				<CardHeader>
 					<CardTitle class="flex items-center gap-2 text-lg">
-						<div class="rounded-lg bg-primary/10 p-2">
+						<div class="bg-primary/10 rounded-lg p-2">
 							<svg
-								class="h-5 w-5 text-primary"
+								class="text-primary h-5 w-5"
 								fill="none"
 								stroke="currentColor"
 								viewBox="0 0 24 24"
@@ -122,12 +122,12 @@
 				</CardContent>
 			</Card>
 
-			<Card class="group cursor-pointer transition-all hover:bg-background/50 hover:shadow-lg">
-				<CardHeader class="pb-3">
+			<Card class="group hover:bg-background/50 cursor-pointer transition-all hover:shadow-lg">
+				<CardHeader>
 					<CardTitle class="flex items-center gap-2 text-lg">
-						<div class="rounded-lg bg-primary/10 p-2">
+						<div class="bg-primary/10 rounded-lg p-2">
 							<svg
-								class="h-5 w-5 text-primary"
+								class="text-primary h-5 w-5"
 								fill="none"
 								stroke="currentColor"
 								viewBox="0 0 24 24"
@@ -151,12 +151,12 @@
 				</CardContent>
 			</Card>
 
-			<Card class="group cursor-pointer transition-all hover:bg-background/50 hover:shadow-lg">
-				<CardHeader class="pb-3">
+			<Card class="group hover:bg-background/50 cursor-pointer transition-all hover:shadow-lg">
+				<CardHeader>
 					<CardTitle class="flex items-center gap-2 text-lg">
-						<div class="rounded-lg bg-primary/10 p-2">
+						<div class="bg-primary/10 rounded-lg p-2">
 							<svg
-								class="h-5 w-5 text-primary"
+								class="text-primary h-5 w-5"
 								fill="none"
 								stroke="currentColor"
 								viewBox="0 0 24 24"
