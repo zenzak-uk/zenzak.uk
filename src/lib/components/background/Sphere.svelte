@@ -6,27 +6,51 @@
 
 	let matcapTexture = readable(new THREE.TextureLoader().load('/assets/textures/gold-matcap.png'));
 
-	let { scale = 1 } = $props();
+	let { scale = 1, controlState = { mode: 'normal', isAnimating: false } } = $props();
 
 	let r = THREE.MathUtils.randFloatSpread;
 
 	// Reference to the rigid body
 	let rigidBody = $state();
 	let vec = new THREE.Vector3();
+
+	// Calculate effective scale based on control state
+	const effectiveScale = $derived(controlState.mode === 'shrunk' ? scale * 0.3 : scale);
+
+	// Track previous control state to detect changes
+	let previousMode = 'normal';
+
 	// Apply impulse during each frame update
 	useTask((delta) => {
 		if (rigidBody) {
 			// Limit the delta to prevent large jumps
 			delta = Math.min(0.1, delta);
 
-			//Apply impulse to the rigid body
+			// Handle push effect when mode changes to 'pushed'
+			if (controlState.mode === 'pushed' && previousMode !== 'pushed') {
+				// Apply strong outward impulse to push spheres away from center
+				const currentPos = rigidBody.translation();
+				const pushDirection = new THREE.Vector3(currentPos.x, currentPos.y, currentPos.z)
+					.normalize()
+					.multiplyScalar(300 * scale); // Strong push force
+
+				rigidBody.applyImpulse(pushDirection);
+			}
+
+			// Normal physics behavior
 			rigidBody.applyImpulse(
 				vec
 					.copy(rigidBody.translation())
 					.normalize()
-					.multiply({ x: -50 * delta * scale, y: -150 * delta * scale, z: -50 * delta * scale })
+					.multiply({
+						x: -50 * delta * effectiveScale,
+						y: -150 * delta * effectiveScale,
+						z: -50 * delta * effectiveScale
+					})
 			);
 		}
+
+		previousMode = controlState.mode;
 	});
 </script>
 
@@ -38,8 +62,8 @@
 		bind:rigidBody
 		colliders={false}
 	>
-		<Collider shape="ball" args={[scale]}>
-			<T.Mesh scale={[scale, scale, scale]} castShadow receiveShadow>
+		<Collider shape="ball" args={[effectiveScale]}>
+			<T.Mesh scale={[effectiveScale, effectiveScale, effectiveScale]} castShadow receiveShadow>
 				<T.SphereGeometry args={[1, 64, 64]} />
 				<T.MeshMatcapMaterial bind:matcap={$matcapTexture} />
 				<!--<T.MeshPhysicalMaterial 
