@@ -6,18 +6,18 @@ ZENZAK transforms complex ideas into clear, persuasive, and market-ready visuals
 
 ### Key Services
 
-*   **Product Visualization & Renders:** Creating compelling, photorealistic images for presentations, marketing campaigns, and e-commerce platforms.
-*   **Technical & Explainer Animations:** Simplifying intricate mechanics and internal processes into intuitive and educational visuals.
-*   **UI/UX & App Demonstrations:** Developing fluid interface animations for promotions and tutorials that enhance the user experience and drive product adoption.
+- **Product Visualization & Renders:** Creating compelling, photorealistic images for presentations, marketing campaigns, and e-commerce platforms.
+- **Technical & Explainer Animations:** Simplifying intricate mechanics and internal processes into intuitive and educational visuals.
+- **UI/UX & App Demonstrations:** Developing fluid interface animations for promotions and tutorials that enhance the user experience and drive product adoption.
 
 ### Tailored Solutions for a Diverse Clientele
 
 ZENZAK provides targeted value for a diverse range of clients:
 
-*   **For Startups:** Assisting in securing funding by demonstrating a product's value and potential through compelling animations.
-*   **For Engineering Firms:** Helping to win bids by showcasing mechanical superiority with technically precise animations.
-*   **For Marketing Teams:** Boosting sales and conversion rates with engaging content that highlights product features and benefits.
-*   **For Product Designers:** Facilitating client approval with photorealistic renders that showcase every detail.
+- **For Startups:** Assisting in securing funding by demonstrating a product's value and potential through compelling animations.
+- **For Engineering Firms:** Helping to win bids by showcasing mechanical superiority with technically precise animations.
+- **For Marketing Teams:** Boosting sales and conversion rates with engaging content that highlights product features and benefits.
+- **For Product Designers:** Facilitating client approval with photorealistic renders that showcase every detail.
 
 ### A Unique Blend of Technical and Creative Expertise
 
