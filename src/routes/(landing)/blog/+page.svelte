@@ -25,7 +25,7 @@
 
 <SEO {...seoProps} />
 
-<div class="mx-auto mt-24 w-full max-w-3xl px-4">
+<div class="mx-auto mt-4 w-full max-w-3xl px-4">
 	<h1 class="mt-0 mb-2 text-center text-5xl tracking-wider text-white">The Blog</h1>
 	<h2 class="mb-2 text-center font-semibold text-neutral-600">
 		Insights on technical animation, design, and market strategy.
