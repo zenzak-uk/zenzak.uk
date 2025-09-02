@@ -6,7 +6,7 @@
 		</h2>
 	</header>
 
-	<div class="flex-grow"></div>
+	<div class="flex-grow" style="flex-grow: 1;"></div>
 
 	<!-- Main Title Section -->
 	<div class="w-full">
@@ -22,7 +22,7 @@
 		</p>
 	</div>
 
-	<div class="flex-grow"></div>
+	<div class="flex-grow" style="flex-grow: 4;"></div>
 
 	<!-- Footer Section -->
 	<footer class="pointer-events-auto flex w-full items-end justify-between">

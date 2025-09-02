@@ -6,7 +6,7 @@
 	<!-- Header Spacer -->
 	<div class="font-antonio mt-20 text-3xl font-bold tracking-tighter">&nbsp;</div>
 
-	<div class="flex-grow"></div>
+	<div class="flex-grow" style="flex-grow: 1;"></div>
 
 	<!-- Main Title Spacer -->
 	<div class="w-full">
@@ -41,7 +41,7 @@
 		Push
 	</button>
 
-	<div class="flex-grow"></div>
+	<div class="flex-grow" style="flex-grow: 4;"></div>
 
 	<!-- Footer Section -->
 	<footer class="pointer-events-auto flex w-full items-end justify-between">
