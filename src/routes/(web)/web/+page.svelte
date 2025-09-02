@@ -5,7 +5,15 @@
 	import Overlay from '$lib/components/background/Overlay.svelte';
 	import CustomRenderer from '$lib/components/background/CustomRenderer.svelte';
 	import CanvasPortal from '$lib/components/CanvasPortal.svelte';
+	import SEO from '$lib/components/SEO/index.svelte';
+	const seoProps = {
+		title: 'Digital Experiences for the Web | Zenzak Animation',
+		metadescription:
+			'Zenzak Animation builds immersive 3D web experiences. Elevate your site with interactive product configurators, digital twins, and data visualizations that engage and persuade.'
+	};
 </script>
+
+<SEO {...seoProps} />
 
 <div class="relative h-screen w-screen overflow-hidden">
 	<!-- Underlay (behind the canvas) -->

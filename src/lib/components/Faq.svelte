@@ -55,7 +55,7 @@
 				<ol class="relative ml-2 space-y-6 border-l pl-8">
 					<li class="relative">
 						<span
-							class="bg-primary ring-background absolute top-1.5 -left-[13px] h-2.5 w-2.5 rounded-full ring-4"
+							class="bg-primary ring-background absolute top-1.5 -left-[13px] h-1.5 w-1.5 rounded-full ring-4"
 						></span>
 						<p class="text-foreground">
 							<strong>Discovery &amp; Strategy:</strong> A quick call to align on your commercial goals
@@ -64,7 +64,7 @@
 					</li>
 					<li class="relative">
 						<span
-							class="bg-primary ring-background absolute top-1.5 -left-[13px] h-2.5 w-2.5 rounded-full ring-4"
+							class="bg-primary ring-background absolute top-1.5 -left-[13px] h-1.5 w-1.5 rounded-full ring-4"
 						></span>
 						<p class="text-foreground">
 							<strong>Creation &amp; Review:</strong> I build the animation with key milestones for your
@@ -73,7 +73,7 @@
 					</li>
 					<li class="relative">
 						<span
-							class="bg-primary ring-background absolute top-1.5 -left-[13px] h-2.5 w-2.5 rounded-full ring-4"
+							class="bg-primary ring-background absolute top-1.5 -left-[13px] h-1.5 w-1.5 rounded-full ring-4"
 						></span>
 						<p class="text-foreground">
 							<strong>Delivery:</strong> You receive the final, high-impact animation, ready for deployment.

@@ -1,7 +1,14 @@
-<!-- src/routes/services/+page.svelte -->
 <script>
 	import Faq from '$lib/components/Faq.svelte';
+	import SEO from '$lib/components/SEO/index.svelte';
+	const seoProps = {
+		title: '3D Animation FAQ: Process, Cost & Timelines | Zenzak Animation',
+		metadescription:
+			'Get clear answers on our 3D animation process, project costs, and timelines. Discover the unique benefits of our engineer-led approach and start your project with confidence.'
+	};
 </script>
+
+<SEO {...seoProps} />
 
 <div
 	class="bg-brand/950 mx-auto my-30 w-full max-w-screen-xl rounded-2xl border border-white/10 px-8 py-16 text-gray-200 backdrop-blur-[10px]"

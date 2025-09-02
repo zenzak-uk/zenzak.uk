@@ -1,7 +1,15 @@
 <script>
 	import Header from '$lib/components/Header.svelte';
 	import Hero from '$lib/Depth3D/Hero.svelte';
+	import SEO from '$lib/components/SEO/index.svelte';
+	const seoProps = {
+		title: 'Digital Experiences for the Web | Zenzak Animation',
+		metadescription:
+			'Zenzak Animation builds immersive 3D web experiences. Elevate your site with interactive product configurators, digital twins, and data visualizations that engage and persuade.'
+	};
 </script>
+
+<SEO {...seoProps} />
 
 <Header></Header>
 

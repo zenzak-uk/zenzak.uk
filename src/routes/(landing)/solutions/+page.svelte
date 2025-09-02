@@ -1,4 +1,3 @@
-<!-- src/routes/services/+page.svelte -->
 <script>
 	import Solutions from '$lib/components/Solutions.svelte';
 	import SEO from '$lib/components/SEO/index.svelte';

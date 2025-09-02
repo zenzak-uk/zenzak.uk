@@ -15,7 +15,15 @@
 
 	// Use a promise to load the posts
 	const postsPromise = getPosts();
+	import SEO from '$lib/components/SEO/index.svelte';
+	const seoProps = {
+		title: 'Zenzak Animation Blog | Technical Animation & 3D Visualization Insights',
+		metadescription:
+			'Explore expert insights at the intersection of engineering and 3D animation. We cover technical explainers, interactive web experiences, and market-ready design.'
+	};
 </script>
+
+<SEO {...seoProps} />
 
 <div class="mx-auto mt-24 w-full max-w-3xl px-4">
 	<h1 class="mt-0 mb-2 text-center text-5xl tracking-wider text-white">The Blog</h1>
