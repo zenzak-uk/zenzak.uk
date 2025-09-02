@@ -23,7 +23,7 @@
 	/>
 	<div class="mx-auto max-w-7xl px-6 pb-24">
 		<div
-			class="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-md sm:p-12 lg:p-16"
+			class="relative overflow-hidden rounded-3xl border border-white/10 bg-black/5 p-8 backdrop-blur-md sm:p-12 lg:p-16"
 		>
 			<!-- Hero Section -->
 			<header class="mx-auto max-w-2xl text-center">
