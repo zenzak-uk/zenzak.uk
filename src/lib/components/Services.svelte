@@ -56,6 +56,11 @@
 		</Card>
 	</div>
 
+	<!-- Video Element -->
+	<div class="mx-auto max-w-6xl">
+		<video class="rounded-xl" src="/videos/technics.webm" autoplay loop muted playsinline></video>
+	</div>
+
 	<div class="bg-muted/30 space-y-8 rounded-xl p-2 md:p-2">
 		<div class="space-y-2 text-center">
 			<h3 class="text-foreground text-3xl font-semibold">Where I Create Value</h3>
