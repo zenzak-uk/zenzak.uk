@@ -39,8 +39,6 @@
 	}}
 ></T.PerspectiveCamera>
 
-<Environment url="/assets/environments/meadow.hdr" />
-
 <!-- Lighting setup -->
 <T.AmbientLight intensity={4} />
 <T.SpotLight
