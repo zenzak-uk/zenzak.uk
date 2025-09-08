@@ -109,66 +109,9 @@
 		</Card>
 	</div>
 	<VideoPlayer
-		videoUrl="https://player.vimeo.com/video/1116754278?h=00ba6dd0ad&dnt=1&autoplay=1"
+		videoUrl="https://player.vimeo.com/video/1116834824?h=00ba6dd0ad&dnt=1&autoplay=1"
 		thumbnailUrl="/images/pelton-thumb.webp"
 		title="Pelton wheel fluid simulation"
 		thumbnailAlt="Pelton wheel fluid simulation thumbnail"
 	/>
 </section>
-
-	
-
-<style>
-	/* --- Video Player Styles --- */
-	.video-container {
-		margin-top: 2rem;
-		margin-bottom: 2rem;
-		aspect-ratio: 16 / 9;
-		width: 100%;
-		border-radius: 8px;
-		overflow: hidden;
-		background-color: #111; /* Fallback color */
-	}
-
-	iframe {
-		width: 100%;
-		height: 100%;
-		border: 0;
-	}
-
-	.video-thumbnail {
-		position: relative;
-		width: 100%;
-		height: 100%;
-		padding: 0;
-		border: 0;
-		cursor: pointer;
-	}
-
-	.thumbnail-image {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		display: block;
-		transition: filter 0.3s ease;
-	}
-
-	.video-thumbnail:hover .thumbnail-image {
-		filter: brightness(0.8);
-	}
-
-	.play-button-icon {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		width: 70px; /* Match the SVG viewBox width */
-		height: 70px;
-		pointer-events: none; /* Allows clicks to go through to the button */
-		transition: transform 0.3s ease;
-	}
-
-	.video-thumbnail:hover .play-button-icon {
-		transform: translate(-50%, -50%) scale(1.1);
-	}
-</style>
