@@ -187,6 +187,10 @@
 		</div>
 	</div>
 
+	<div class="mx-auto max-w-6xl">
+		<video class="rounded-xl" src="/videos/cinema-web.webm" autoplay loop muted playsinline></video>
+	</div>
+
 	<!-- Engineering-Grade 3D Animation callout -->
 	<Card class="border-slate-700 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
 		<CardContent class="space-y-4 p-8 md:p-10">

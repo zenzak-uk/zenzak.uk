@@ -7,6 +7,7 @@
 	import { Dialog, DialogContent, DialogTrigger } from '$lib/components/ui/dialog';
 	import { AspectRatio } from '$lib/components/ui/aspect-ratio';
 	import Button from '$lib/components/Button.svelte';
+	import VideoPlayer from './VideoPlayer.svelte';
 </script>
 
 <section class="mx-auto max-w-6xl space-y-16 px-4 py-16">
@@ -31,48 +32,12 @@
 		</div>
 	</div>
 
-	<div class="video-container">
-		{#if showVideo}
-			<iframe
-				src="https://player.vimeo.com/video/1099649861?h=00ba6dd0ad&dnt=1&autoplay=1"
-				width="100%"
-				height="100%"
-				frameborder="0"
-				allow="fullscreen; picture-in-picture"
-				allowfullscreen
-				title="Zenzak Portfolio Video"
-			></iframe>
-		{:else}
-			<button
-				class="video-thumbnail"
-				onclick={() => (showVideo = true)}
-				aria-label="Play portfolio video"
-			>
-				<!-- Add loading state overlay -->
-				{#if !imageLoaded}
-					<div class="loading-placeholder">
-						<div class="loading-spinner"></div>
-					</div>
-				{/if}
-
-				<img
-					src="/thumb.jpg"
-					alt="Portfolio showreel thumbnail"
-					class="thumbnail-image"
-					class:loaded={imageLoaded}
-					onload={() => (imageLoaded = true)}
-				/>
-
-				<div class="play-button-icon" class:visible={imageLoaded}>
-					<svg viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<circle cx="35" cy="35" r="35" fill="white" fill-opacity="0.2" />
-						<circle cx="35" cy="35" r="29" stroke="white" stroke-opacity="0.8" stroke-width="2" />
-						<path d="M49 35L28.75 47.1244L28.75 22.8756L49 35Z" fill="white" />
-					</svg>
-				</div>
-			</button>
-		{/if}
-	</div>
+	<VideoPlayer
+		videoUrl="https://player.vimeo.com/video/1099649861?h=00ba6dd0ad&dnt=1&autoplay=1"
+		thumbnailUrl="/images/thumb.jpg"
+		title="Zenzak Portfolio Video"
+		thumbnailAlt="Portfolio showreel thumbnail"
+	/>
 
 	<!-- Outcomes Grid (Product Design & Modeling first) -->
 	<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -143,59 +108,10 @@
 			</CardContent>
 		</Card>
 	</div>
+	<VideoPlayer
+		videoUrl="https://player.vimeo.com/video/1116834824?h=00ba6dd0ad&dnt=1&autoplay=1"
+		thumbnailUrl="/images/pelton-thumb.webp"
+		title="Pelton wheel fluid simulation"
+		thumbnailAlt="Pelton wheel fluid simulation thumbnail"
+	/>
 </section>
-
-<style>
-	/* --- Video Player Styles --- */
-	.video-container {
-		margin-top: 2rem;
-		margin-bottom: 2rem;
-		aspect-ratio: 16 / 9;
-		width: 100%;
-		border-radius: 8px;
-		overflow: hidden;
-		background-color: #111; /* Fallback color */
-	}
-
-	iframe {
-		width: 100%;
-		height: 100%;
-		border: 0;
-	}
-
-	.video-thumbnail {
-		position: relative;
-		width: 100%;
-		height: 100%;
-		padding: 0;
-		border: 0;
-		cursor: pointer;
-	}
-
-	.thumbnail-image {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		display: block;
-		transition: filter 0.3s ease;
-	}
-
-	.video-thumbnail:hover .thumbnail-image {
-		filter: brightness(0.8);
-	}
-
-	.play-button-icon {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		width: 70px; /* Match the SVG viewBox width */
-		height: 70px;
-		pointer-events: none; /* Allows clicks to go through to the button */
-		transition: transform 0.3s ease;
-	}
-
-	.video-thumbnail:hover .play-button-icon {
-		transform: translate(-50%, -50%) scale(1.1);
-	}
-</style>
