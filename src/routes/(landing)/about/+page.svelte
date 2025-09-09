@@ -1,6 +1,6 @@
 <script>
 	import Header from '$lib/components/Header.svelte';
-	import Hero from '$lib/Depth3D/Hero.svelte';
+	import Hero from '$lib/Depth3D/Quote.svelte';
 	import SEO from '$lib/components/SEO/index.svelte';
 	const seoProps = {
 		title: 'Digital Experiences for the Web | Zenzak Animation',
@@ -14,14 +14,7 @@
 <Header></Header>
 
 <div>
-	<Hero
-		image={{
-			image: '/images/me.webp',
-			depth: '/images/depth.png'
-		}}
-		clipTop="{1},"
-	/>
-	<div class="mx-auto max-w-7xl px-6 pb-24">
+	<div class=" mx-auto mt-24 max-w-7xl px-6 pb-24">
 		<div
 			class="relative overflow-hidden rounded-3xl border border-white/10 bg-black/5 p-8 backdrop-blur-md sm:p-12 lg:p-16"
 		>
@@ -34,6 +27,46 @@
 					</span>
 				</h1>
 			</header>
+
+			<!-- About Me Card -->
+			<section class="mx-auto mt-24 max-w-4xl">
+				<div
+					class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-violet-200/10 via-black/10 to-blue-200/10 p-8 backdrop-blur sm:p-12"
+				>
+					<!-- Decorative element -->
+					<div
+						class="absolute -top-4 -right-4 h-24 w-24 rounded-full bg-gradient-to-br from-blue-400/20 to-violet-400/20 blur-2xl"
+					></div>
+
+					<div class="relative">
+						<p class="text-sm font-semibold tracking-wider text-blue-400 uppercase">About Me</p>
+
+						<p class="mt-4 text-2xl leading-tight font-bold text-white sm:text-3xl">
+							Designer. Engineer. Programmer.
+							<span
+								class="bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent"
+							>
+								{' '}3D Artist.
+							</span>
+						</p>
+
+						<p class="mt-6 max-w-2xl text-lg leading-relaxed text-gray-300">
+							My unique background helps me understand projects from every angle. I thrive on
+							solving technical challenges and emerging with visual solutions that are both <span
+								class="text-white">elegant</span
+							>
+							and
+							<span class="text-white">effective</span>.
+						</p>
+					</div>
+				</div>
+				<Hero
+							image={{
+								image: '/images/portrait-me.webp',
+								depth: '/images/depth-me.webp'
+							}}
+						/>
+			</section>
 
 			<!-- Our Story Section -->
 			<section class="mx-auto mt-24 max-w-6xl">
@@ -72,7 +105,7 @@
 
 						<!-- Highlight box -->
 						<div
-							class="mt-8 rounded-lg bg-gradient-to-r from-blue-500/10 to-violet-500/10 p-6 backdrop-blur"
+							class="mt-8 rounded-lg bg-gradient-to-br from-violet-200/10 via-black/10 to-blue-200/10 p-6 backdrop-blur"
 						>
 							<p class="text-lg leading-relaxed text-white">
 								<span class="font-semibold text-blue-400">Zenzak</span> was born from this desire: a
@@ -116,7 +149,7 @@
 									<div class="h-2 w-2 rounded-full bg-blue-400"></div>
 									<h4 class="font-semibold text-white">Technical Fluency</h4>
 								</div>
-								<p class="text-sm leading-relaxed text-gray-400">
+								<p class="leading-relaxed text-gray-300">
 									We speak your technical language and understand the mechanics behind your ideas
 								</p>
 							</div>
@@ -126,7 +159,7 @@
 									<div class="h-2 w-2 rounded-full bg-violet-400"></div>
 									<h4 class="font-semibold text-white">Visual Impact</h4>
 								</div>
-								<p class="text-sm leading-relaxed text-gray-400">
+								<p class="leading-relaxed text-gray-300">
 									We translate brilliance into visuals that are accurate and impossible to ignore
 								</p>
 							</div>
@@ -140,39 +173,7 @@
 				</div>
 			</section>
 
-			<!-- About Me Card -->
-			<section class="mx-auto mt-24 max-w-4xl">
-				<div
-					class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-500/10 via-violet-500/10 to-blue-500/10 p-8 backdrop-blur sm:p-12"
-				>
-					<!-- Decorative element -->
-					<div
-						class="absolute -top-4 -right-4 h-24 w-24 rounded-full bg-gradient-to-br from-blue-400/20 to-violet-400/20 blur-2xl"
-					></div>
-
-					<div class="relative">
-						<p class="text-sm font-semibold tracking-wider text-blue-400 uppercase">About Me</p>
-
-						<p class="mt-4 text-2xl leading-tight font-bold text-white sm:text-3xl">
-							Designer. Engineer. Programmer.
-							<span
-								class="bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent"
-							>
-								{' '}3D Artist.
-							</span>
-						</p>
-
-						<p class="mt-6 max-w-2xl text-lg leading-relaxed text-gray-300">
-							My unique background helps me understand projects from every angle. I thrive on
-							solving technical challenges and emerging with visual solutions that are both <span
-								class="text-white">elegant</span
-							>
-							and
-							<span class="text-white">effective</span>.
-						</p>
-					</div>
-				</div>
-			</section>
+			
 		</div>
 	</div>
 </div>
