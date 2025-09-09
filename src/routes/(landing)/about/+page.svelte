@@ -65,7 +65,7 @@
 
 						<!-- Highlight box -->
 						<div
-							class="mt-8 rounded-lg bg-gradient-to-r from-blue-500/10 to-violet-500/10 p-6 backdrop-blur"
+							class="mt-8 rounded-lg bg-gradient-to-br via-black/10 from-violet-200/10 to-blue-200/10 p-6 backdrop-blur"
 						>
 							<p class="text-lg leading-relaxed text-white">
 								<span class="font-semibold text-blue-400">Zenzak</span> was born from this desire: a
@@ -136,7 +136,7 @@
 			<!-- About Me Card -->
 			<section class="mx-auto mt-24 max-w-4xl">
 				<div
-					class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-500/10 via-violet-500/10 to-blue-500/10 p-8 backdrop-blur sm:p-12"
+					class="relative overflow-hidden rounded-2xl bg-gradient-to-br via-black/10 from-violet-200/10 to-blue-200/10 p-8 backdrop-blur sm:p-12"
 				>
 					<!-- Decorative element -->
 					<div
