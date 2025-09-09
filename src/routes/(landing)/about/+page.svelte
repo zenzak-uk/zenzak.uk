@@ -1,6 +1,6 @@
 <script>
 	import Header from '$lib/components/Header.svelte';
-	import Hero from '$lib/Depth3D/Hero.svelte';
+	import Hero from '$lib/Depth3D/Quote.svelte';
 	import SEO from '$lib/components/SEO/index.svelte';
 	const seoProps = {
 		title: 'Digital Experiences for the Web | Zenzak Animation',
@@ -14,14 +14,7 @@
 <Header></Header>
 
 <div>
-	<Hero
-		image={{
-			image: '/images/me.webp',
-			depth: '/images/depth.png'
-		}}
-		clipTop="{1},"
-	/>
-	<div class="mx-auto max-w-7xl px-6 pb-24">
+	<div class=" mt-24 mx-auto max-w-7xl px-6 pb-24">
 		<div
 			class="relative overflow-hidden rounded-3xl border border-white/10 bg-black/5 p-8 backdrop-blur-md sm:p-12 lg:p-16"
 		>
@@ -116,7 +109,7 @@
 									<div class="h-2 w-2 rounded-full bg-blue-400"></div>
 									<h4 class="font-semibold text-white">Technical Fluency</h4>
 								</div>
-								<p class="text-sm leading-relaxed text-gray-400">
+								<p class="leading-relaxed text-gray-300">
 									We speak your technical language and understand the mechanics behind your ideas
 								</p>
 							</div>
@@ -126,7 +119,7 @@
 									<div class="h-2 w-2 rounded-full bg-violet-400"></div>
 									<h4 class="font-semibold text-white">Visual Impact</h4>
 								</div>
-								<p class="text-sm leading-relaxed text-gray-400">
+								<p class="leading-relaxed text-gray-300">
 									We translate brilliance into visuals that are accurate and impossible to ignore
 								</p>
 							</div>
@@ -170,6 +163,12 @@
 							and
 							<span class="text-white">effective</span>.
 						</p>
+						<Hero
+				image={{
+					image: '/images/portrait-me.webp',
+					depth: '/images/depth-me.webp'
+				}}
+			/>
 					</div>
 				</div>
 			</section>

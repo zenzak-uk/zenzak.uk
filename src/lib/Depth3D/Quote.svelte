@@ -8,12 +8,13 @@
 </script>
 
 <section class="isolate overflow-hidden px-6 lg:px-8">
-	<div class="relative mx-auto max-w-2xl py-24 sm:py-32 lg:max-w-4xl">
-		<figure class="grid grid-cols-1 items-center gap-x-6 gap-y-8 lg:gap-x-10">
+	<div class="relative mx-auto max-w-2xl py-4 sm:py-12 lg:max-w-4xl">
+		<figure class="grid grid-cols-1 items-center gap-x-6 gap-y-2 lg:gap-x-10">
 			<div class="relative col-span-2 lg:col-start-1 lg:row-start-2">
-				<blockquote class="text-xl leading-8 font-semibold text-stone-50 sm:text-2xl sm:leading-9">
-					<p>"This is what I look like."</p>
-				</blockquote>
+				<div class="mt-2 text-lg leading-8 text-stone-400">
+					
+					
+				</div>
 			</div>
 
 			<div class="relative col-end-1 h-56 w-56 lg:row-span-4 lg:h-[32rem] lg:w-[32rem]">

@@ -12,15 +12,15 @@
 
 	export let rounded = false;
 
-	export let cameraPosition: [number, number, number] = [0, 0.7, 9];
+	export let cameraPosition: [number, number, number] = [0, 0, 9];
 
 	export let rotate = true;
 	export let rotationScale = 0.075;
 	export let rotationSpeed = 1.5;
 
-	export let detail = 200;
+	export let detail = 800;
 
-	export let depthScale = 2;
+	export let depthScale = 0.5;
 
 	const map = useTexture(image.image, {
 		transform: (texture) => {
