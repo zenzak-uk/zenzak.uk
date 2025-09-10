@@ -8,6 +8,23 @@
 	let buttonEl;
 	let firstLinkEl;
 
+	const menuItems = [
+		{ href: '/services', label: 'Services' },
+		{ href: '/solutions', label: '3D Solutions' },
+		{ href: '/web', label: 'Web' },
+		{ href: '/faq', label: 'FAQs' },
+		{ href: '/blog', label: 'Blog' },
+		{ href: '/contact', label: 'Contact' }
+	];
+
+	const menuItemClass =
+		'block w-full rounded-[10px] border border-white/20 bg-gradient-to-b from-zinc-950 to-zinc-950/90 px-8 py-3.5 text-xl font-semibold text-white no-underline outline-none transition-all hover:border-white/40 hover:from-zinc-700 hover:to-zinc-800 focus-visible:border-white/40 focus-visible:from-zinc-700 focus-visible:to-zinc-800';
+	function setFirstLink(node, index) {
+		if (index === 0) {
+			firstLinkEl = node;
+		}
+	}
+
 	function toggleMobileMenu() {
 		isMobileMenuOpen = !isMobileMenuOpen;
 	}
@@ -112,7 +129,7 @@
 		{#if isMobileMenuOpen}
 			<div
 				id="mobile-menu-dropdown"
-				class="absolute top-[calc(100%+0.75rem)] right-0 z-[1002] w-[min(92vw,320px)] origin-top-right rounded-[14px] border border-white/[0.08] bg-black/[0.9] p-2 shadow-[0_12px_40px_rgba(0,0,0,0.28)] backdrop-blur-[8px]"
+				class="absolute top-[calc(100%+1.25rem)] right-0 z-[1002] w-[min(92vw,320px)] origin-top-right rounded-[14px] border border-white/[0.08] bg-zinc-950/30 p-2 shadow-[0_12px_40px_rgba(0,0,0,0.28)] backdrop-blur-[8px]"
 				tabindex="-1"
 				use:clickOutside
 				on:outclick={closeMenu}
@@ -120,49 +137,17 @@
 				role="menu"
 				transition:scale={{ duration: 150, start: 0.96, opacity: 0.25, easing: cubicOut }}
 			>
-				<a
-					href="{base}/services"
-					on:click={closeMenu}
-					role="menuitem"
-					bind:this={firstLinkEl}
-					class="block w-full rounded-[10px] px-8 py-3.5 text-xl font-semibold text-white no-underline outline-none hover:bg-white/[0.08] focus-visible:bg-white/[0.08]"
-					>Services</a
-				>
-				<a
-					href="{base}/solutions"
-					on:click={closeMenu}
-					role="menuitem"
-					class="block w-full rounded-[10px] px-8 py-3.5 text-xl font-semibold text-white no-underline outline-none hover:bg-white/[0.08] focus-visible:bg-white/[0.08]"
-					>3D Solutions</a
-				>
-				<a
-					href="{base}/web"
-					on:click={closeMenu}
-					role="menuitem"
-					class="block w-full rounded-[10px] px-8 py-3.5 text-xl font-semibold text-white no-underline outline-none hover:bg-white/[0.08] focus-visible:bg-white/[0.08]"
-					>Web</a
-				>
-				<a
-					href="{base}/faq"
-					on:click={closeMenu}
-					role="menuitem"
-					class="block w-full rounded-[10px] px-8 py-3.5 text-xl font-semibold text-white no-underline outline-none hover:bg-white/[0.08] focus-visible:bg-white/[0.08]"
-					>FAQs</a
-				>
-				<a
-					href="{base}/blog"
-					on:click={closeMenu}
-					role="menuitem"
-					class="block w-full rounded-[10px] px-8 py-3.5 text-xl font-semibold text-white no-underline outline-none hover:bg-white/[0.08] focus-visible:bg-white/[0.08]"
-					>Blog</a
-				>
-				<a
-					href="{base}/contact"
-					on:click={closeMenu}
-					role="menuitem"
-					class="block w-full rounded-[10px] px-8 py-3.5 text-xl font-semibold text-white no-underline outline-none hover:bg-white/[0.08] focus-visible:bg-white/[0.08]"
-					>Contact</a
-				>
+				{#each menuItems as item, i}
+					<a
+						href="{base}{item.href}"
+						on:click={closeMenu}
+						role="menuitem"
+						use:setFirstLink={i}
+						class="{menuItemClass} {i < menuItems.length - 1 ? 'mb-2' : ''}"
+					>
+						{item.label}
+					</a>
+				{/each}
 			</div>
 		{/if}
 	</nav>
