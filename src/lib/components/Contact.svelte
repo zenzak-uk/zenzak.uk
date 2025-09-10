@@ -7,7 +7,7 @@
 <div class="mx-auto max-w-2xl">
 	<hr />
 
-	<p class="text-center text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+	<p class="text-center text-lg leading-relaxed text-gray-300">
 		Ready to see your vision realized? Fill out the form below to tell me about your project. I'll
 		get back to you to schedule our discovery call.
 	</p>
@@ -63,11 +63,11 @@
 		</div>
 	</form>
 
-	<p class="mt-12 text-center text-sm text-gray-600 dark:text-gray-400">
+	<p class="mt-12 text-center text-sm text-gray-300">
 		Or email me directly at
 		<a
 			href="mailto:hello@zenzak.uk"
-			class="font-medium text-indigo-600 underline decoration-indigo-400/40 transition hover:text-indigo-500 hover:decoration-indigo-500 dark:text-indigo-400 dark:hover:text-indigo-300"
+			class="font-medium text-indigo-300 underline transition hover:text-indigo-500"
 			>hello@zenzak.uk</a
 		>
 	</p>

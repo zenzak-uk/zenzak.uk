@@ -12,7 +12,7 @@
 
 <section class="py-16 pb-24">
 	<div
-		class="mx-auto my-8 w-full max-w-screen-xl rounded-2xl border border-white/10 bg-black/5 px-8 py-16 text-gray-200 backdrop-blur-[10px]"
+		class="mx-auto my-8 w-full max-w-screen-xl rounded-2xl bg-black/5 px-8 py-16 text-gray-200 backdrop-blur-[10px]"
 	>
 		<Solutions />
 	</div>
