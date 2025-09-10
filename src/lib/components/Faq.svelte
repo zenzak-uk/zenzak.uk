@@ -122,7 +122,7 @@
 	</Accordion>
 
 	<section>
-		<h4 semibold>Still have a question?</h4>
+		<h4 class="semibold mb-2">Still have a question?</h4>
 		<Button href="/contact">Let's talk</Button>
 	</section>
 </div>
