@@ -130,7 +130,7 @@
 			loop
 			playsinline
 			poster="{base}/videos/poster.avif"
-			class="h-full w-full object-cover"
+			class="!min-h-full w-full object-cover"
 		>
 			<source src="{base}/videos/bg.webm" type="video/webm" />
 			<source src="{base}/videos/bg.mp4" type="video/mp4" />

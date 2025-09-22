@@ -14,7 +14,7 @@
 
 <!-- Fixed background -->
 <div class="pointer-events-none fixed inset-0 -z-10" style={`--poster-url: url(${poster})`}>
-	<video autoplay muted loop playsinline {poster} class="h-full w-full object-cover">
+	<video autoplay muted loop playsinline {poster} class="!min-h-full w-full object-cover">
 		<source src={bgWebm} type="video/webm" />
 		<source src={bgMp4} type="video/mp4" />
 		Your browser does not support the video tag.
