@@ -61,11 +61,11 @@
 					</div>
 				</div>
 				<Hero
-							image={{
-								image: '/images/portrait-me.webp',
-								depth: '/images/depth-me.webp'
-							}}
-						/>
+					image={{
+						image: '/images/portrait-me.webp',
+						depth: '/images/depth-me.webp'
+					}}
+				/>
 			</section>
 
 			<!-- Our Story Section -->
@@ -172,8 +172,6 @@
 					</div>
 				</div>
 			</section>
-
-			
 		</div>
 	</div>
 </div>

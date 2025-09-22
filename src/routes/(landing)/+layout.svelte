@@ -7,6 +7,7 @@
 	const poster = `${base}/videos/poster.avif`;
 	const bgWebm = `${base}/videos/bg.webm`;
 	const bgMp4 = `${base}/videos/bg.mp4`;
+	import Footer from '$lib/components/Footer.svelte';
 </script>
 
 <Header />
@@ -25,8 +26,9 @@
 	{@render children()}
 </main>
 
+<Footer></Footer>
+
 <style>
-	/* Radial gradient since Tailwind doesn't have this built-in */
 	.bg-gradient-radial {
 		background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.8) 70%);
 	}
