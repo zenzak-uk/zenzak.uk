@@ -1,5 +1,5 @@
 ---
-title: 'Welcome to the Zenzak Animation Blog'
+title: 'Welcome to the Zenzak Studio Blog'
 date: '2025-08-08'
 description: "An introduction to our new blog, where we'll share insights on 3D animation, engineering, and bringing technical ideas to market."
 ---

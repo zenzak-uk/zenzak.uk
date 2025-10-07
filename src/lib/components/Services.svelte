@@ -122,7 +122,7 @@
 				<CardContent class="pt-0">
 					<p class="text-card-foreground">
 						<strong class="text-primary">Win Bids.</strong> Eliminate ambiguity and showcase mechanism
-						superiority with technically‑precise animations that leave no room for doubt.
+						superiority with technically‑precise visualizations that leave no room for doubt.
 					</p>
 				</CardContent>
 			</Card>
@@ -191,10 +191,10 @@
 		<video class="rounded-xl" src="/videos/cinema-web.webm" autoplay loop muted playsinline></video>
 	</div>
 
-	<!-- Engineering-Grade 3D Animation callout -->
+	<!-- Engineering-Grade 3D Visualization callout -->
 	<Card class="border-slate-700 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
 		<CardContent class="space-y-4 p-8 md:p-10">
-			<p class="text-sm tracking-widest text-slate-300 uppercase">Engineering‑Grade 3D Animation</p>
+			<p class="text-sm tracking-widest text-slate-300 uppercase">Engineering‑Grade 3D Visualization</p>
 			<h3 class="text-3xl font-semibold text-white md:text-4xl">
 				Your vision is technically brilliant. I bridge the gap.
 			</h3>

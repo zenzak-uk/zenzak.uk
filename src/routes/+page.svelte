@@ -14,7 +14,7 @@
 	const seoProps = {
 		title: 'Engineering-Grade 3D Animation & Product Visualization',
 		metadescription:
-			'Zenzak Animation provides engineering-grade 3D animation, product visualization, and design services to bring your vision to market. Secure funding, win bids, and drive sales with stunning visuals.'
+			'Zenzak Studio provides engineering-grade 3D animation, product visualization, and design services to bring your vision to market. Secure funding, win bids, and drive sales with stunning visuals.'
 	};
 
 	onMount(() => {

@@ -26,7 +26,7 @@
 		vimeoProfile
 	} = website;
 
-	const defaultAlt = 'Engineering-Grade 3D Animation and Product Visualization by Zenzak Animation';
+	const defaultAlt = 'Engineering-Grade 3D Animation and Product Visualization by Zenzak Studio';
 
 	let {
 		article = false,
@@ -34,16 +34,16 @@
 		entityMeta = null,
 		lastUpdated = new Date().toISOString(),
 		datePublished = new Date().toISOString(),
-		metadescription = 'Zenzak Animation provides engineering-grade 3D animation, product visualization, and design services to bring your vision to market. Secure funding, win bids, and drive sales with stunning visuals.',
+		metadescription = 'Zenzak Studio provides engineering-grade 3D animation, product visualization, and design services to bring your vision to market. Secure funding, win bids, and drive sales with stunning visuals.',
 		slug = '',
 		timeToRead = 0,
 		title = 'Engineering-Grade 3D Animation & Product Visualization',
 		featuredImage = {
 			url: featuredImageSrc,
-			alt: 'A stunning product render created by Zenzak Animation.',
+			alt: 'A stunning product render created by Zenzak Studio.',
 			width: 1200,
 			height: 675,
-			caption: 'Zenzak Animation: From Concept to Production-Ready Visuals'
+			caption: 'Zenzak Studio: From Concept to Production-Ready Visuals'
 		},
 		ogImage = {
 			url: ogImageSrc,

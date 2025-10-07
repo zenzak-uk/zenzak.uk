@@ -2,9 +2,9 @@
 	import Solutions from '$lib/components/Solutions.svelte';
 	import SEO from '$lib/components/SEO/index.svelte';
 	const seoProps = {
-		title: 'Zenzak Animation | Launch-Ready 3D Product Renders & Animation',
+		title: 'Zenzak Studio | Launch-Ready 3D Product Renders & Animation',
 		metadescription:
-			'Transform your product concepts into stunning, launch-ready visuals. Zenzak Animation offers expert 3D modeling, sculpting, and animation services designed to make your products stand out. Get your centerpiece imagery here.'
+			'Transform your product concepts into stunning, launch-ready visuals. Zenzak Studio offers expert 3D modeling, sculpting, and animation services designed to make your products stand out. Get your centerpiece imagery here.'
 	};
 </script>
 

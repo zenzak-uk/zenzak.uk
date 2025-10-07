@@ -17,7 +17,7 @@
 	const postsPromise = getPosts();
 	import SEO from '$lib/components/SEO/index.svelte';
 	const seoProps = {
-		title: 'Zenzak Animation Blog | Technical Animation & 3D Visualization Insights',
+		title: 'Zenzak Studio Blog | Technical Animation & 3D Visualization Insights',
 		metadescription:
 			'Explore expert insights at the intersection of engineering and 3D animation. We cover technical explainers, interactive web experiences, and market-ready design.'
 	};

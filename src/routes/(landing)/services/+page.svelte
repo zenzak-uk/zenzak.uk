@@ -2,9 +2,9 @@
 	import Services from '$lib/components/Services.svelte';
 	import SEO from '$lib/components/SEO/index.svelte';
 	const seoProps = {
-		title: '3D Animation for Engineering, Marketing & Startups | Zenzak Animation',
+		title: '3D Animation for Engineering, Marketing & Startups | Zenzak Studio',
 		metadescription:
-			'Zenzak Animation offers full-cycle 3D services, from product visualization and technical explainers to UI/UX demos. We help startups, engineers, and marketers bring their vision to market.'
+			'Zenzak Studio offers full-cycle 3D services, from product visualization and technical explainers to UI/UX demos. We help startups, engineers, and marketers bring their vision to market.'
 	};
 </script>
 

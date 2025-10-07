@@ -71,8 +71,8 @@
 		class="relative mx-auto flex max-w-6xl items-center justify-between text-2xl text-white no-underline"
 	>
 		<a href="{base}/" class="flex items-center text-2xl font-bold text-white no-underline">
-			<img src="/lightbulb.svg" alt="Zenzak Animation Home" class="mr-2 h-[1.4em] w-auto" />
-			<span class="font-light tracking-[0.2em]">ZENZAK ANIMATION</span>
+			<img src="/lightbulb.svg" alt="Zenzak Studio Home" class="mr-2 h-[1.4em] w-auto" />
+			<span class="font-light tracking-[0.2em]">ZENZAK STUDIO</span>
 		</a>
 
 		<!-- Right side icons group -->
