@@ -25,7 +25,7 @@
 	const schemaOrgOrganization = {
 		'@type': 'ProfessionalService',
 		'@id': `${siteUrl}/#organization`,
-		name: 'Zenzak Animation',
+		name: 'Zenzak Studio',
 		url: siteUrl,
 		logo: `${siteUrl}/favicon.ico`,
 		image: featuredImage.url,

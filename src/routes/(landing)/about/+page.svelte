@@ -3,9 +3,9 @@
 	import Hero from '$lib/Depth3D/Quote.svelte';
 	import SEO from '$lib/components/SEO/index.svelte';
 	const seoProps = {
-		title: 'Digital Experiences for the Web | Zenzak Animation',
+		title: 'Digital Experiences for the Web | Zenzak Studio',
 		metadescription:
-			'Zenzak Animation builds immersive 3D web experiences. Elevate your site with interactive product configurators, digital twins, and data visualizations that engage and persuade.'
+			'Zenzak Studio builds immersive 3D web experiences. Elevate your site with interactive product configurators, digital twins, and data visualizations that engage and persuade.'
 	};
 </script>
 

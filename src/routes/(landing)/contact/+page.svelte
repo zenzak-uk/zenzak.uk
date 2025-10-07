@@ -2,9 +2,9 @@
 	import Contact from '$lib/components/Contact.svelte';
 	import SEO from '$lib/components/SEO/index.svelte';
 	const seoProps = {
-		title: 'Contact ZENZAK | Start Your 3D Animation Project',
+		title: 'Contact Zenzak Studio | Start Your 3D Animation Project',
 		metadescription:
-			'Ready to bring your vision to life? Contact ZENZAK to discuss your project. I translate complex engineering ideas into clear, persuasive 3D product animations and technical renders. Schedule your free discovery call today.'
+			'Ready to bring your vision to life? Contact Zenzak Studio to discuss your project. I translate complex engineering ideas into clear, persuasive 3D product animations and technical renders. Schedule your free discovery call today.'
 	};
 </script>
 

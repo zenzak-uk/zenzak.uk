@@ -2,7 +2,7 @@
 	import Faq from '$lib/components/Faq.svelte';
 	import SEO from '$lib/components/SEO/index.svelte';
 	const seoProps = {
-		title: '3D Animation FAQ: Process, Cost & Timelines | Zenzak Animation',
+		title: '3D Animation FAQ: Process, Cost & Timelines | Zenzak Studio',
 		metadescription:
 			'Get clear answers on our 3D animation process, project costs, and timelines. Discover the unique benefits of our engineer-led approach and start your project with confidence.'
 	};
