@@ -31,7 +31,7 @@
 				{
 					url: 'https://www.linkedin.com/company/zenzak/',
 					name: 'LinkedIn'
-				}
+				},
 				{
 					url: 'https://www.instagram.com/zenzakuk/',
 					name: 'Instagram'
