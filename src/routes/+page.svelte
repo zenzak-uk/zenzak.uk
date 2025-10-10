@@ -19,6 +19,8 @@
 			'Zenzak Studio provides engineering-grade 3D animation, product visualization, and design services to bring your vision to market. Secure funding, win bids, and drive sales with stunning visuals.'
 	};
 
+	let videoElement;
+
 	onMount(() => {
 		const words = gsap.utils.toArray('.rotator-word');
 		const container = document.querySelector('.rotator-container');
@@ -57,15 +59,46 @@
 				'+=1'
 			);
 		});
+
+		// Video autoplay fallback
+		if (videoElement) {
+			const playVideo = async () => {
+				try {
+					await videoElement.play();
+					console.log('Video playing successfully');
+				} catch (err) {
+					console.log('Autoplay blocked:', err);
+				}
+			};
+
+			// Wait for video to be ready
+			const handleCanPlay = () => {
+				playVideo();
+			};
+
+			if (videoElement.readyState >= 3) {
+				// Video already loaded
+				playVideo();
+			} else {
+				// Wait for video to load
+				videoElement.addEventListener('canplay', handleCanPlay, { once: true });
+			}
+
+			// Retry on user interaction if blocked
+			const handleInteraction = () => {
+				playVideo();
+			};
+
+			document.addEventListener('click', handleInteraction, { once: true });
+			document.addEventListener('touchstart', handleInteraction, { once: true });
+
+			// Cleanup
+			return () => {
+				videoElement.removeEventListener('canplay', handleCanPlay);
+			};
+		}
 	});
 </script>
-
-<style>
-	.rotator-word {
-		opacity: 0;
-		visibility: hidden;
-	}
-</style>
 
 <SEO {...seoProps} />
 
@@ -87,7 +120,7 @@
 						>
 							<span>We Create</span>
 							<span
-								class="relative inline-flex h-20 w-full justify-center overflow-hidden px-8 md:h-24 lg:h-32"
+								class="rotator-container relative inline-flex h-20 w-full justify-center overflow-hidden px-8 md:h-24 lg:h-32"
 							>
 								<span class="rotator-word absolute">Visuals</span>
 								<span class="rotator-word absolute">Animations</span>
@@ -140,7 +173,7 @@
 	</main>
 	<div class="fixed top-0 left-0 z-[-1] h-full w-full">
 		<video
-			autoplay
+			bind:this={videoElement}
 			muted
 			loop
 			playsinline
@@ -158,3 +191,10 @@
 </div>
 
 <Footer></Footer>
+
+<style>
+	.rotator-word {
+		opacity: 0;
+		visibility: hidden;
+	}
+</style>

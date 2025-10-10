@@ -194,7 +194,9 @@
 	<!-- Engineering-Grade 3D Visualization callout -->
 	<Card class="border-slate-700 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
 		<CardContent class="space-y-4 p-8 md:p-10">
-			<p class="text-sm tracking-widest text-slate-300 uppercase">Engineering‑Grade 3D Visualization</p>
+			<p class="text-sm tracking-widest text-slate-300 uppercase">
+				Engineering‑Grade 3D Visualization
+			</p>
 			<h3 class="text-3xl font-semibold text-white md:text-4xl">
 				Your vision is technically brilliant. I bridge the gap.
 			</h3>
