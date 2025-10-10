@@ -7,6 +7,8 @@
 	import VideoPlayer from '$lib/components/VideoPlayer.svelte';
 	import { AspectRatio } from '$lib/components/ui/aspect-ratio';
 	import Footer from '$lib/components/Footer.svelte';
+	import Software from '$lib/components/Software.svelte';
+	import Offering from '$lib/components/Offering.svelte';
 
 	import { gsap } from 'gsap';
 
@@ -47,7 +49,7 @@
 				word,
 				{
 					rotationX: 90,
-					autoalpha: 0,
+					autoAlpha: 0,
 					y: -50,
 					duration: 0.4,
 					ease: 'power2.in'
@@ -57,6 +59,13 @@
 		});
 	});
 </script>
+
+<style>
+	.rotator-word {
+		opacity: 0;
+		visibility: hidden;
+	}
+</style>
 
 <SEO {...seoProps} />
 
@@ -121,6 +130,12 @@
 				title="Zenzak Portfolio Video"
 				thumbnailAlt="Portfolio showreel thumbnail"
 			/>
+		</section>
+		<section>
+			<Software></Software>
+		</section>
+		<section>
+			<Offering></Offering>
 		</section>
 	</main>
 	<div class="fixed top-0 left-0 z-[-1] h-full w-full">
