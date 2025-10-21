@@ -34,10 +34,10 @@
 		entityMeta = null,
 		lastUpdated = new Date().toISOString(),
 		datePublished = new Date().toISOString(),
-		metadescription = "Zenzak Studio is Edinburgh's independent visualisation studio. 3D animation, product visualisation, and design services bring your vision to life.",
+		metadescription = "Zenzak Studio is Edinburgh's independent visualisation studio. 3D animation, product visualisation, and design services to bring your vision to life.",
 		slug = '',
 		timeToRead = 0,
-		title = 'Engineering-Grade 3D Animation & Product Visualisation',
+		title = "Edinburgh's design, visualisation, and animation studio",
 		featuredImage = {
 			url: featuredImageSrc,
 			alt: 'A stunning product render created by Zenzak Studio.',
