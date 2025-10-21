@@ -14,9 +14,9 @@
 
 	import SEO from '$lib/components/SEO/index.svelte';
 	const seoProps = {
-		title: 'Engineering-Grade 3D Animation & Product Visualization',
+		title: "Edinburgh's design, visualisation, and animation studio",
 		metadescription:
-			'Zenzak Studio provides engineering-grade 3D animation, product visualization, and design services to bring your vision to market. Secure funding, win bids, and drive sales with stunning visuals.'
+			"Zenzak Studio is Edinburgh's independent visualisation studio. 3D animation, product visualisation, and design services to bring your vision to life."
 	};
 
 	let videoElement;
@@ -131,7 +131,7 @@
 					</div>
 					<div class="flex flex-col items-center gap-5 text-center lg:gap-10">
 						<p class="mt-8 max-w-3xl font-mono font-semibold lg:text-lg">
-							We're a design, visualization, and animation studio that makes the innovative
+							We're Edinburgh's design, visualization, and animation studio that makes the innovative
 							understandable. We partner with you to create stunning visuals that captivate
 							audiences and get you market-ready. See your vision take shape. Schedule a free
 							consultation.
