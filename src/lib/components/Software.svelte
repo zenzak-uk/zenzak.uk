@@ -18,7 +18,7 @@
 		<div class="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-6">
 			{#each logos as logo}
 				<div
-					class="flex h-16 cursor-pointer items-center justify-center rounded-xl bg-gradient-to-br from-gray-800 to-gray-900 p-4 shadow-lg transition-all duration-300 hover:from-gray-700 hover:to-gray-800 hover:shadow-xl"
+					class="flex h-16 cursor-pointer items-center justify-center rounded-xl bg-gradient-to-br from-gray-800 to-black p-4 shadow-lg transition-all duration-300 hover:from-gray-700 hover:to-gray-800 hover:shadow-xl"
 				>
 					<img
 						src={logo.src}
