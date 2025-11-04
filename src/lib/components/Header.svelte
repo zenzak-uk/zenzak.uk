@@ -18,7 +18,8 @@
 	];
 
 	const menuItemClass =
-		'block w-full rounded-[10px] border border-white/20 bg-gradient-to-b from-zinc-950 to-zinc-950/90 px-8 py-3.5 text-xl font-semibold text-white no-underline outline-none transition-all hover:border-white/40 hover:from-zinc-700 hover:to-zinc-800 focus-visible:border-white/40 focus-visible:from-zinc-700 focus-visible:to-zinc-800';
+		'block w-full px-3 py-2 text-md text-white/90 no-underline outline-none transition-colors hover:bg-white/[0.06] hover:text-white focus-visible:bg-white/[0.06] focus-visible:text-white rounded-md';
+	
 	function setFirstLink(node, index) {
 		if (index === 0) {
 			firstLinkEl = node;
@@ -129,13 +130,13 @@
 		{#if isMobileMenuOpen}
 			<div
 				id="mobile-menu-dropdown"
-				class="absolute top-[calc(100%+1.25rem)] right-0 z-[1002] w-[min(92vw,320px)] origin-top-right rounded-[14px] border border-white/[0.08] bg-zinc-950/60 p-2 shadow-[0_12px_40px_rgba(0,0,0,0.28)] backdrop-blur-md"
+				class="absolute top-[calc(100%+0.75rem)] right-0 z-[1002] w-[min(92vw,200px)] origin-top-right rounded-lg border border-white/[0.12] bg-black/95 p-1.5 shadow-[0_8px_30px_rgba(0,0,0,0.4)] backdrop-blur-xl"
 				tabindex="-1"
 				use:clickOutside
 				on:outclick={closeMenu}
 				on:keydown={handleKeydown}
 				role="menu"
-				transition:scale={{ duration: 150, start: 0.96, opacity: 0.25, easing: cubicOut }}
+				transition:scale={{ duration: 150, start: 0.96, opacity: 0, easing: cubicOut }}
 			>
 				{#each menuItems as item, i}
 					<a
@@ -143,7 +144,7 @@
 						on:click={closeMenu}
 						role="menuitem"
 						use:setFirstLink={i}
-						class="{menuItemClass} {i < menuItems.length - 1 ? 'mb-2' : ''}"
+						class={menuItemClass}
 					>
 						{item.label}
 					</a>

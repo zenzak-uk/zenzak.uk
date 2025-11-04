@@ -62,8 +62,8 @@
 	--color-default-font: rgb(248, 250, 252);
 	--color-subtext-color: rgb(148, 163, 184);
 	--color-neutral-border: rgb(51, 65, 85);
-	--color-black: rgb(2, 6, 23);
-	--color-default-background: rgb(2, 6, 23);
+	--color-black: rgb(0, 0, 0);
+	--color-default-background: rgb(0, 0, 0);
 
 	/* Fonts */
 	--text-caption: 12px;
