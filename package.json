@@ -42,7 +42,8 @@
 		"tailwind-variants": "^1.0.0",
 		"tailwindcss": "^4.0.0",
 		"tw-animate-css": "^1.3.7",
-		"vite": "^7.1.3"
+		"vite": "^7.1.3",
+		"wrangler": "^4.129.0"
 	},
 	"dependencies": {
 		"@popperjs/core": "^2.11.8",
